@@ -1,14 +1,15 @@
 #pragma once
 
+#include "apps/AppFablab.hpp"
 #include "apps/AppSalina.hpp"
 #include "apps/Application.hpp"
-#include "vector"
+#include <memory>
+#include <vector>
 
 class Manager {
 private:
     int appIndex = 0;
-    AppSalina appSalina;
-    std::vector<Application> applications;
+    std::vector<std::unique_ptr<Application>> applications;
 
 public:
     Manager(/* args */);

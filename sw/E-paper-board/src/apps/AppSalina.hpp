@@ -2,12 +2,11 @@
 
 #include "Application.hpp"
 
-class AppSalina: public Application {
+class AppSalina : public Application {
 private:
-	/* data */
+    /* data */
 public:
-	AppSalina(/* args */);
-	~AppSalina();
-	int update();
-
+    AppSalina(/* args */);
+    ~AppSalina();
+    int update();
 };

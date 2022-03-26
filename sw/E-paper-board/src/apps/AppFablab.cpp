@@ -3,6 +3,9 @@
 AppFablab::AppFablab(/* args */) {
 }
 
-AppFablab::~AppFablab()
-{
+AppFablab::~AppFablab() {
+}
+
+int AppFablab::update() {
+    return 44;
 }

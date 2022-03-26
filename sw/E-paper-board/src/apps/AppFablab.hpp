@@ -1,10 +1,12 @@
 #pragma once
 
-class AppFablab
-{
+#include "Application.hpp"
+
+class AppFablab : public Application {
 private:
-	/* data */
+    /* data */
 public:
-	AppFablab(/* args */);
-	~AppFablab();
+    AppFablab(/* args */);
+    ~AppFablab();
+    int update();
 };

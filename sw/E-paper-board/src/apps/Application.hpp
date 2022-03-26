@@ -1,12 +1,11 @@
 #pragma once
 
-class Application
-{
+class Application {
 private:
-	/* data */
+    /* data */
 public:
-	Application(/* args */);
-	~Application();
+    Application(/* args */);
+    ~Application();
 
-	virtual int update() = 0;
+    virtual int update() = 0;
 };
