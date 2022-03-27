@@ -42,7 +42,10 @@ void Manager::buttonClickRight(Button2& btn) {
 
 void Manager::run() {
 
-    printf("%d\n", applications[appIndex]->update());
-    printf("%d\n", applications[appIndex]->update());
-    printf("Konec\n");
+    try {
+        printf("%d\n", applications[appIndex]->update());
+    } catch (HttpRequestError& e) {
+        printf("ERROR: %s\n", e.what());
+    }
+    printf("End\n");
 }

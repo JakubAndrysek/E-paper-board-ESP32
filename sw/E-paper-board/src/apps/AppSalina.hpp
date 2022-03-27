@@ -13,5 +13,7 @@ public:
     void buttonClickLeft();
     void buttonClickMiddle();
     void buttonClickRight();
+    JSONVar prepareSalinaStop(std::string stopParameters);
+
     int update();
 };

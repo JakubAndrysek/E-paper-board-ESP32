@@ -1,10 +1,13 @@
 #pragma once
 #include <functional>
 #include <string>
+#include <Arduino_JSON.h>
 
 class Application {
 private:
 protected:
+    std::string httpFetchUrl;
+
 public:
     Application(std::function<std::string(std::string url)> getHTTPRequest);
     ~Application();
