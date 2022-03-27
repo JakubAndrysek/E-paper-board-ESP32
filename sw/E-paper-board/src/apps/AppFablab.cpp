@@ -1,11 +1,11 @@
-#include "AppFablab.hpp"
+// #include "AppFablab.hpp"
 
-AppFablab::AppFablab(/* args */) {
-}
+// AppFablab::AppFablab(/* args */) {
+// }
 
-AppFablab::~AppFablab() {
-}
+// AppFablab::~AppFablab() {
+// }
 
-int AppFablab::update() {
-    return 44;
-}
+// int AppFablab::update() {
+//     return 44;
+// }
