@@ -4,13 +4,14 @@
 
 #include <Fonts/FreeMono9pt7b.h>
 
-AppSalina::AppSalina(std::function<std::string(std::string url)> _getHTTPRequest)
-    : Application(_getHTTPRequest) {
+AppSalina::AppSalina(std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(getHTTPRequest) {
     httpFetchUrl = "https://jsonplaceholder.typicode.com/todos/1";
     // httpFetchUrl = "https://mapa.idsjmk.cz/api/Departures";
 }
 
-AppSalina::~AppSalina() {
+std::string AppSalina::toString() {
+    return "AppSalina";
 }
 
 void AppSalina::buttonClickLeft() {
@@ -36,19 +37,19 @@ void AppSalina::buttonClickRight() {
 // 	{
 // 		Serial.println("Parsing input failed!");
 // 		return new JSONVar();
-// 	}	
+// 	}
 // }
 
 // int AppSalina::update(GxGDEW027C44 &display) {
 int AppSalina::update() {
     printf("%s\n", getHTTPRequest("https://jsonplaceholder.typicode.com/todos/1").c_str());
-	// display.setCursor(0,0);
-	// display.setTextColor(GxEPD_BLACK);
-	// display.setFont(&FreeMono9pt7b);
-	// display.println("Ahoj svete");
-	// display.update();
+    // display.setCursor(0,0);
+    // display.setTextColor(GxEPD_BLACK);
+    // display.setFont(&FreeMono9pt7b);
+    // display.println("Ahoj svete");
+    // display.update();
 
-	// display.setFont();
+    // display.setFont();
 
     return 44;
 }

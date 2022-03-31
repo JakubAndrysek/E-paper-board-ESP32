@@ -20,4 +20,5 @@ public:
     virtual void buttonClickLeft() = 0;
     virtual void buttonClickMiddle() = 0;
     virtual void buttonClickRight() = 0;
+    virtual std::string toString() = 0;
 };

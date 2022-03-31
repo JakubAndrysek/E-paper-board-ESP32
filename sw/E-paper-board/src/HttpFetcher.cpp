@@ -1,7 +1,7 @@
 #include "HttpFetcher.hpp"
 #include <stdio.h>
 
-HttpFetcher::HttpFetcher(/* args */) {
+HttpFetcher::HttpFetcher() {
 }
 
 HttpFetcher::~HttpFetcher() {

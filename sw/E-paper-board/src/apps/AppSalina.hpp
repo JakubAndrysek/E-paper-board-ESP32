@@ -10,6 +10,7 @@ private:
 public:
     AppSalina(std::function<std::string(std::string url)> getHTTPRequest);
     ~AppSalina();
+    std::string toString();
 
     void buttonClickLeft();
     void buttonClickMiddle();

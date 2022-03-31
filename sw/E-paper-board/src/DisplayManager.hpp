@@ -17,12 +17,12 @@
 
 class DisplayManager {
 private:
-    GxIO_Class *io;
+    GxIO_Class* io;
 
 public:
-	GxEPD_Class *display;
-    
-    DisplayManager(/* args */);
+    GxEPD_Class* display;
+
+    DisplayManager();
     ~DisplayManager();
 
     void test();

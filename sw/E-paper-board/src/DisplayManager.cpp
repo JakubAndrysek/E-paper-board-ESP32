@@ -1,6 +1,6 @@
 #include "DisplayManager.hpp"
 
-DisplayManager::DisplayManager(/* args */) {
+DisplayManager::DisplayManager() {
     SPI.begin(EPD_SCLK, EPD_MISO, EPD_MOSI);
     io = new GxIO_Class(SPI, EPD_CS, EPD_DC, EPD_RSET);
     display = new GxEPD_Class(*io, EPD_RSET);
@@ -8,6 +8,8 @@ DisplayManager::DisplayManager(/* args */) {
 }
 
 DisplayManager::~DisplayManager() {
+    delete display;
+    delete io;
 }
 
 void DisplayManager::test() {

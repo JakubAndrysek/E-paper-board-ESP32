@@ -4,59 +4,35 @@
 #include "credentials.h"
 #include <stdio.h>
 
-Manager::Manager(/* args */) {
+Manager::Manager() {
     // array of applications
     applications.emplace_back(new AppSalina(&HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppFablab(&HttpFetcher::getHTTPRequest));
 
-    // applications.emplace_back(new AppFablab());
-
-    inputManager.btn2Left.setClickHandler([&](Button2 &btn) {
-        applications[appIndex]->update();
+    inputManager.btnLeft.setClickHandler([&](Button2& btn) {
+        appIndex = (appIndex + 1) % applications.size();
+        printf("appIndex: %d -> %s\n", appIndex, applications[appIndex]->toString().c_str());
     });
-    // inputManager.btnMiddle.setClickHandler(buttonClickMiddle);
-    // inputManager.btnRight.setClickHandler(buttonClickRight);
 
-    // WiFi.begin(ssid, password);
-    // printf("Connecting to WiFi\n");
-    // while (WiFi.status() != WL_CONNECTED) {
-    //     // delay(500);
-    //     // printf(".");
-    // }
-    // printf("Connected to WiFi network with IP Address: ");
-    // printf("%s\n\n", WiFi.localIP().toString().c_str());
-    // delay(100);
-}
+    inputManager.btnMiddle.setClickHandler([&](Button2& btn) {
+        applications[appIndex]->buttonClickMiddle();
+    });
 
-Manager::~Manager() {
-}
+    inputManager.btnRight.setClickHandler([&](Button2& btn) {
+        applications[appIndex]->buttonClickRight();
+    });
 
-void Manager::buttonClickLeft(Button2& btn) {
-    applications[appIndex]->buttonClickLeft();
-}
-
-void Manager::buttonClickMiddle(Button2& btn) {
-    applications[appIndex]->buttonClickMiddle();
-}
-
-void Manager::buttonClickRight(Button2& btn) {
-    applications[appIndex]->buttonClickRight();
+    WiFi.begin(ssid, password);
+    printf("Connecting to WiFi\n");
+    while (WiFi.status() != WL_CONNECTED) {
+        // delay(500);
+        // printf(".");
+    }
+    printf("Connected to WiFi network with IP Address: ");
+    printf("%s\n\n", WiFi.localIP().toString().c_str());
+    delay(100);
 }
 
 void Manager::run() {
-
-    inputManager.buttonLeft.checkPressed();
-    delay(300);
-    // printf("Loop\n");
-
-    // displayManager.display->setTextColor(GxEPD_BLACK);
-    // displayManager.display->setFont(&FreeSans9pt7b);
-    // displayManager.display->println("Funguje");
-    // displayManager.display->update();
-
-    // try {
-    //     printf("%d\n", applications[appIndex]->update());
-    // } catch (HttpRequestError& e) {
-    //     printf("ERROR: %s\n", e.what());
-    // }
-    // printf("End\n");
+    inputManager.loop();
 }
