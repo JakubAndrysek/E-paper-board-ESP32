@@ -11,7 +11,6 @@ public:
     ~HttpFetcher();
 
     static std::string getHTTPRequest(std::string url);
-    static void testFetch();
 };
 
 struct HttpRequestError : public std::exception {

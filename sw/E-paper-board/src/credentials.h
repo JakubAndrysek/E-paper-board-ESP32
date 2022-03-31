@@ -1,2 +1,2 @@
-const char *ssid = "WiFi SSID";
-const char *password = "WiFi PWD";
+const char *ssid = "Pletacka-IoT";
+const char *password = "PletackaPlete";

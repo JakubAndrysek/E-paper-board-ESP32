@@ -1,10 +1,10 @@
 #include "InputManager.hpp"
-#include "board_TTGO_Tdisplay.h"
+#include "Board_TTGO_Tdisplay.hpp"
 
-InputManager::InputManager(/* args */) {
-    btnLeft.begin(BUTTON_LEFT);
-    btnMiddle.begin(BUTTON_MIDDLE);
-    btnRight.begin(BUTTON_RIGHT);
+InputManager::InputManager(/* args */): buttonLeft(BUTTON_LEFT) {
+    btn2Left.begin(BUTTON_LEFT);
+    // btnMiddle.begin(BUTTON_MIDDLE);
+    // btnRight.begin(BUTTON_RIGHT);
 }
 
 InputManager::~InputManager() {

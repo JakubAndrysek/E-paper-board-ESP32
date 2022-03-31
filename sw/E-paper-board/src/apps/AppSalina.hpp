@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Application.hpp"
+#include <GxGDEW027C44/GxGDEW027C44.h>
 #include <functional>
 
 class AppSalina : public Application {
@@ -15,5 +16,6 @@ public:
     void buttonClickRight();
     JSONVar prepareSalinaStop(std::string stopParameters);
 
+    // int update(GxGDEW027C44 &display);
     int update();
 };

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "InputManager.hpp"
+#include "DisplayManager.hpp"
 #include "HttpFetcher.hpp"
 #include "apps/Application.hpp"
 #include "Button2.h"
@@ -11,11 +12,13 @@
 class Manager {
 private:
     InputManager inputManager;
+    DisplayManager displayManager;
 
     int appIndex = 0;
     std::vector<std::unique_ptr<Application>> applications;
 
 public:
+
     Manager(/* args */);
     ~Manager();
     void buttonClickLeft(Button2 &btn);

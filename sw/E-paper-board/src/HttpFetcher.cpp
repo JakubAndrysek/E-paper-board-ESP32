@@ -30,7 +30,3 @@ std::string HttpFetcher::getHTTPRequest(std::string url) {
 
     return payload;
 }
-
-void HttpFetcher::testFetch() {
-    printf("Ahoj\n");
-}
