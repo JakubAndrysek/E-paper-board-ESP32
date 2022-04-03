@@ -14,10 +14,6 @@ std::string AppFablab::toString() {
     return "AppFablab";
 }
 
-void AppFablab::buttonClickLeft() {
-    printf("Pressed button LEFT\n");
-}
-
 void AppFablab::buttonClickMiddle() {
     printf("Pressed button MIDDLE\n");
 }

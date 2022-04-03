@@ -23,7 +23,6 @@ public:
     GxEPD_Class* display;
 
     DisplayManager();
-    ~DisplayManager();
 
     void test();
 };

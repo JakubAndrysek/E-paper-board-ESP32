@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Application.hpp"
+#include <Arduino_JSON.h>
 #include <GxGDEW027C44/GxGDEW027C44.h>
 #include <functional>
 
@@ -9,9 +10,8 @@ private:
     /* data */
 public:
     AppFablab(std::function<std::string(std::string url)> getHTTPRequest);
-	std::string toString();
+    std::string toString();
 
-    void buttonClickLeft();
     void buttonClickMiddle();
     void buttonClickRight();
     JSONVar prepareSalinaStop(std::string stopParameters);

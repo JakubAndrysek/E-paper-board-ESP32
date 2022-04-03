@@ -31,8 +31,12 @@ Manager::Manager() {
     printf("Connected to WiFi network with IP Address: ");
     printf("%s\n\n", WiFi.localIP().toString().c_str());
     delay(100);
+
+    displayManager.test();
 }
 
 void Manager::run() {
     inputManager.loop();
+
+    
 }

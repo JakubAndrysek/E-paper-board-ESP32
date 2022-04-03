@@ -1,5 +1,5 @@
 #pragma once
-#include <Arduino_JSON.h>
+
 #include <GxGDEW027C44/GxGDEW027C44.h>
 #include <functional>
 #include <string>
@@ -17,7 +17,6 @@ public:
 
     // virtual int update(GxGDEW027C44 &display) = 0;
     virtual int update() = 0;
-    virtual void buttonClickLeft() = 0;
     virtual void buttonClickMiddle() = 0;
     virtual void buttonClickRight() = 0;
     virtual std::string toString() = 0;
