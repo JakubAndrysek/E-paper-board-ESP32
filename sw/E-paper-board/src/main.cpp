@@ -1,7 +1,9 @@
 #include "Manager.hpp"
+#include "utils.hpp"
+
 
 int mainAp() {
-    Manager manager;
+    Manager manager(false);
 
     while (true) {
         manager.run();

@@ -4,7 +4,7 @@
 #include "credentials.h"
 #include <stdio.h>
 
-Manager::Manager() {
+Manager::Manager(bool connectToWifi) {
     // array of applications
     applications.emplace_back(new AppSalina(&HttpFetcher::getHTTPRequest));
     applications.emplace_back(new AppFablab(&HttpFetcher::getHTTPRequest));
@@ -22,15 +22,17 @@ Manager::Manager() {
         applications[appIndex]->buttonClickRight();
     });
 
-    WiFi.begin(ssid, password);
-    printf("Connecting to WiFi\n");
-    while (WiFi.status() != WL_CONNECTED) {
-        // delay(500);
-        // printf(".");
+    if(connectToWifi) {
+        WiFi.begin(ssid, password);
+        printf("Connecting to WiFi\n");
+        while (WiFi.status() != WL_CONNECTED) {
+            // delay(500);
+            // printf(".");
+        }
+        printf("Connected to WiFi network with IP Address: ");
+        printf("%s\n\n", WiFi.localIP().toString().c_str());
+        delay(100);
     }
-    printf("Connected to WiFi network with IP Address: ");
-    printf("%s\n\n", WiFi.localIP().toString().c_str());
-    delay(100);
 
     displayManager.test();
 }
@@ -38,5 +40,5 @@ Manager::Manager() {
 void Manager::run() {
     inputManager.loop();
 
-    
+
 }

@@ -11,30 +11,36 @@ DisplayManager::DisplayManager() {
     display->setRotation(1);
 }
 
-void DisplayManager::test() {
-    // display->setTextColor(GxEPD_BLACK);
-    // display->setFont(&FreeMono9pt7b);
-    // display->setCursor(0, 45);
-    // display->println("Hello World");
-
-    // display->setTextColor(GxEPD_RED);
-    // display->setFont(&FreeSans9pt7b);
-    // display->println("Hello World");
-
-    // display->setFont(&FreeSerif9pt7b);
-    // display->println("Hello World");
-    // display->update();
-
-    display->setCursor(0, 0);
+void DisplayManager::showStopLine(std::string time, std::string delay) {
     display->setTextColor(GxEPD_BLACK);
-    display->print("Příliš žluťoučký kůň úpěl ďábelské ódy");
-    // display->setFont(&FreeSansBold12pt7b);
-    // display->print("\nAhoj svete!");
-    // display->setRotation(3);
-    // display->fillRect(50, 60, 128, 64, GxEPD_RED);
+    display->printf(std::string("- " + time + " ").c_str());
+
+    if(delay != "") {
+        display->setTextColor(GxEPD_RED);
+        display->print(std::string("(" + delay + ")\n").c_str());
+        display->setTextColor(GxEPD_BLACK);
+    } else {
+        display->print("\n");
+    }
+
+}
+
+void DisplayManager::test() {
+
+    display->setCursor(0, 8);
+    display->setTextColor(GxEPD_RED);
+    display->setFont(&FreeSansBold9pt7b);
+    display->print("Odjezdy salin\n");
+
+    display->setTextColor(GxEPD_BLACK);
+    display->setFont(&FreeSansBold12pt7b);
+    display->print("Z: Semilasso\n");
+
+    display->setFont(&FreeSansBold9pt7b);
+    showStopLine("1min", "2 min");
+    showStopLine("13min");
+
     display->drawRect(0, 0, display->width(), display->height(), GxEPD_BLACK);
+    display->update();
 
-
-
-    display->update();    
 }

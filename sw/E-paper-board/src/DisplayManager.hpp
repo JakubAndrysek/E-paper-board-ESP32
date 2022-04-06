@@ -23,6 +23,7 @@ public:
     GxEPD_Class* display;
 
     DisplayManager();
+    void showStopLine(std::string time, std::string delay = "");
 
     void test();
 };

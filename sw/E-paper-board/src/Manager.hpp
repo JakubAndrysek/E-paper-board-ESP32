@@ -18,6 +18,6 @@ private:
     std::vector<std::unique_ptr<Application>> applications;
 
 public:
-    Manager();
+    Manager(bool connectToWifi = true);
     void run();
 };
