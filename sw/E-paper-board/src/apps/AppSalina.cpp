@@ -1,10 +1,11 @@
 #include "AppSalina.hpp"
 #include <stdio.h>
 
-#include <Fonts/FreeMono9pt7b.h>
+#include <Fonts/FreeSansBold12pt7b.h>
+#include <Fonts/FreeSans9pt7b.h>
 
-AppSalina::AppSalina(std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(getHTTPRequest) {
+AppSalina::AppSalina(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(display, getHTTPRequest) {
     httpFetchUrl = "http://192.168.0.15:3333";
     stopParameters = "/1272";
     // httpFetchUrl = "https://mapa.idsjmk.cz/api/Departures";
@@ -17,6 +18,18 @@ std::string AppSalina::toString() {
 
 void AppSalina::buttonClickMiddle() {
     printf("Pressed button MIDDLE\n");
+
+    display->setTextColor(GxEPD_BLACK);
+    display->setFont(&FreeSansBold12pt7b);
+    display->print("Z: Semilasso\n");
+
+    display->setFont(&FreeSans9pt7b);
+    // showStopLine("1min", "2 min");
+    // showStopLine("13min");
+
+    display->drawRect(0, 0, display->width(), display->height(), GxEPD_BLACK);
+    display->update();    
+
     update();
 }
 

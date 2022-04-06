@@ -4,8 +4,8 @@
 
 #include <Fonts/FreeMono9pt7b.h>
 
-AppFablab::AppFablab(std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(getHTTPRequest) {
+AppFablab::AppFablab(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(display, getHTTPRequest) {
     httpFetchUrl = "https://jsonplaceholder.typicode.com/todos/1";
     // httpFetchUrl = "https://mapa.idsjmk.cz/api/Departures";
 }

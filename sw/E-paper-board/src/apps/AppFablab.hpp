@@ -9,7 +9,7 @@ class AppFablab : public Application {
 private:
     /* data */
 public:
-    AppFablab(std::function<std::string(std::string url)> getHTTPRequest);
+    AppFablab(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest);
     std::string toString();
 
     void buttonClickMiddle();

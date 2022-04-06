@@ -9,7 +9,7 @@ class AppSalina : public Application {
 private:
     std::string stopParameters;
 public:
-    AppSalina(std::function<std::string(std::string url)> getHTTPRequest);
+    AppSalina(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest);
     std::string toString();
 
     void buttonClickMiddle();

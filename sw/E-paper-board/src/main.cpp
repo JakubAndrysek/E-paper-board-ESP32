@@ -3,7 +3,7 @@
 
 
 int mainAp() {
-    Manager manager(false);
+    Manager manager;
 
     while (true) {
         manager.run();

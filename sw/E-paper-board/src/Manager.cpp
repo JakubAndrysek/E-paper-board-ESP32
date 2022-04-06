@@ -6,8 +6,8 @@
 
 Manager::Manager(bool connectToWifi) {
     // array of applications
-    applications.emplace_back(new AppSalina(&HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppFablab(&HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppSalina(displayManager.display, &HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppFablab(displayManager.display, &HttpFetcher::getHTTPRequest));
 
     inputManager.btnLeft.setClickHandler([&](Button2& btn) {
         appIndex = (appIndex + 1) % applications.size();
@@ -34,7 +34,7 @@ Manager::Manager(bool connectToWifi) {
         delay(100);
     }
 
-    displayManager.test();
+    // displayManager.test();
 }
 
 void Manager::run() {
