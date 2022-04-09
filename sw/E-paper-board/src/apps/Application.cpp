@@ -19,5 +19,5 @@ JSONVar Application::requestJson() {
 }
 
 std::string Application::jsonToStr(JSONVar json) {
-    return JSON.stringify(json).c_str();
+    return (const char*) json;
 }
