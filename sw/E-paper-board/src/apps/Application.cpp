@@ -2,9 +2,8 @@
 #include "exception/JsonParseException.h"
 #include <stdio.h>
 
-Application::Application(GxEPD* display, std::function<std::string(std::string url)> getHTTPRequest) {
+Application::Application(std::function<std::string(std::string url)> getHTTPRequest) {
     this->getHTTPRequest = getHTTPRequest;
-    this->display = display;
     this->updateHandler = nullptr;
 }
 

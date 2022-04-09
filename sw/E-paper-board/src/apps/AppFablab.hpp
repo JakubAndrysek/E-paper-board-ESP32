@@ -9,7 +9,7 @@ class AppFablab : public Application {
 private:
     /* data */
 public:
-    AppFablab(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest);
+    AppFablab(std::function<std::string(std::string url)> getHTTPRequest);
     std::string toString();
     void setUpdateHandler(std::function<int(void)> updateHandler);
 
@@ -18,5 +18,5 @@ public:
     JSONVar prepareSalinaStop(std::string stopParameters);
 
     // int update(GxGDEW027C44 &display);
-    int update();
+    int update(GxEPD* display);
 };

@@ -4,8 +4,8 @@
 #include <Fonts/FreeSans9pt7b.h>
 #include <Fonts/FreeSansBold12pt7b.h>
 
-AppSalina::AppSalina(GxEPD* display, std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(display, getHTTPRequest) {
+AppSalina::AppSalina(std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(getHTTPRequest) {
     httpFetchUrl = "http://192.168.0.5:3333";
     httpFetchUrlParameter = "/1272";
     // httpFetchUrl = "https://mapa.idsjmk.cz/api/Departures";
@@ -31,7 +31,7 @@ void AppSalina::buttonClickRight() {
     printf("Pressed button RIGHT\n");
 }
 
-void AppSalina::showStopLine(std::string LineName, std::string TimeMark, std::string FinalStop) {
+void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string TimeMark, std::string FinalStop) {
     char buffer[100];
     display->setTextColor(GxEPD_BLACK);
     sprintf(buffer, "- %s (%s) %s\n", LineName.c_str(), TimeMark.c_str(), FinalStop.c_str());
@@ -39,7 +39,7 @@ void AppSalina::showStopLine(std::string LineName, std::string TimeMark, std::st
     printf("%s\n", buffer);
 }
 
-void AppSalina::showDeparture(JSONVar salinaStop) {
+void AppSalina::showDeparture(GxEPD* display, JSONVar salinaStop) {
     JSONVar StopID = salinaStop["StopID"];
     printf("%s\n", JSON.stringify(StopID).c_str());
 
@@ -54,15 +54,15 @@ void AppSalina::showDeparture(JSONVar salinaStop) {
     
     JSONVar Departures0 = Departures[0];
 
-    showStopLine(jsonToStr(Departures0["LineName"]), jsonToStr(Departures0["TimeMark"]), jsonToStr(Departures0["FinalStop"]));
+    showStopLine(display, jsonToStr(Departures0["LineName"]), jsonToStr(Departures0["TimeMark"]), jsonToStr(Departures0["FinalStop"]));
 
     display->update();
 }
 
 // int AppSalina::update(GxGDEW027C44 &display) {
-int AppSalina::update() {
+int AppSalina::update(GxEPD* display) {
     printf("%s\n", this->toString().c_str());
     JSONVar salinaStop = requestJson();
-    showDeparture(salinaStop);
+    showDeparture(display, salinaStop);
     return 44;
 }

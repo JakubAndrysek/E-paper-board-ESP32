@@ -6,10 +6,10 @@
 #include <iostream>
 #include <stdio.h>
 
-Manager::Manager(bool connectToWifi) {
+Manager::Manager(bool WiFiConnect) {
     // array of applications
-    applications.emplace_back(new AppSalina(displayManager.display, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppFablab(displayManager.display, &HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppSalina(&HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppFablab(&HttpFetcher::getHTTPRequest));
 
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         (*it)->setUpdateHandler(std::bind(&Manager::update, this));
@@ -28,7 +28,7 @@ Manager::Manager(bool connectToWifi) {
         applications[appIndex]->buttonClickRight();
     });
 
-    if (connectToWifi) {
+    if (WiFiConnect) {
         connectToWiFi(ssid, password);
     }
 
@@ -38,8 +38,7 @@ Manager::Manager(bool connectToWifi) {
 
 int Manager::update() {
     try {
-        return applications[appIndex]->update();
-        // } catch (const JsonParseException& e) {
+        return applications[appIndex]->update(displayManager.display);
     } catch (const std::exception& e) {
         std::cerr << e.what() << '\n';
         displayManager.showError(e.what());

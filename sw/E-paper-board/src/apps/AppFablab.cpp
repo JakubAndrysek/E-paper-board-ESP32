@@ -4,8 +4,8 @@
 
 #include <Fonts/FreeMono9pt7b.h>
 
-AppFablab::AppFablab(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(display, getHTTPRequest) {
+AppFablab::AppFablab(std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(getHTTPRequest) {
     httpFetchUrl = "https://jsonplaceholder.typicode.com/todos/1";
     // httpFetchUrl = "https://mapa.idsjmk.cz/api/Departures";
 }
@@ -38,7 +38,7 @@ void AppFablab::buttonClickRight() {
 // }
 
 // int AppFablab::update(GxGDEW027C44 &display) {
-int AppFablab::update() {
+int AppFablab::update(GxEPD* display) {
     printf("%s\n", getHTTPRequest("https://jsonplaceholder.typicode.com/todos/1").c_str());
     // display.setCursor(0,0);
     // display.setTextColor(GxEPD_BLACK);

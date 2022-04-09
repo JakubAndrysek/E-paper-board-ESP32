@@ -12,13 +12,12 @@ private:
 protected:
     std::string httpFetchUrl;
     std::string httpFetchUrlParameter;
-    GxEPD* display;
 
     std::function<std::string(std::string url)> getHTTPRequest;
     std::function<int(void)> updateHandler;
 
 public:
-    Application(GxEPD* display, std::function<std::string(std::string url)> getHTTPRequest);
+    Application(std::function<std::string(std::string url)> getHTTPRequest);
 
     JSONVar requestJson();
     std::string jsonToStr(JSONVar json);
@@ -29,5 +28,5 @@ public:
     virtual void buttonClickRight() = 0;
 
     // virtual int update(GxGDEW027C44 &display) = 0;
-    virtual int update() = 0;
+    virtual int update(GxEPD* display) = 0;
 };
