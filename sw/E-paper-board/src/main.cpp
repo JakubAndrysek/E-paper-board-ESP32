@@ -1,8 +1,10 @@
 #include "Manager.hpp"
 #include "utils.hpp"
 
-
 int mainAp() {
+    delay(100);
+    printf("Start application\n");
+
     Manager manager;
 
     while (true) {

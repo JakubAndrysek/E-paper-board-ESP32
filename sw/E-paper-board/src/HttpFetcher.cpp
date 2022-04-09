@@ -1,4 +1,7 @@
 #include "HttpFetcher.hpp"
+#include "exception/HttpRequestException.h"
+#include "exception/WifiConnException.h"
+#include <WiFi.h>
 #include <stdio.h>
 
 HttpFetcher::HttpFetcher() {
@@ -8,6 +11,10 @@ HttpFetcher::~HttpFetcher() {
 }
 
 std::string HttpFetcher::getHTTPRequest(std::string url) {
+    if (WiFi.status() != WL_CONNECTED) {
+        throw WifiConnException();
+    }
+
     HTTPClient http;
 
     http.begin(url.c_str());
@@ -23,7 +30,7 @@ std::string HttpFetcher::getHTTPRequest(std::string url) {
     } else {
         Serial.print("Error code: ");
         Serial.println(httpResponseCode);
-        throw HttpRequestError();
+        throw HttpRequestException();
     }
     // Free resources
     http.end();

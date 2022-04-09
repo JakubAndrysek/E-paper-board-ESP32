@@ -11,6 +11,7 @@ private:
 public:
     AppFablab(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest);
     std::string toString();
+    void setUpdateHandler(std::function<int(void)> updateHandler);
 
     void buttonClickMiddle();
     void buttonClickRight();

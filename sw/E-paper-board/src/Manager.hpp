@@ -13,9 +13,12 @@ class Manager {
 private:
     InputManager inputManager;
     DisplayManager displayManager;
+    std::vector<std::unique_ptr<Application>> applications;
 
     int appIndex = 0;
-    std::vector<std::unique_ptr<Application>> applications;
+
+    int update();
+    void connectToWiFi(const char* ssid, const char* passphrase);
 
 public:
     Manager(bool connectToWifi = true);

@@ -2,23 +2,32 @@
 
 // #include <GxGDEW027C44/GxGDEW027C44.h>
 #include "GxEPD.h"
+#include <Arduino_JSON.h>
 #include <functional>
-#include <string>
 #include <memory>
+#include <string>
 
 class Application {
 private:
 protected:
     std::string httpFetchUrl;
-    GxEPD *display;
-public:
-    Application(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest);
+    std::string httpFetchUrlParameter;
+    GxEPD* display;
 
     std::function<std::string(std::string url)> getHTTPRequest;
+    std::function<int(void)> updateHandler;
+
+public:
+    Application(GxEPD* display, std::function<std::string(std::string url)> getHTTPRequest);
+
+    JSONVar requestJson();
+    std::string jsonToStr(JSONVar json);
+
+    virtual std::string toString() = 0;
+    virtual void setUpdateHandler(std::function<int(void)> updateHandler) = 0;
+    virtual void buttonClickMiddle() = 0;
+    virtual void buttonClickRight() = 0;
 
     // virtual int update(GxGDEW027C44 &display) = 0;
     virtual int update() = 0;
-    virtual void buttonClickMiddle() = 0;
-    virtual void buttonClickRight() = 0;
-    virtual std::string toString() = 0;
 };

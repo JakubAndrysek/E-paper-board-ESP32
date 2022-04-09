@@ -7,14 +7,16 @@
 
 class AppSalina : public Application {
 private:
-    std::string stopParameters;
+    // std::string stopParameters;
 public:
     AppSalina(GxEPD *display, std::function<std::string(std::string url)> getHTTPRequest);
     std::string toString();
+    void setUpdateHandler(std::function<int(void)> updateHandler);
 
     void buttonClickMiddle();
     void buttonClickRight();
-    JSONVar prepareSalinaStop(std::string stopParameters);
+
+    void showStopLine(std::string LineName, std::string TimeMark, std::string FinalStop = "");
     void showDeparture(JSONVar salinaStop);
 
     // int update(GxGDEW027C44 &display);
