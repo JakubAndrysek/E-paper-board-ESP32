@@ -1,6 +1,6 @@
 #include "AppSalina.hpp"
-#include <stdio.h>
 #include "utils.hpp"
+#include <stdio.h>
 
 #include <Fonts/FreeSans9pt7b.h>
 #include <Fonts/FreeSansBold12pt7b.h>
@@ -52,15 +52,15 @@ void AppSalina::showDeparture(GxEPD* display, JSONVar salinaStop) {
 
     JSONVar PostList0 = salinaStop["PostList"][0];
     JSONVar Departures = PostList0["Departures"];
-    
+
     JSONVar Departures0 = Departures[0];
 
-    for(int i = 0; i < Departures.length(); i++) {
+    for (int i = 0; i < Departures.length(); i++) {
         JSONVar Departure = Departures[i];
 
-        std::string LineName = (const char*) Departure["LineName"];
-        std::string TimeMark = (const char*) Departure["TimeMark"];
-        std::string FinalStop = (const char*) Departure["FinalStop"];
+        std::string LineName = (const char*)Departure["LineName"];
+        std::string TimeMark = (const char*)Departure["TimeMark"];
+        std::string FinalStop = (const char*)Departure["FinalStop"];
         showStopLine(display, LineName, TimeMark, FinalStop);
     }
 

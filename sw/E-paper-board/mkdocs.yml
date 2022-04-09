@@ -1,0 +1,53 @@
+site_name: E-paper panel
+theme:
+  name: material
+
+use_directory_urls: True
+
+plugins:
+  - awesome-pages # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - mkdoxy: # https://github.com/JakubAndrysek/mkdoxy
+      projects:
+        api-board:
+          src-dirs: src
+          full-doc: True
+          doxy-cfg:
+            FILE_PATTERNS: "*.c* *.h*"
+            # EXAMPLE_PATH: examples
+            RECURSIVE: True
+
+      save-api: .mkdoxy
+      full-doc: True
+      debug: False
+      ignore-errors: False
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+nav:
+  - "Domů": "index.md"
+  - ... | aplikace/**.md
+  - ... | panel/**.md
+  - API Panelu:
+      - "Links": "api-board/links.md"
+      - "Classes":
+          - "Class List": "api-board/annotated.md"
+          - "Class Index": "api-board/classes.md"
+          - "Class Hierarchy": "api-board/hierarchy.md"
+          - "Class Members": "api-board/class_members.md"
+          - "Class Member Functions": "api-board/class_member_functions.md"
+          - "Class Member Variables": "api-board/class_member_variables.md"
+          - "Class Member Typedefs": "api-board/class_member_typedefs.md"
+          - "Class Member Enumerations": "api-board/class_member_enums.md"
+      - "Namespaces":
+          - "Namespace List": "api-board/namespaces.md"
+          - "Namespace Members": "api-board/namespace_members.md"
+          - "Namespace Member Functions": "api-board/namespace_member_functions.md"
+          - "Namespace Member Variables": "api-board/namespace_member_variables.md"
+          - "Namespace Member Typedefs": "api-board/namespace_member_typedefs.md"
+          - "Namespace Member Enumerations": "api-board/namespace_member_enums.md"
+      - "Functions": "api-board/functions.md"
+      - "Variables": "api-board/variables.md"
+      - "Macros": "api-board/macros.md"
+      - "Files": "api-board/files.md"
