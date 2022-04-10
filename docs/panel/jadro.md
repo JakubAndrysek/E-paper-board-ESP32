@@ -1,0 +1,2 @@
+# Jádro aplikace
+

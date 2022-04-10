@@ -1,9 +1,11 @@
+docs_dir: docs
 site_name: E-paper panel
 site_url: https://jakubandrysek.github.io/E-paper-board-ESP32/
 site_author: Jakub Andrýsek
 site_description: >-
-  Create a branded static site from a set of Markdown files to host the
-  documentation of your Open Source or commercial project
+  Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel. 
+  Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy.
+
 # Repository
 repo_name: JakubAndrysek/E-paper-board-ESP32
 repo_url: https://github.com/JakubAndrysek/E-paper-board-ESP32
@@ -62,7 +64,6 @@ use_directory_urls: True
 
 plugins:
   - search
-  - awesome-pages # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
   - mkdoxy: # https://github.com/JakubAndrysek/mkdoxy
       projects:
         api-board:
@@ -83,12 +84,29 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
+  - featherlight
+
+extra_javascript:
+  - vendor/jquery-latest.js #https://code.jquery.com/jquery-latest.js
+  - vendor/featherlight.min.js # https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js
+
+extra_css:
+  - vendor/featherlight.min.css #https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css
 
 nav:
   - "Domů": "index.md"
-  - ... | aplikace/**.md
-  - ... | panel/**.md
-  - ... | server/**.md
+  - Panel:
+      - panel/index.md
+      - panel/vstup.md
+      - panel/jadro.md
+      - panel/vykreslovani.md
+      - panel/testovani.md
+  - Aplikace:
+      - aplikace/index.md
+      - aplikace/mhd.md
+      - aplikace/alojz.md
+      - aplikace/skolaoline.md
+      - aplikace/fablab.md
   - API Panelu:
       - api-board/index.md
       - "Links": "api-board/links.md"

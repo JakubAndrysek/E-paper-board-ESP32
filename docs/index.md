@@ -13,15 +13,15 @@ Součásti systému:
 - [ ] [využití strojů ve FabLabu](aplikace/fablab.md)
 - [ ] …
 
+![demo](media/board/ttgo-front.png)
 ## Základní informace
 
 Domácí panej je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a tříbarevným E-paper displejem.
 
 ### ESP32
 
-ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a Bluetooth…
+ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a Bluetooth.
 
 ### E-paper displej
 
 Do svého projektu jsem si zvolil decentní tříbarevný displej s velikostí 2,7 palců. Tento displej má rozlišení 264 na 176 bodů.
-

@@ -17,4 +17,4 @@ jobs:
       - run: pip install git+https://github.com/JakubAndrysek/mkdoxy.git
       - run: pip install mkdocs-awesome-pages-plugin
 
-      - run: mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --forceAdd previous tests

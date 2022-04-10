@@ -9,7 +9,7 @@
  */
 
 #include "Manager.hpp"
-
+https://link
 /**
  * @brief Hlavní program aplikace
  * 

@@ -9,25 +9,25 @@
         "Departures": [
           {
             "LineName": "1",
-            "FinalStop": "Pisárky",
+            "FinalStop": "Pisarky",
             "IsLowFloor": true,
             "TimeMark": "4min"
           },
           {
             "LineName": "1",
-            "FinalStop": "Pisárky",
+            "FinalStop": "Pisarky",
             "IsLowFloor": true,
             "TimeMark": "14min"
           },
           {
             "LineName": "1",
-            "FinalStop": "Pisárky",
+            "FinalStop": "Pisarky",
             "IsLowFloor": true,
             "TimeMark": "24min"
           },
           {
             "LineName": "1",
-            "FinalStop": "Pisárky",
+            "FinalStop": "Pisarky",
             "IsLowFloor": true,
             "TimeMark": "19:22"
           }
