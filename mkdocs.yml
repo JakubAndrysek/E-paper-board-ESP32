@@ -7,6 +7,7 @@ site_description: >-
 # Repository
 repo_name: JakubAndrysek/E-paper-board-ESP32
 repo_url: https://github.com/JakubAndrysek/E-paper-board-ESP32
+edit_uri: blob/main/docs/
 
 # Copyright
 copyright: Copyright &copy; 2022 Jakub Andrýsek
@@ -82,7 +83,6 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
-      
 
 nav:
   - "Domů": "index.md"
@@ -90,6 +90,7 @@ nav:
   - ... | panel/**.md
   - ... | server/**.md
   - API Panelu:
+      - api-board/index.md
       - "Links": "api-board/links.md"
       - "Classes":
           - "Class List": "api-board/annotated.md"
