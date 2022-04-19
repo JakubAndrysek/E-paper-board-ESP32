@@ -9,25 +9,25 @@
         "Departures": [
           {
             "LineName": "1",
-            "FinalStop": "Pisarky",
+            "FinalStop": "Pisárky",
             "IsLowFloor": true,
             "TimeMark": "4min"
           },
           {
             "LineName": "1",
-            "FinalStop": "Pisarky",
+            "FinalStop": "Pisárky",
             "IsLowFloor": true,
             "TimeMark": "14min"
           },
           {
             "LineName": "1",
-            "FinalStop": "Pisarky",
+            "FinalStop": "Pisárky",
             "IsLowFloor": true,
             "TimeMark": "24min"
           },
           {
             "LineName": "1",
-            "FinalStop": "Pisarky",
+            "FinalStop": "Pisárky",
             "IsLowFloor": true,
             "TimeMark": "19:22"
           }
@@ -76,5 +76,18 @@
     "FromCache": false,
     "Warning": "Downloading data using automated tools is forbidden, for API access contact Kordis JMK. Automatizované stahování dat není povolené, pro přístup k API kontaktujte Kordis JMK.",
     "Error": ""
-  }
+  },
+  "lastMarks": [
+    {
+      "date": "\u00dat 5.4.",
+      "subject": "N\u011bmeck\u00fd jazyk",
+      "mark": "1"
+    },
+    {
+      "date": "P\u00e1 1.4.",
+      "subject": "\u010cesk\u00fd jazyk a literatura",
+      "mark": "2"
+    },
+    { "date": "St 30.3.", "subject": "Fyzika", "mark": "2" }
+  ]
 }

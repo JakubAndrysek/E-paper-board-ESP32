@@ -18,6 +18,7 @@ HttpFetcher::HttpFetcher() {
 }
 
 std::string HttpFetcher::getHTTPRequest(std::string url) {
+    printf("HTTP GET: %s\n", url.c_str());
     if (WiFi.status() != WL_CONNECTED) {
         throw WifiConnException();
     }

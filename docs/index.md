@@ -23,5 +23,3 @@ ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a Bluetoo
 ### E-paper displej
 
 Do svého projektu jsem si zvolil decentní tříbarevný displej s velikostí 2,7 palců. Tento displej má rozlišení 264 na 176 bodů.
-
-## Více informací v [kompletní dokumentaci](https://jakubandrysek.github.io/E-paper-board-ESP32/)

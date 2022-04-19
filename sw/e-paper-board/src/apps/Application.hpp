@@ -12,8 +12,10 @@
 #include "GxEPD.h"
 #include <Arduino_JSON.h>
 #include <functional>
+#include <map>
 #include <memory>
 #include <string>
+#include <utility>
 
 /**
  * @brief Výchozí aplikace
@@ -22,8 +24,9 @@
 class Application {
 private:
 protected:
-    std::string httpFetchUrl;
-    std::string httpFetchUrlParameter;
+    std::string httpUrlBase;
+    std::string httpUrlParamKey;
+    std::map<std::string, std::string> httpUrlParams;
 
     std::function<std::string(std::string url)> getHTTPRequest;
     std::function<int(void)> updateHandler;
@@ -38,10 +41,10 @@ public:
 
     /**
      * @brief Získá data z internetu a převede na JSON objekt
-     * 
+     * TODO
      * @return JSONVar Objekt JSON
      */
-    JSONVar requestJson();
+    JSONVar requestJson(std::string httpUrlBase, std::string httpUrlParam);
 
     /**
      * @brief Vrátí název a popis třídy

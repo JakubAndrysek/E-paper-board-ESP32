@@ -9,9 +9,7 @@
  */
 
 #include "DisplayManager.hpp"
-
-// #include <Fonts/FreeSansBold12pt7b.h>
-#include <Fonts/FreeSans9pt7b.h>
+#include "utils/utils.hpp"
 
 DisplayManager::DisplayManager() {
     SPI.begin(EPD_SCLK, EPD_MISO, EPD_MOSI);
@@ -19,20 +17,9 @@ DisplayManager::DisplayManager() {
     display = new GxEPD_Class(*io, EPD_RSET);
     display->init();
     display->setRotation(1);
+    // display->fillScreen(GxEPD_WHITE);
+    // display->update();
 }
-
-// void DisplayManager::showStopLine(std::string time, std::string delay) {
-//     display->setTextColor(GxEPD_BLACK);
-//     display->printf(std::string("- " + time + " ").c_str());
-
-//     if (delay != "") {
-//         display->setTextColor(GxEPD_RED);
-//         display->print(std::string("(" + delay + ")\n").c_str());
-//         display->setTextColor(GxEPD_BLACK);
-//     } else {
-//         display->print("\n");
-//     }
-// }
 
 void DisplayManager::init() {
     display->fillScreen(GxEPD_WHITE);
@@ -42,16 +29,37 @@ void DisplayManager::init() {
 void DisplayManager::test() {
     display->setCursor(0, 8);
     display->setTextColor(GxEPD_RED);
-    display->setFont(&FreeSans9pt7b);
-    display->print("Odjezdy salin\n");
+    display->setFont(&FreeSans9pt8b);
+    display->print(printCz("Odjezdy šalin\n"));
     display->update();
 }
 
-void DisplayManager::showError(std::string errorMsg) {
+void DisplayManager::prepareDisplay(const GFXfont *f, uint16_t fillScreenColor, uint16_t textColor) {
+    display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_WHITE);
-    display->setCursor(0, 0);
+    display->setTextColor(GxEPD_BLACK);
+}
+
+void DisplayManager::showError(std::string errorMsg) {
+    display->setFont(&FreeSans9pt8b);
+    display->fillScreen(GxEPD_WHITE);
+    display->setTextColor(GxEPD_BLACK);
+    display->setCursor(0, 30);
+    display->println(printCz("Error:"));
     display->setTextColor(GxEPD_RED);
-    display->setFont(&FreeSans9pt7b);
-    display->print(errorMsg.c_str());
+    display->print(printCz(errorMsg.c_str()));
+    display->update();
+}
+
+void DisplayManager::wifiConnectInfo(std::string ssid, std::string password) {
+    this->prepareDisplay();
+    display->setCursor(0, 30);
+    display->println(printCz("Připojuji se na WiFi"));
+    display->setCursor(0, 50);
+    display->print(printCz("Jméno: "));
+    display->print(printCz(ssid.c_str()));
+    display->setCursor(0, 70);
+    display->print(printCz("Heslo: "));
+    display->print(printCz(password.c_str()));
     display->update();
 }

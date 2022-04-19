@@ -17,12 +17,7 @@
 #include <GxIO/GxIO.h>
 #include <GxIO/GxIO_SPI/GxIO_SPI.h>
 
-// #include <Fonts/FreeMono9pt7b.h>
-// #include <Fonts/FreeMonoBold12pt7b.h>
-// #include <Fonts/FreeMonoBold18pt7b.h>
-// #include <Fonts/FreeMonoBold9pt7b.h>
-// #include <Fonts/FreeSans9pt7b.h>
-// #include <Fonts/FreeSerif9pt7b.h>
+#include "fontsCz/FreeSans9pt8bfr.h"
 
 /**
  * @brief Správce displeje
@@ -59,9 +54,18 @@ public:
     void test();
 
     /**
+     * @brief 
+     * 
+     */
+    // void prepareDisplay();
+    void prepareDisplay(const GFXfont *f = &FreeSans9pt8b, uint16_t fillScreenColor = GxEPD_WHITE, uint16_t textColor = GxEPD_BLACK);
+
+    /**
      * @brief Zobrazí zprávy chyby
      * 
      * @param errorMsg std::string Zpráva chyby
      */
     void showError(std::string errorMsg);
+
+    void wifiConnectInfo(std::string ssid, std::string password);
 };

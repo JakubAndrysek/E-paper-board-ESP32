@@ -11,14 +11,19 @@
 #include "AppSalina.hpp"
 #include <stdio.h>
 
-#include <Fonts/FreeSans9pt7b.h>
-#include <Fonts/FreeSansBold12pt7b.h>
+#include "fontsCz/FreeSans9pt8bfr.h"
+#include "fontsCz/FreeSansBold12pt8bfr.h"
+#include "utils/utils.hpp"
 
 AppSalina::AppSalina(std::function<std::string(std::string url)> getHTTPRequest)
     : Application(getHTTPRequest) {
-    httpFetchUrl = "http://192.168.0.5:3333";
-    httpFetchUrlParameter = "/1272";
-    // httpFetchUrl = "https://mapa.idsjmk.cz/api/Departures";
+    httpUrlBase = "http://192.168.0.15:3333";
+    // httpUrlBase = "http://192.168.42.22:3333";
+    // httpUrlBase = "https://mapa.idsjmk.cz/api/Departures";
+
+    httpUrlParams.insert(std::make_pair("Kořístkova", "/1272"));
+    httpUrlParams.insert(std::make_pair("Med škola->Z", "/1377"));
+    httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
 }
 
 std::string AppSalina::toString() {
@@ -30,22 +35,22 @@ void AppSalina::setUpdateHandler(std::function<int(void)> updateHandler) {
 }
 
 void AppSalina::buttonClickMiddle() {
-    printf("Pressed button MIDDLE\n");
-    httpFetchUrlParameter = "/1272";
+    printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
+    httpUrlParamKey = "Kořístkova";
     updateHandler();
 }
 
 void AppSalina::buttonClickRight() {
-    httpFetchUrlParameter = "/1377";
+    printf("Pressed button RIGHT - %s\n", this->toString().c_str());
+    httpUrlParamKey = "Med škola->Z";
     updateHandler();
-    printf("Pressed button RIGHT\n");
 }
 
 void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string TimeMark, std::string FinalStop) {
     char buffer[100];
     display->setTextColor(GxEPD_BLACK);
-    sprintf(buffer, "- %s (%s) %s\n", LineName.c_str(), TimeMark.c_str(), FinalStop.c_str());
-    display->print(buffer);
+    sprintf(buffer, "- %s (%s) %s", LineName.c_str(), TimeMark.c_str(), FinalStop.c_str());
+    display->println(printCz(buffer));
     printf("%s\n", buffer);
 }
 
@@ -53,11 +58,11 @@ void AppSalina::showDeparture(GxEPD* display, JSONVar salinaStop) {
     JSONVar StopID = salinaStop["StopID"];
     printf("%s\n", JSON.stringify(StopID).c_str());
 
+    display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_WHITE);
-    display->setCursor(0, 8);
     display->setTextColor(GxEPD_RED);
-    display->setFont(&FreeSans9pt7b);
-    display->printf("Odjezdy salin - %s\n", JSON.stringify(StopID).c_str());
+    display->setCursor(0, 8);
+    display->println(printCz(std::string("Odjezdy šalin - ") + httpUrlParamKey));
 
     JSONVar PostList0 = salinaStop["PostList"][0];
     JSONVar Departures = PostList0["Departures"];
@@ -78,8 +83,7 @@ void AppSalina::showDeparture(GxEPD* display, JSONVar salinaStop) {
 
 // int AppSalina::update(GxGDEW027C44 &display) {
 int AppSalina::update(GxEPD* display) {
-    printf("%s\n", this->toString().c_str());
-    JSONVar salinaStop = requestJson();
+    JSONVar salinaStop = requestJson(httpUrlBase, httpUrlParams.at(httpUrlParamKey));
     showDeparture(display, salinaStop);
     return 44;
 }
