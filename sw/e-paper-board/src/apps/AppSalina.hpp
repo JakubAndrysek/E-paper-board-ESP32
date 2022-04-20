@@ -26,7 +26,7 @@ public:
      * 
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    AppSalina(std::function<std::string(std::string url)> getHTTPRequest);
+    AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
 
     /**
      * @brief Vrátí název a popis třídy
@@ -76,15 +76,5 @@ public:
      * @param display Ukazatel na displej
      * @param salinaStop Objekt s odjezdy ze zastávky
      */
-    void showDeparture(GxEPD* display, JSONVar salinaStop);
-
-    /**
-     * @brief 
-     * 
-     * @param display GxEPD* ukazatel na displej
-     * 
-     * Implementace z výchozí aplikace
-     * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
-     */
-    int update(GxEPD* display);
+    int showDataOnDisplay(GxEPD* display, JSONVar data);
 };

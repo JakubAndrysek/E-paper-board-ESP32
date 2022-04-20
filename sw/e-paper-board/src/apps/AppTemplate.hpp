@@ -26,7 +26,7 @@ public:
      * 
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    AppTemplate(std::function<std::string(std::string url)> getHTTPRequest);
+    AppTemplate(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
 
     /**
      * @brief Vrátí název a popis třídy
@@ -60,7 +60,16 @@ public:
     void buttonClickRight();
 
     /**
-     * @brief 
+     * @brief Zobrazí zformátovaná data na display
+     * 
+     * @param display GxEPD* ukazatel na displej
+     * @param data Data získaná z HTTP requestu
+     * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
+     */
+    int showDataOnDisplay(GxEPD* display, JSONVar data);
+
+    /**
+     * @brief Aktualizuje obsah displeje
      * 
      * @param display GxEPD* ukazatel na displej
      * 

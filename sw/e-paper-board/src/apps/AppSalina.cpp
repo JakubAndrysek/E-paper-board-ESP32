@@ -10,13 +10,14 @@
 
 #include "AppSalina.hpp"
 #include <stdio.h>
+#include <string.h>
 
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "fontsCz/FreeSansBold12pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppSalina::AppSalina(std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(getHTTPRequest) {
+AppSalina::AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(updateIntervalSec, getHTTPRequest) {
     httpUrlBase = "http://192.168.0.15:3333";
     // httpUrlBase = "http://192.168.42.22:3333";
     // httpUrlBase = "https://mapa.idsjmk.cz/api/Departures";
@@ -27,7 +28,7 @@ AppSalina::AppSalina(std::function<std::string(std::string url)> getHTTPRequest)
 }
 
 std::string AppSalina::toString() {
-    return "AppSalina";
+    return std::string("AppSalina: (updateTime: ");
 }
 
 void AppSalina::setUpdateHandler(std::function<int(void)> updateHandler) {
@@ -54,8 +55,8 @@ void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string T
     printf("%s\n", buffer);
 }
 
-void AppSalina::showDeparture(GxEPD* display, JSONVar salinaStop) {
-    JSONVar StopID = salinaStop["StopID"];
+int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar data) {
+    JSONVar StopID = data["StopID"];
     printf("%s\n", JSON.stringify(StopID).c_str());
 
     display->setFont(&FreeSans9pt8b);
@@ -64,7 +65,7 @@ void AppSalina::showDeparture(GxEPD* display, JSONVar salinaStop) {
     display->setCursor(0, 8);
     display->println(printCz(std::string("Odjezdy šalin - ") + httpUrlParamKey));
 
-    JSONVar PostList0 = salinaStop["PostList"][0];
+    JSONVar PostList0 = data["PostList"][0];
     JSONVar Departures = PostList0["Departures"];
 
     JSONVar Departures0 = Departures[0];
@@ -79,11 +80,5 @@ void AppSalina::showDeparture(GxEPD* display, JSONVar salinaStop) {
     }
 
     display->update();
-}
-
-// int AppSalina::update(GxGDEW027C44 &display) {
-int AppSalina::update(GxEPD* display) {
-    JSONVar salinaStop = requestJson(httpUrlBase, httpUrlParams.at(httpUrlParamKey));
-    showDeparture(display, salinaStop);
-    return 44;
+    return secToMs(updateIntervalSec);
 }

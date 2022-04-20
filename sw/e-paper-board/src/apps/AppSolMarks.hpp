@@ -1,5 +1,5 @@
 /**
- * @file AppSol.hpp
+ * @file AppSolMarks.hpp
  * @author Kuba Andrýsek (email@kubaandrysek.cz)
  * @brief Modul aplikace pro zobrazování nejnovějších známek ze systému Škola Online
  * @date 2022-04-19
@@ -18,15 +18,15 @@
  * @brief Modul aplikace pro zobrazování nejnovějších známek ze systému Škola Online
  * 
  */
-class AppSol : public Application {
+class AppSolMarks : public Application {
 private:
 public:
     /**
-     * @brief Konstruktor aplikace AppSol dědí z výchozí aplikace
+     * @brief Konstruktor aplikace AppSolMarks dědí z výchozí aplikace
      * 
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    AppSol(std::function<std::string(std::string url)> getHTTPRequest);
+    AppSolMarks(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
 
     /**
      * @brief Vrátí název a popis třídy
@@ -60,12 +60,13 @@ public:
     void buttonClickRight();
 
     /**
-     * @brief 
+     * @brief Zobrazí zformátovaná data na display
      * 
      * @param display GxEPD* ukazatel na displej
-     * 
-     * Implementace z výchozí aplikace
+     * @param data Data získaná z HTTP requestu
      * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
      */
-    int update(GxEPD* display);
+    int showDataOnDisplay(GxEPD* display, JSONVar data);
+
+    void showMarkLine(GxEPD* display, std::string date, std::string subject, std::string mark);
 };

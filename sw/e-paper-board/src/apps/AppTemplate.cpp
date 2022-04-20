@@ -15,8 +15,8 @@
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppTemplate::AppTemplate(std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(getHTTPRequest) {
+AppTemplate::AppTemplate(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(updateIntervalSec, getHTTPRequest) {
     httpUrlBase = "http://baseUrl";
     httpUrlParams.insert(std::make_pair("key1", "/key1json"));
     httpUrlParams.insert(std::make_pair("key2", "/key2json"));
@@ -43,7 +43,7 @@ void AppTemplate::buttonClickRight() {
     updateHandler();
 }
 
-int AppTemplate::update(GxEPD* display) {
+int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_WHITE);
     display->setTextColor(GxEPD_RED);
@@ -53,5 +53,9 @@ int AppTemplate::update(GxEPD* display) {
     display->println(printCz(std::string("Url base: - ") + httpUrlBase));
     display->println(printCz(std::string("Url param: - ") + httpUrlParams.at(httpUrlParamKey)));
     display->update();
-    return 44;
+    return secToMs(updateIntervalSec);
+}
+
+int AppTemplate::update(GxEPD* display) {
+    return showDataOnDisplay(display, JSONVar());
 }

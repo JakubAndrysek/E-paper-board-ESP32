@@ -10,20 +10,21 @@
 
 #include "Manager.hpp"
 #include "apps/AppFablab.hpp"
-#include "apps/AppTemplate.hpp"
-#include "apps/AppSol.hpp"
 #include "apps/AppSalina.hpp"
+#include "apps/AppSolMarks.hpp"
+#include "apps/AppTemplate.hpp"
 #include "credentials.h"
 #include "exception/JsonParseException.h"
 #include <iostream>
 #include <stdio.h>
 
 Manager::Manager(bool WiFiConnect) {
+    metronomeTimer.intervalSet(20000);
     // array of applications
-    applications.emplace_back(new AppSalina(&HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppSol(&HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppTemplate(&HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppFablab(&HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppSolMarks(30, &HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppSalina(20, &HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppTemplate(60, &HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppFablab(120, &HttpFetcher::getHTTPRequest));
 
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         (*it)->setUpdateHandler(std::bind(&Manager::update, this));
@@ -61,7 +62,8 @@ int Manager::update() {
         std::cerr << e.what() << '\n';
         displayManager.showError(e.what());
     }
-    return -1;
+    metronomeTimer.timeReset();
+    return 10000; // try
 }
 
 void Manager::connectToWiFi(const char* ssid, const char* passphrase) {
@@ -79,4 +81,9 @@ void Manager::connectToWiFi(const char* ssid, const char* passphrase) {
 
 void Manager::run() {
     inputManager.loop();
+
+    if (metronomeTimer.loopMs()) {
+        int newInterval = update();
+        metronomeTimer.intervalSet(newInterval);
+    }
 }

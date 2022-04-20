@@ -15,6 +15,7 @@
 #include "HttpFetcher.hpp"
 #include "InputManager.hpp"
 #include "apps/Application.hpp"
+#include "ArduinoMetronome.hpp"
 #include <WiFi.h>
 #include <memory>
 #include <vector>
@@ -28,6 +29,7 @@ class Manager {
 private:
     InputManager inputManager;
     DisplayManager displayManager;
+    ArduinoMetronome metronomeTimer;
     std::vector<std::unique_ptr<Application>> applications;
 
     int appIndex = 0;

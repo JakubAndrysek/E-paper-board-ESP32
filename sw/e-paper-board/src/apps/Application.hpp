@@ -30,6 +30,8 @@ protected:
 
     std::function<std::string(std::string url)> getHTTPRequest;
     std::function<int(void)> updateHandler;
+    int updateIntervalSec;
+    inline int secToMs(int sec) { return sec * 1000; }
 
 public:
     /**
@@ -37,7 +39,7 @@ public:
      * 
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    Application(std::function<std::string(std::string url)> getHTTPRequest);
+    Application(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
 
     /**
      * @brief Získá data z internetu a převede na JSON objekt
@@ -76,13 +78,15 @@ public:
      */
     virtual void buttonClickRight() = 0;
 
+    virtual int showDataOnDisplay(GxEPD* display, JSONVar data) = 0;
+
     /**
-     * @brief 
+     * @brief Aktualizuje obsah displeje
      * 
      * @param display GxEPD* ukazatel na displej
      * 
      * Virtualní metoda
      * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
      */
-    virtual int update(GxEPD* display) = 0;
+    virtual int update(GxEPD* display);
 };

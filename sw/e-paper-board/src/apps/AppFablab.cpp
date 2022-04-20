@@ -15,8 +15,8 @@
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppFablab::AppFablab(std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(getHTTPRequest) {
+AppFablab::AppFablab(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
+    : Application(updateIntervalSec, getHTTPRequest) {
     httpUrlBase = "http://baseUrl";
     httpUrlParams.insert(std::make_pair("key1", "/key1json"));
     httpUrlParams.insert(std::make_pair("key2", "/key2json"));
@@ -43,14 +43,19 @@ void AppFablab::buttonClickRight() {
     updateHandler();
 }
 
-int AppFablab::update(GxEPD* display) {
+int AppFablab::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_WHITE);
     display->setTextColor(GxEPD_RED);
     display->setCursor(0, 15);
-    display->println(printCz(std::string("TemplateApp - ") + httpUrlParamKey));
+    display->println(printCz(this->toString() + httpUrlParamKey));
     display->setTextColor(GxEPD_BLACK);
-    display->println(printCz(std::string("Url: - ") + httpUrlParams.at(httpUrlParamKey)));
+    display->println(printCz(std::string("Url base: - ") + httpUrlBase));
+    display->println(printCz(std::string("Url param: - ") + httpUrlParams.at(httpUrlParamKey)));
     display->update();
-    return 44;
+    return secToMs(updateIntervalSec);
+}
+
+int AppFablab::update(GxEPD* display) {
+    return showDataOnDisplay(display, JSONVar());
 }

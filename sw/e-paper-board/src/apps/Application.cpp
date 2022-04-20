@@ -13,17 +13,19 @@
 #include "exception/JsonEmptyObjectException.h"
 #include <stdio.h>
 
-Application::Application(std::function<std::string(std::string url)> getHTTPRequest) {
+Application::Application(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest) {
     this->getHTTPRequest = getHTTPRequest;
     this->updateHandler = nullptr;
+    this->updateIntervalSec = updateIntervalSec;
 }
 
 JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlParam) {
     auto payload = getHTTPRequest(httpUrlBase + httpUrlParam);
+    printf("Request payload: %s\n", payload.c_str());
     JSONVar httpPayload = JSON.parse(payload.c_str());
 
     if (JSON.typeof(httpPayload) == "undefined") {
-        Serial.println("DUPLICATED: Parsing input failed!");
+        printf("DUPLICATED: Parsing input failed!\n");
         throw JsonParseException();
     }
 
@@ -35,4 +37,9 @@ JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlPar
     // }
 
     return httpPayload;
+}
+
+int Application::update(GxEPD* display) {
+    JSONVar data = requestJson(httpUrlBase, httpUrlParams.at(httpUrlParamKey));
+    return showDataOnDisplay(display, data);
 }
