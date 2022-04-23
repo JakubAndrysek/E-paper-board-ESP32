@@ -1,0 +1,3 @@
+# ŠOL rozvrh
+
+Ve vývoji

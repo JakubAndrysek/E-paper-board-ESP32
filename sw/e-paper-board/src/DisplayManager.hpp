@@ -67,5 +67,11 @@ public:
      */
     void showError(std::string errorMsg);
 
+    /**
+     * @brief Zobrazí informace o připojení k WiFi
+     * 
+     * @param ssid std::string SSID
+     * @param password std::string Heslo
+     */
     void wifiConnectInfo(std::string ssid, std::string password);
 };

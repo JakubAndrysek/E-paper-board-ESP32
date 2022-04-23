@@ -22,8 +22,9 @@ class AppFablab : public Application {
 private:
 public:
     /**
-     * @brief Konstruktor aplikace AppFablab dědí z výchozí aplikace
+     * @brief Konstruktor aplikace - dědí z výchozí aplikace
      * 
+     * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
     AppFablab(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);

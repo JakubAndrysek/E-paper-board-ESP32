@@ -24,8 +24,22 @@ public:
      */
     InputManager();
 
+    /**
+     * @brief Objekt tlačítka - levé
+     * 
+     */
     Button2 btnLeft;
+
+    /**
+     * @brief Objekt tlačítka - prostředí
+     * 
+     */
     Button2 btnMiddle;
+
+    /**
+     * @brief Objekt tlačítka - pravé
+     * 
+     */
     Button2 btnRight;
 
     /**

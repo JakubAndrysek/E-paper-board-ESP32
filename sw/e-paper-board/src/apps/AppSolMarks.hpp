@@ -22,8 +22,9 @@ class AppSolMarks : public Application {
 private:
 public:
     /**
-     * @brief Konstruktor aplikace AppSolMarks dědí z výchozí aplikace
+     * @brief Konstruktor aplikace - dědí z výchozí aplikace
      * 
+     * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
     AppSolMarks(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
@@ -37,7 +38,7 @@ public:
     std::string toString();
 
     /**
-     * @brief Nastaví callback pro atualizaci displeje
+     * @brief N astaví callback pro atualizaci displeje
      * 
      * Implementace z výchozí aplikace
      * 

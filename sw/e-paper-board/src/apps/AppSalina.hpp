@@ -22,8 +22,9 @@ class AppSalina : public Application {
 private:
 public:
     /**
-     * @brief Konstruktor aplikace AppSalina dědí z výchozí aplikace
+     * @brief Konstruktor aplikace - dědí z výchozí aplikace
      * 
+     * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
     AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);

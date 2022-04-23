@@ -1,4 +1,4 @@
-installů:
+install:
 	npm install -g json-server
 
 serve-departures-pletacka:

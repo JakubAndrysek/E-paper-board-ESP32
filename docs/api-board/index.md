@@ -1,3 +1,7 @@
 # API Panelu
 
-API dokumentace generovaná pomocí mnou vytvořeného nástroje [MkDoxy](https://github.com/JakubAndrysek/mkdoxy) založeném na rozšířeném dokumentačním nástroji [Doxygen](https://www.doxygen.nl/) a nástroji [Mkdocs](https://www.mkdocs.org/).
+Dokumentace pro zobrazovací panel.
+
+Hlavní aplikace pro E-paper panel je naprogramovaná v jazyce C++. Jako vývojové prostředí používám [PlatformIO](https://platformio.org/platformio-ide), které má přímou podporu pro programování mikročipu ESP32.
+
+Více informací [zde](../panel/index.md#software)

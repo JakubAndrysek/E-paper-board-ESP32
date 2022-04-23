@@ -1,7 +1,7 @@
 /**
  * @file AppTemplate.hpp
  * @author Kuba Andrýsek (email@kubaandrysek.cz)
- * @brief Modul aplikace pro zobrazování obsazenosti FabLabu
+ * @brief Modul aplikace - Šablona
  * @date 2022-04-10
  * 
  * @copyright Copyright (c) 2022 Kuba Andrýsek
@@ -15,15 +15,16 @@
 #include <functional>
 
 /**
- * @brief Modul aplikace pro zobrazování obsazenosti FabLabu
+ * @brief Modul aplikace - Šablona
  * 
  */
 class AppTemplate : public Application {
 private:
 public:
     /**
-     * @brief Konstruktor aplikace AppTemplate dědí z výchozí aplikace
+     * @brief Konstruktor aplikace - dědí z výchozí aplikace
      * 
+     * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
     AppTemplate(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);

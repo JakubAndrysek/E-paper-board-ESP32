@@ -1,3 +1,0 @@
-# Škola online
-
-Ve vývoji

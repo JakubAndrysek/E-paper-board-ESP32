@@ -1,0 +1,1145 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>
+	KZK001 - Kalendář
+</title><meta http-equiv="expires" content="Wed, 10 Jan 1990 08:00:00 GMT" /><meta http-equiv="Cache-control" content="no-cache, max-age=0, must-revalidate, no-store" /><meta http-equiv="Pragma" content="no-cache" /><meta name="application-name" content="Škola OnLine" /><meta name="msapplication-tooltip" content="Školní informační systém Škola OnLine" /><meta name="msapplication-starturl" content="/SOL" /><meta name="msapplication-TileImage" content="/SOL/Themes/sol-bak/Images/tile144x144.png" /><meta name="msapplication-TileColor" content="#470000" />
+<link href="../../Themes/sol-bak/Infragistics/Default/ig_shared.css" type="text/css" rel="stylesheet" />
+<link href="../../Themes/sol-bak/Infragistics/Default/ig_calendar.css" type="text/css" rel="stylesheet" /><link href="/SOL/Themes/sol-bak/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="/SOL/Themes/sol-bak/Images/favicon.ico" rel="icon" type="image/ico" /><link href="../../Themes/master.css" rel="stylesheet" type="text/css" /><link href="/SOL/Themes/style.sol-bak.min.css" rel="stylesheet" /></head>
+<body oncontextmenu="return false;">
+    <script type="text/javascript">
+        function predmetDetail() {
+            window.location = "../Rozvrh/KZP001_PredmetyVS.aspx?UDALOST_ID=" + menuParameters[2] +
+                "&ReturnPage=../Kalendar/KZK001_KalendarTyden.aspx";
+        }
+    </script>
+
+    <form name="Form1" method="post" action="./KZK001_KalendarTyden.aspx" id="Form1" class="KZK001 sol-content-width-full">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE_SESSION_KEY" id="__VIEWSTATE_SESSION_KEY" value="VIEWSTATE_637863344277038964" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/SOL/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZM-V0qvYllL0RccRdCGM4LnTFig4ngcxpV7JTSz_W4-zeFvBTw2&amp;t=637814689746327080" type="text/javascript"></script>
+
+
+                <script language='javascript'>
+                function valueChanging(owner, date, evt) {
+                    if(date == null)
+                        return;
+                    if(date.getMonth() != owner.getVisibleMonth().getMonth())
+                        evt.cancel = true;
+        }
+                </script>
+<script src="/SOL/JavaScript/cookieconsent/cookieconsent.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/cookieconsent/cookieconsent-app.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/jQuery/jquery.browser.min.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/jQuery/jquery-migrate-1.4.1.js" type="text/javascript"></script>
+<script src="/SOL/Scripts/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/HotFix.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/hotfix/ig_webdropdown.patch.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/focus.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/window.log.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/hotfix/ig_msie_detection.patch.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/backbutton-disable.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/sol.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/onload.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/kalendarvypis-tooltipprovider.js" type="text/javascript"></script><script type="text/plain" data-cookiecategory="analytics">
+var GoogleAnalyticsWebID = 'UA-6348056-2';
+</script><script type="text/plain" data-cookiecategory="analytics" src="/SOL/JavaScript/google/google-analytics.js">
+</script>
+<script src="/SOL/JavaScript/hotfix/ig_webgrid_cb.patch.js" type="text/javascript"></script>
+<script>
+(function () {
+  var overDiv = document.getElementById('overDiv');
+  if (overDiv == null) {
+    var div = document.createElement('div');
+    div.id = 'overDiv';
+    div.style.position = 'absolute';
+    div.style.visibility = 'hidden';
+    div.style.zIndex = 1000;
+    document.body.appendChild(div);
+  }
+}());
+</script>
+<script type='text/javascript' src='/SOL\JavaScript\tooltip.js'></script>
+<script type='text/javascript' src='/SOL\JavaScript\overlib.min.js'></script>
+<script type='text/javascript' src='/SOL\JavaScript\overlib_cssstyle.min.js'></script>
+
+<script type="text/javascript">
+//<![CDATA[
+ function onMouseOut() { window.tooltipIdentification = null; if(typeof(nd) != 'undefined') { return nd(); } } 
+function CCAButtonLockScreen(lockID, causesValidation) { 
+  var jeValidni = ((typeof (Page_IsValid) != 'undefined') ? Page_IsValid : true); 
+  var causesValidation
+  if (jeValidni || causesValidation == '0') { 
+    var e = document.getElementById(lockID); 
+    if (e) e.className='LockScreenOn'; 
+    return jeValidni; 
+  } 
+}//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var ig_pi_imageUrl='/SOL/WebResource.axd?d=TxrpyKyWW7W8Vvnjg71AIG0Jjy8M7qBndvSie8BrQn0Y20_nu1iu-Xw9BPGpl8xcekF9qdg0_QOVqRFAmiMole5G_xodQzFXCStz1WcziDYtW8lJWx0WP9zHdA_oqBPHvJWPLQHELa032lKyUBRYUkfm60jxfk9MzOc1yTPuVDRlHzh60&t=637810274180000000';try{(new Image()).src=ig_pi_imageUrl;}catch(ex){}
+//]]>
+</script>
+<script src="/SOL/ScriptResource.axd?d=eaBvf8SEZ7GyGoLx-4wo5q-JJMgDZDGXOb3pbJACud2pVvWamuh934t_A0wmH1xnfXxVGaXbrPO6f4lEjC4jnLgju8XNwSGwhduxOD-h_lC93Egpkls-pm3BasrE2ywJgA007ls3mYxedrtaYvQWr_-IkoY1&amp;t=ffffffff8d839678" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=39e97bwC_3vXi4sq3udMXzBSiSsH0YX34sP6dddq6E2yh2G15P-j9Ef-WadBhZgc4YKrhn2hvndfh3RbjiKeKEWudY_sYrW0khnzaK_u0xtwi5IdnfwwR7HdRil0M-54I4O4UNt8rGjOAghWb0xqnoZCW5IJbnl--xvwnpsc_NSDpN4P0&amp;t=ffffffffec2132a1" type="text/javascript"></script>
+<script src="../../JavaScript/kalendar-normalize-column-width.js" type="text/javascript"></script>
+<script src="../../JavaScript/jQuery/jquery.fixedtableheader.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() { jQuery('#CCADynamicCalendarTable').fixedtableheader({ "cssclass": "CCADynamicCalendarTable_FixedTableHeader" }); });//]]>
+</script>
+<script type='text/javascript' src='/SOL/JavaScript/table_cell.js'></script>
+
+<script src="/SOL/JavaScript/instantni-napoveda-editor.js" type="text/javascript"></script>
+<script src="/SOL/JavaScript/instantni-napoveda.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+instantHelp.titleDefaultText = 'Nápověda';instantHelp.druhOrganizaceID = 'KS';instantHelp.prodlevaZobrazeniMS = 0;
+instantniNapovedaEditor.labelNapovedaProPoleTextTemplate = 'Instantní nápověda k vybranému poli "{0}".';
+
+var KZK001; if (!KZK001) { KZK001 = {
+
+}; }
+//]]>
+</script>
+
+<script src="/SOL/ScriptResource.axd?d=x6wALODbMJK5e0eRC_p1LcXEmWv2sxhTS6T81lER4nnHte_VnP14qOxm_eYpq9YBC9K1qoLB3BqC_R6J09ml4QIcYowzkNpDo7dO_HdVAGur-ech0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=P5lTttoqSeZXoYRLQMIScFB9w44ZfB4oaKsbqETvhPxk1Lm2Q7CiDZLGb9cGIL3PEU3KXOlLsQIy2YSIoO-W5hdaxMfOo03DOGY7Xql_biNocr1n0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=NHo7rzvB81m25b5lv-ojMSBwV0MnQML7XseXcEXE3lbIetMqjPuL-ogn0DWDi5OwpN3rCsC9lNMdojBqwcZzSjSisbf6qMtILtyChwGFgmZBlXPA0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=cwGphBcvejt2VIyBHnRhTVEr6v11oyBMq2jp-avh_5UJudvThw4Qoq79ziOgZ5lUItBmmvTS4y6w_TUImvdtG4pijVIuyHHZv7TkXHGY9YkYQBzV0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=ZT9rkJNR62Xa35oVFu0brRp249NZ-A91cs4uwKoil8UYY9zgsx7r1YyAbg4Y29xMKV9IqmiCNFGw5cFIlLmvD6sKFJu_JoOibhn4S7Poe62MRMSV1ufsv_6dlb2V0moT-tGJ9Q2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=G7OZOzpYF9XwHB8eN29YbyWFew8rjh1qCjnS4M8QVa3AAmb3RwUBGWsnY_d96EUAWC7ZHGYgmQk6MkEM64yOfm7eCJXPZhPRhl4xh0htg_mTYfswlgh9uMLcjdX86E0iTNUzzw2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=dyNR31g23bihdQsCIkXUOH17ImVVj1lxJwD_L7GhSO_aatNcPmF7X63-1AaV8Sh-aLSqDNAI3mm6kPhuwgrcMngWuSWsq-cN6jZzI4iNt7HMIuhM79JjkgdmQRPIUyGWV-oUVA2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=t8xKct_NbNgBw-XPoRZ-nNLwUJBiJemxlIalH9Eb2I9s11pBnNvHz8ctiPmWSEezUIIyKc4Q986Z0d-vFg-kS2F2Mg1cS1HEsJWQju7K3amCJRPZVtb18Z_NsuF6b8DcQ88n_g2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=TLZ1vtjBxtO9Jbc2uVK03xLhx-rwA3HEqYGjdWIY0PZk4fFoX_BojakDx3qATJNkkQFiwMjA3Ztp_oS-LYCnz3bhAOJbM47kmQ6P7R-VVieTc4ZHXlWAioQCtdoEdN2NWpQVAQ2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=IDWj4WSOOvkdPRnPVbJVZOQjiNMBnLD2zSVOwJLDuXm8MEfzm4IyuZSu0TM7O1Q0EmlqB-82Y3XMjI-Q1jMYpyxpaEMVC3Pa_8YQuLBr16D4-SVk0&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=QURf4xOsrV7WTJCWSccZW07qDkP-w5nQ9yOMLNAOX4KRCJEyzV0GiUrY-9hE1rjIzFpgTcZPK1jkm6W3bEKoFfZlz57WYNVEgjpMTEe43oZlkfCoKzAVSwFCTkvENcBoznH1eg2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=APiGnkSUwteJqB7qVaRTTibelNEMKVailrNsvpjfMTV-347s7g_P7bp7T0G841tNRNjsROMqaCGXxVFQoH8IBAM7nDJIBG_WGoSokW2p9mjOyPZLskCB24O3tcSTVNV5mFx0lw2&amp;t=7c776dc1" type="text/javascript"></script>
+<script src="/SOL/ScriptResource.axd?d=pu2ExBiwxefn6RsV2td6q-hxCHuS8_t0YVwY1s6deOL_WfqsoNNMfUiT43KeCl5PnDrqHvB9_A2iNXbdjYCYwsVeate4kcwjlXQOvL27HtAgK60f9_It0ew4nJ1eVamUgB7iBQ2&amp;t=7c776dc1" type="text/javascript"></script>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'Form1', [], [], [], 90, '');
+//]]>
+</script>
+
+
+        <div class="sol-page">
+
+            <div class="top_frame sol-header">
+                <!-- TOP BEGIN -->
+                
+
+
+
+<script type='text/javascript'>
+    var logoutTimeoutSecVychozi = 30 * 60 - 15;
+    var logoutTimeoutSec = logoutTimeoutSecVychozi;
+    var logoutTimeoutSec10Percent = parseInt(logoutTimeoutSecVychozi * 0.1);
+    var upozorneniOdhlaseniSec = 0 * 60;
+    var vypsanoUpozorneniOdhlaseni = false;
+    var loadTime = null;
+    var periodaSec = 1;
+    var logoutTickHandler = null;
+    function logoutTick() {
+        if (logoutTimeoutSec >= 0) {
+            var elm = document.getElementById('ctl14_lblPocetMinutDoOdhlaseniValue');
+            if (elm) {
+                elm.firstChild.data = Math.ceil(logoutTimeoutSec / 60); // minuty
+                if (logoutTimeoutSec <= logoutTimeoutSec10Percent) {
+                    if (elm.className.match(/\bHeaderIconLabel\b/)) {
+                        //elm.className = 'LogoutTimeoutAlt' //HeaderIconLabel
+                        elm.className = 'HeaderIconLabelAlert';
+                    } else {
+                        //elm.className = 'LogoutTimeout'
+                        elm.className = 'HeaderIconLabel';
+                    }
+                }
+                if (vypsanoUpozorneniOdhlaseni == false && upozorneniOdhlaseniSec > 0 && logoutTimeoutSec <= upozorneniOdhlaseniSec) {
+                    alert('Do automatického odhlášení zbývá 0 minut.');
+                    vypsanoUpozorneniOdhlaseni = true;
+                }
+                logoutTimeoutSec = logoutTimeoutSec - periodaSec;
+            }
+        }
+        var pageAgeMS = new Date() - loadTime;
+        if ((logoutTimeoutSecVychozi * 1000) < pageAgeMS) {
+            clearInterval(logoutTickHandler); // zrusi opakovane nacasovani 
+            document.location = '../Logout.aspx';
+        }
+    }
+
+</script>
+
+<header>
+    
+    <div class="top-header">
+        <div class="logo">
+            <a href="../../Default.aspx"></a>
+        </div>
+
+        
+        <nav class="header-links">
+            <ul id="ctl14_menuHeaderLinks" class="ButtonMenu">
+
+                
+
+                
+
+                
+
+                
+            </ul>
+        </nav>
+
+        <div id="ctl14_pnlMessages" class="messages">
+	
+            <a id="ctl14_linkNovaZprava" title="Klikněte pro zobrazení nepřečtených zpráv" href="../Zpravy/KZZ005_PrijateZpravy.aspx?MOD=NEPRECTENE"><span id="ctl14_lblNovaZpravaPocet" class="badge">7</span><br />
+                <span id="ctl14_lblZprava" LDLanguageID="TOPPART041">Zprávy</span></a>
+        
+</div>
+        
+        <div class="account">
+            <div class="user-image">
+                <img id="ctl14_userPhoto" src="/SOL/Themes/images/themes/sol-bak/avatar.png" style="border-width:0px;" />
+            </div>
+            <div class="user">
+                <span title="Andrýsek&amp;nbsp;Jakub" class="username">Andrýsek&nbsp;Jakub</span>
+                <span id="ctl14_lblKategorie" title=" Žák/student" class="user-role"> Žák/student</span>
+            </div>
+        </div>
+
+        <div class="main-controls">
+
+            <div class="period-switch">
+                <a title="Klikněte pro přepnutí do jiného období" class="period" href="/SOL/App/Spolecne/KAA004_NastaveniProstr.aspx">2021<span class='alt'>/</span>2022</a>
+            </div>
+            <div class="help">
+                <a id="ctl14_hlNapoveda" title="Klikněte pro zobrazení nápovědy k aplikaci" class="help open-popup" href="https://aplikace.skolaonline.cz/dokumentace/KS/verejnost/">Nápověda</a>
+            </div>
+            <div class="logout">
+                <a id="ctl14_hlOdhlasit" title="Klikněte pro odhlášení z aplikace" class="logout" href="../Logout.aspx">Odhlásit</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+    <div class="main-menu">
+        
+        <nav style="float: none">
+            
+            <div id="wdmWrapper" style="overflow: visible">
+                
+                
+                
+                <span id="ctl14_lblNoveMenu" class="menuWrapper"><ul class='main-navigation'><li><a href='#'>Docházka</a><ul class='dropdown-menu'><li><a href='#'>Výpis docházky</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/DochSystem/KDS004_PrichodOdchodOsoby.aspx'>Příchody/odchody žáka/studenta</a></li><li><a href='/SOL/App/Dochazka/KZD001_VypisKalendarni.aspx'>Kalendářní žáka/studenta</a></li><li><a href='/SOL/App/Dochazka/KZD002_ZobrAbsPredmZaka.aspx'>Absence v předmětech</a></li></ul></li></ul></li><li><a href='#'>Hodnocení</a><ul class='dropdown-menu'><li><a href='#'>Výpisy hodnocení</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Hodnoceni/KZH001_HodnVypisStud.aspx'>Hodnocení žáka/studenta</a></li><li><a href='/SOL/App/Hodnoceni/KZH003_PrubezneHodnoceni.aspx'>Průběžné hodnocení</a></li><li><a href='/SOL/App/Hodnoceni/KZH002_ChovaniStudenta.aspx'>Chování žáka/studenta</a></li></ul></li><li><a href='#'>Slovní hodnocení</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Hodnoceni/KHS005_VyplneniHodnoceni.aspx'>Vyplnění hodnocení</a></li><li><a href='/SOL/App/Hodnoceni/KHS006_VypisHodnoceni.aspx'>Výpis hodnocení</a></li></ul></li></ul></li><li><a href='#'>Výuka</a><ul class='dropdown-menu'><li><a href='#'>Úkoly</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Ukoly/KUK005_UkolyStudenta.aspx'>Domácí úkoly</a></li></ul></li><li><a href='#'>Výukové zdroje</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/VyukoveZdroje/KVZ003_VyukoveZdroje.aspx'>Výukové zdroje</a></li><li><a href='/SOL/App/VyukoveZdroje/KVZ015_VyslTestuStudenta.aspx'>Výsledky testů žáka/studenta</a></li></ul></li><li><a href='#'>Informace k výuce</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Administrace/KZO001_SeznamUcitelu.aspx'>Seznam vyučujících</a></li><li><a href='/SOL/App/Administrace/KZO004_InformaceKPredmetu.aspx'>Informace k předmětu</a></li><li><a href='/SOL/App/Administrace/KZT001_ProbraneUcivo.aspx'>Probrané učivo</a></li></ul></li></ul></li><li><a href='#'>Komunikace</a><ul class='dropdown-menu'><li><a href='#'>Zprávy</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Zpravy/KZZ005_PrijateZpravy.aspx'>Přijaté zprávy</a></li><li><a href='/SOL/App/Zpravy/KZZ007_OdeslatZpravu.aspx'>Odeslat zprávu</a></li><li><a href='/SOL/App/Zpravy/KZZ008_OdeslaneZpravy.aspx'>Odeslané zprávy</a></li></ul></li></ul></li><li><a href='#'>Ostatní moduly</a><ul class='dropdown-menu'><li><a href='#'>Stravovací systém</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/DochSystem/KDS003_StravaOdkaz.aspx'>Stravovací systém</a></li></ul></li><li><a href='#'>Úložiště dokumentů</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/UlozisteDokumentu/KUD001_UlozisteDokumentu.aspx'>Úložiště dokumentů</a></li></ul></li><li><a href='#'>Zápis na školní akce</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/SkolniDruzina/KSD003_PrihlaskyNaKrouzky.aspx'>Přehled akcí</a></li></ul></li><li><a href='#'>Knihovna</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Administrace/KCI055_KnihovnaRezervace.aspx'>Rezervace knih</a></li></ul></li><li><a href='#'>GDPR</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/GDPR/KGD005_Souhlas.aspx'>Souhlasy se zpracováním osobních údajů</a></li></ul></li></ul></li><li><a href='#'>Správa aplikace</a><ul class='dropdown-menu'><li><a href='#'>Nastavení</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Administrace/KCI005_ParametryApl.aspx'>Parametry aplikace</a></li><li><a href='/SOL/App/Spolecne/KAA003_NastaveniHesla.aspx'>Změna hesla</a></li><li><a href='/SOL/App/Spolecne/KAA004_NastaveniProstr.aspx?FRM=../Default.aspx'>Změna období</a></li><li><a href='/SOL/App/Spolecne/KAA026_PersSouhlas.aspx'>Souhlas s personalizací obsahu</a></li></ul></li><li><a href='#'>Statistiky přehledy</a><ul class='dropdown-menu sub-menu'><li><a href='/SOL/App/Spolecne/KAA014_UspesnaPrihlaseni.aspx'>Přehled přihlášení do aplikace</a></li></ul></li></ul></li></ul></span>
+            </div>
+        </nav>
+
+        
+
+    </div>
+
+    
+    <div class="developer-toolbar">
+        
+    </div>
+
+</header>
+
+<script>
+    function igMenuInitialize(menu, e) {
+        menu.__lastFocusedElementFocus = function () {
+        };
+    }
+
+    function VisibleOrnamentalImage() {
+        var require_width = $('.ornamental_image').outerWidth() + $('.menu ul').outerWidth() + 5;
+
+        if (require_width > $('.menu').outerWidth()) {
+            $('.ornamental_image').css('display', 'none');
+        } else {
+            $('.ornamental_image').css('display', 'block');
+        }
+    }
+
+    $(document).ready(function () {
+        var num = $('.menu ul li').length;
+        var percent = 100 / num;
+        $('.menu ul').find('li').width(percent + '%');
+        $('.menu ul').css('maxWidth', (num * 81) + 'px');
+
+        VisibleOrnamentalImage();
+        $(window).resize(function () {
+            VisibleOrnamentalImage();
+        });
+    }); 
+
+
+    $('.help.open-popup').click(function (e) {
+        e.preventDefault();
+        var HelpWindow = window.open(this.href, 'HelpWindow', 'toolbar=yes,scrollbars=yes,resizable=yes,width=640,height=480');
+        if (HelpWindow) HelpWindow.focus();
+    });
+
+
+</script>
+
+<span id="ctl14_lblPocetMinutDoOdhlaseniValue" title="Počet minut zbývajících do automatického odhlášení z aplikace" class="HeaderIconLabel" style="display: none">30<br />min</span>
+
+<script type="text/javascript">
+
+    function okScript() {
+        var url = 'https://aplikace.skolaonline.cz/SOL/App/Zpravy/KZZ005_PrijateZpravy.aspx?MOD=NEPRECTENE';
+        $(location).attr('href', url);
+    }
+
+    function cancelSkript() {
+        $find('mpeSpustNeprecteneZpravyBehavior').hide();
+        return true;
+    }
+
+</script>
+<div>
+	
+    <input type="submit" name="ctl14$NeprecteneZpravyOtazka$btnSpustNeprecteneZpravyTargetControl" value="" id="ctl14_NeprecteneZpravyOtazka_btnSpustNeprecteneZpravyTargetControl" style="display: none;" />
+    
+
+    <div id="ctl14_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravy" class="modalPopup" style="display: none;">
+		
+        <div class="modalContent">
+                <div id="ctl14_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravyDragHandle" class="modalPopupDragHandle">
+			
+                    <span>Nepřečtené zprávy</span>
+                
+		</div>
+                <div class="modalTextContainer">
+                    <span>Máte nepřečtené zprávy. Chcete je nyní zobrazit?</span>
+                </div>
+                <div class="modalButtonContainer">
+                    <button type="submit" name="ctl14$NeprecteneZpravyOtazka$btnAno" value="Ano, zobrazit" id="ctl14_NeprecteneZpravyOtazka_btnAno" class="ButtonLabel SpaceBeforeButton sol-btn sol-btn-show">Ano, zobrazit</button>
+                    <button type="submit" name="ctl14$NeprecteneZpravyOtazka$btnPozdeji" value="Ne, přečtu si je později" id="ctl14_NeprecteneZpravyOtazka_btnPozdeji" class="ButtonLabel SpaceBeforeButton sol-btn sol-btn-show">Ne, přečtu si je později</button>
+                </div>
+        </div>
+    
+	</div>
+
+</div>
+
+
+
+
+
+
+
+                <!-- TOP END -->
+            </div>
+
+            <div class="sol-body-wrapper">
+                <div class="sol-body">
+
+                    <div class="sol-body-left-wrapper">
+                        <div class="left_frame sol-body-left">
+                            <!-- LEFT BEGIN -->
+                            
+                            
+<table border="0" class="left_frame_panel">
+	<tr>
+		
+		<td class="left_frame_area_header">
+		  <span id="calendarPart_CCALabel3">Výběr data</span>
+		</td>
+		
+	</tr>
+	<tr>
+		<td class="left_frame_area" align="center">
+			<!-- LEFT CONTENT BEGIN -->
+			
+<input type="hidden" name="calendarPart_kalendar" id="calendarPart_kalendar"/><table cellspacing="0" cellpadding="0" id="igcalcalendarPart_kalendar" style="" class="ig_Control igcal_Control">
+	<tr><td>
+		<table width="100%" height="100%" cellspacing="0" cellpadding="2"><tr>
+			<td nowrap="nowrap" align="center" id="calendarPart_kalendar_500" class="ig_Button igcal_NextPrev"><IMG border="0" src="../../Themes/sol-bak/Infragistics/Default/images/ig_cal_prev.gif" alt="" align="middle" /></td>
+			<td nowrap="nowrap" align="center" width="100%"  class="ig_Header igcal_Header">&nbsp;
+				<select id="calendarPart_kalendar_504"  class="ig_DropDown igcal_DropDown"><option>leden</option><option>únor</option><option>březen</option><option selected>duben</option><option>květen</option><option>červen</option><option>červenec</option><option>srpen</option><option>září</option><option>říjen</option><option>listopad</option><option>prosinec</option></select>&nbsp;
+				<select id="calendarPart_kalendar_506"  class="ig_DropDown igcal_DropDown"><option>2021</option><option selected>2022</option></select>&nbsp;
+			</td>
+			<td nowrap="nowrap" align="center" id="calendarPart_kalendar_502"  class="ig_Button igcal_NextPrev"><IMG border="0" src="../../Themes/sol-bak/Infragistics/Default/images/ig_cal_next.gif" alt="" align="middle" /></td></tr>
+		</table>
+	</td></tr>
+	<tr><td height="100%">
+		<table width="100%" height="100%" cellspacing="0" cellpadding="2" class="igcal_Calendar" rules="none" border="0" id="calendarPart_kalendar_512">
+		<tr id="calendarPart_kalendar_514"><td class="ig_Header igcal_DOW" align="center">po</td><td class="ig_Header igcal_DOW" align="center">út</td><td class="ig_Header igcal_DOW" align="center">st</td><td class="ig_Header igcal_DOW" align="center">čt</td><td class="ig_Header igcal_DOW" align="center">pá</td><td class="ig_Header igcal_DOW" align="center">so</td><td class="ig_Header igcal_DOW" align="center">ne</td>		</tr>
+		<tr><td id="calendarPart_kalendar_d0" align="center" class="igcal_Day igcal_OtherMonthDay">28</td><td id="calendarPart_kalendar_d1" align="center" class="igcal_Day igcal_OtherMonthDay">29</td><td id="calendarPart_kalendar_d2" align="center" class="igcal_Day igcal_OtherMonthDay">30</td><td id="calendarPart_kalendar_d3" align="center" class="igcal_Day igcal_OtherMonthDay">31</td><td id="calendarPart_kalendar_d4" align="center" class="igcal_Day">1</td><td id="calendarPart_kalendar_d5" align="center" class="igcal_Day igcal_WeekendDay">2</td><td id="calendarPart_kalendar_d6" align="center" class="igcal_Day igcal_WeekendDay">3</td></tr>
+		<tr><td id="calendarPart_kalendar_d7" align="center" class="igcal_Day">4</td><td id="calendarPart_kalendar_d8" align="center" class="igcal_Day">5</td><td id="calendarPart_kalendar_d9" align="center" class="igcal_Day">6</td><td id="calendarPart_kalendar_d10" align="center" class="igcal_Day">7</td><td id="calendarPart_kalendar_d11" align="center" class="igcal_Day ig_Selected igcal_SelectedDay">8</td><td id="calendarPart_kalendar_d12" align="center" class="igcal_Day igcal_WeekendDay">9</td><td id="calendarPart_kalendar_d13" align="center" class="igcal_Day igcal_WeekendDay">10</td></tr>
+		<tr><td id="calendarPart_kalendar_d14" align="center" class="igcal_Day">11</td><td id="calendarPart_kalendar_d15" align="center" class="igcal_Day">12</td><td id="calendarPart_kalendar_d16" align="center" class="igcal_Day">13</td><td id="calendarPart_kalendar_d17" align="center" class="igcal_Day">14</td><td id="calendarPart_kalendar_d18" align="center" class="igcal_Day">15</td><td id="calendarPart_kalendar_d19" align="center" class="igcal_Day igcal_WeekendDay">16</td><td id="calendarPart_kalendar_d20" align="center" class="igcal_Day igcal_WeekendDay">17</td></tr>
+		<tr><td id="calendarPart_kalendar_d21" align="center" class="igcal_Day">18</td><td id="calendarPart_kalendar_d22" align="center" class="igcal_Day">19</td><td id="calendarPart_kalendar_d23" align="center" class="igcal_Day">20</td><td id="calendarPart_kalendar_d24" align="center" class="igcal_Day">21</td><td id="calendarPart_kalendar_d25" align="center" class="igcal_Day">22</td><td id="calendarPart_kalendar_d26" align="center" class="igcal_Day igcal_WeekendDay igcal_TodayDay">23</td><td id="calendarPart_kalendar_d27" align="center" class="igcal_Day igcal_WeekendDay">24</td></tr>
+		<tr><td id="calendarPart_kalendar_d28" align="center" class="igcal_Day">25</td><td id="calendarPart_kalendar_d29" align="center" class="igcal_Day">26</td><td id="calendarPart_kalendar_d30" align="center" class="igcal_Day">27</td><td id="calendarPart_kalendar_d31" align="center" class="igcal_Day">28</td><td id="calendarPart_kalendar_d32" align="center" class="igcal_Day">29</td><td id="calendarPart_kalendar_d33" align="center" class="igcal_Day igcal_WeekendDay">30</td><td id="calendarPart_kalendar_d34" align="center" class="igcal_Day igcal_WeekendDay igcal_OtherMonthDay">1</td></tr>
+		<tr><td id="calendarPart_kalendar_d35" align="center" class="igcal_Day igcal_OtherMonthDay">2</td><td id="calendarPart_kalendar_d36" align="center" class="igcal_Day igcal_OtherMonthDay">3</td><td id="calendarPart_kalendar_d37" align="center" class="igcal_Day igcal_OtherMonthDay">4</td><td id="calendarPart_kalendar_d38" align="center" class="igcal_Day igcal_OtherMonthDay">5</td><td id="calendarPart_kalendar_d39" align="center" class="igcal_Day igcal_OtherMonthDay">6</td><td id="calendarPart_kalendar_d40" align="center" class="igcal_Day igcal_WeekendDay igcal_OtherMonthDay">7</td><td id="calendarPart_kalendar_d41" align="center" class="igcal_Day igcal_WeekendDay igcal_OtherMonthDay">8</td></tr>
+		</table>
+	</td></tr>
+	<tr><td nowrap="nowrap"  class="ig_Footer igcal_Footer">
+<table cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tr>
+		<td align="center"><span>01.09.2021 - 31.08.2022</span></td>
+	</tr>
+</table><table id="calendarPart_kalendar_tabSelectiponMode" cellspacing="0" cellpadding="0" border="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tr>
+		<td align="center"><table id="calendarPart_kalendar_RBSelectionMode" class="FieldLabel" border="0">
+			<tr>
+				<td><input id="calendarPart_kalendar_RBSelectionMode_0" type="radio" name="calendarPart$kalendar$RBSelectionMode" value="Week" checked="checked" /><label for="calendarPart_kalendar_RBSelectionMode_0">Týden</label></td><td><input id="calendarPart_kalendar_RBSelectionMode_1" type="radio" name="calendarPart$kalendar$RBSelectionMode" value="Month" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;calendarPart$kalendar$RBSelectionMode$1\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="calendarPart_kalendar_RBSelectionMode_1">Měsíc</label></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+		</td></tr>
+</table>
+
+			<!-- LEFT CONTENT END -->
+		</td>
+	</tr>
+</table>
+
+                            
+
+
+
+                            <!-- LEFT END -->
+                        </div>
+                    </div>
+
+                    <div class="sol-body-content-wrapper">
+                        <div class="sol-notifications">
+                            <!-- MESSAGE BEGIN -->
+                            
+                            <!-- MESSAGE END -->
+                        </div>
+
+                        <div class="content_frame sol-body-content">
+                            <div>
+                                <div class="sol-body-content-top">
+                                    <!-- CONTENT HEADER BEGIN -->
+                                    <table cellspacing="0" cellpadding="0" border="0" width="100%" class="content_frame_area_header">
+  <tr>
+    <td width="100%">
+      <div class="form-title"><h1>
+Kalendář      </h1></div>
+    </td>
+<td><input type="submit" name="BtnTisk" value="" id="BtnTisk" class="sol-btn-print-form" title="Tisk" /></td>
+ </tr>
+</table>
+                                    <!-- CONTENT HEADER END -->
+                                </div>
+
+                                <div class="main_content_frame sol-body-content-main">
+                                    <!-- MAIN CONTENT BEGIN -->
+
+                                    <div class="sol-main-content">
+                                        <div id="PPlan">
+	
+                                            <div id="PanelNadpis">
+		
+                                                <table id="Table4" style="width: 100%;">
+                                                    <tr>
+                                                        <td>
+                                                            <span id="CCALabel4" class="FieldLabel">Třída:</span>
+                                                            <span id="LBLTrida" class="FieldValue">5.G</span>
+                                                            <span id="CCALabel2" class="FieldValue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                                            <span id="CCALabel6" class="FieldLabel">Žák:</span>
+                                                            <span id="LBLStudent" class="FieldValue">Andrýsek Jakub</span>
+                                                        </td>
+                                                        <td align="right">
+                                                            <span id="lblSluzbaNadpis" class="FieldLabel">Pořádková služba:</span>
+                                                            <span id="lblSluzbaNazev" class="FieldValue">Ráheľová L., Koníček L.</span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            
+	</div>
+                                            <table id="CCADynamicCalendarTable" class="DctTable" border="0">
+		<tr>
+			<th style="font-weight:normal;">&nbsp;</th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">0.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">07:05 - 07:50</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">1.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">08:00 - 08:45</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">2.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">08:55 - 09:40</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">3.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">09:55 - 10:40</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">4.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">10:50 - 11:35</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">5.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">11:45 - 12:30</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">6.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">12:40 - 13:25</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">7.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">13:30 - 14:15</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">8.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">14:20 - 15:05</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">9.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">15:10 - 15:55</td></tr></table></th><th style="font-weight:normal;"><table width="100%" cellspacing="0" cellpadding="0"><tr><td class="KuvHeaderNadpis">10.</td></tr><tr><td class="KuvHeaderText" nowrap="nowrap">16:00 - 16:45</td></tr></table></th>
+		</tr><tr class="RowOdd">
+			<th rowspan="2" style="font-weight:normal;"><table cellspacing=0 cellpadding=0><tr><td align=center class=KuvHeaderNadpis>Po</td></tr><tr><td nowrap align=center class=KuvHeaderText>4.4.</td></tr></table></th><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328047#1#D#1#0" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Ch (Chemie) &#39;,&#39;Učitel:~Nevřelová K.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~106-IVT~Cyklus:~bez cyklů~Den (vyuč. hodina):~Po 4.4. (1.)~Probrané učivo:~Opakování lipidy, sacharidy, bílkoviny&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Ch</span><span class=KuvBunkaRozvrhText>5.G<br />106-IVT</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35327987#14#D#2#0" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;ČJ (Český jazyk a literatura) &#39;,&#39;Učitel:~Klímková I.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~105-2F~Cyklus:~bez cyklů~Den (vyuč. hodina):~Po 4.4. (2.)~Probrané učivo:~J. Joyce: Odyssea&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>ČJ</span><span class=KuvBunkaRozvrhText>5.G<br />105-2F</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328208#2#D#3#0" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Zsv (Základy společenských věd) &#39;,&#39;Učitel:~Svoboda J.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~304-2A~Cyklus:~bez cyklů~Den (vyuč. hodina):~Po 4.4. (3.)~Probrané učivo:~Materialismus v době osvícenství&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Zsv</span><span class=KuvBunkaRozvrhText>5.G<br />304-2A</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35364565#1#4#0" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;M (Matematika) &#39;,&#39;Učitel:~Kramářová L.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~105-2F~Cyklus:~bez cyklů~Den (vyuč. hodina):~Po 4.4. (4.)~Nahrazuje hodiny:~Po 4.4. 4., M (Matematika), &lt;span class=AbsZdroj>Mášová H.&lt;/span>, 5.G (celá třída), 105-2F~Probrané učivo:~Vzájemná poloha útvarů v prostoru - úvodní hodina&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>M</span><span class=KuvBunkaRozvrhText>5.G<br />105-2F</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35327957#2#D#6#0" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;B (Biologie) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Garguláková E.&lt;/span>~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~205-Ma~Cyklus:~bez cyklů~Den (vyuč. hodina):~Po 4.4. (6.)~Je suplována hodinami:~Hodina odpadá&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>B</span><span class=KuvBunkaRozvrhText>5.G<br />205-Ma</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328293#25#D#7#0" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;AJ (Anglický jazyk) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Bergerová I.&lt;/span>~Třída:~5.G~Žáci:~5.G (A1)~Učebna:~203-CJ3~Cyklus:~bez cyklů~Den (vyuč. hodina):~Po 4.4. (7.)~Je suplována hodinami:~Hodina odpadá&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>AJ</span><span class=KuvBunkaRozvrhText>5.G<br />203-CJ3</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowOdd">
+			<td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328118#38#D#4#0" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;M (Matematika) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Mášová H.&lt;/span>~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~105-2F~Cyklus:~bez cyklů~Den (vyuč. hodina):~Po 4.4. (4.)~Je suplována hodinami:~Po 4.4. 4., M (Matematika), Kramářová L., 5.G (celá třída), 105-2F&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>M</span><span class=KuvBunkaRozvrhText>5.G<br />105-2F</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowEven">
+			<th rowspan="2" style="font-weight:normal;"><table cellspacing=0 cellpadding=0><tr><td align=center class=KuvHeaderNadpis>Út</td></tr><tr><td nowrap align=center class=KuvHeaderText>5.4.</td></tr></table></th><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328295#14#D#1#1" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;NJ (Německý jazyk) &#39;,&#39;Učitel:~Šáro O.~Třída:~5.G~Žáci:~5.G (A1)~Učebna:~306-2B~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (1.)~Probrané učivo:~Lektion 6 - Kundenwünsche&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>NJ</span><span class=KuvBunkaRozvrhText>5.G<br />306-2B</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35372095#1#2#1" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;M (Matematika) &#39;,&#39;Učitel:~Bukvaldová J.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~211-Bi~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (2.)~Nahrazuje hodiny:~Út 5.4. 2., M (Matematika), &lt;span class=AbsZdroj>Mášová H.&lt;/span>, 5.G (celá třída), 211-Bi~Probrané učivo:~Vzájemná poloha dvou rovin&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>M</span><span class=KuvBunkaRozvrhText>5.G<br />211-Bi</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35372105#1#3#1" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;Tv (Tělesná výchova) &#39;,&#39;Učitel:~Kvasnička P.~Třída:~5.G~Žáci:~5.G (Chlapci)~Učebna:~218-TMal~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (3.)~Nahrazuje hodiny:~Út 5.4. 3., Tv (Tělesná výchova), &lt;span class=AbsZdroj>Garguláková E.&lt;/span>, 5.G (Chlapci), 218-TMal~Probrané učivo:~Sportovní hry - volejbal&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>Tv</span><span class=KuvBunkaRozvrhText>5.G<br />218-TMal</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35372112#1#4#1" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;AJ (Anglický jazyk) &#39;,&#39;Učitel:~Koblihová T.~Třída:~5.G~Žáci:~5.G (A1)~Učebna:~302-4B~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (4.)~Nahrazuje hodiny:~Út 5.4. 4., AJ (Anglický jazyk), &lt;span class=AbsZdroj>Bergerová I.&lt;/span>, 5.G (A1), 302-4B~Probrané učivo:~Speaking activities&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>AJ</span><span class=KuvBunkaRozvrhText>5.G<br />302-4B</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35327987#26#D#5#1" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;ČJ (Český jazyk a literatura) &#39;,&#39;Učitel:~Klímková I.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~302-4B~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (5.)~Probrané učivo:~Líčení&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>ČJ</span><span class=KuvBunkaRozvrhText>5.G<br />302-4B</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328119#13#D#6#1" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Z (Zeměpis) &#39;,&#39;Učitel:~Sekanina P.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~206-Ze~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (6.)~Probrané učivo:~Povrch ČR&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Z</span><span class=KuvBunkaRozvrhText>5.G<br />206-Ze</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328089#13#D#8#1" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Pr (Programování) &#39;,&#39;Učitel:~Martinek D.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~106-IVT~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (8.)~Probrané učivo:~Formální gramatiky&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Pr</span><span class=KuvBunkaRozvrhText>5.G<br />106-IVT</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowEven">
+			<td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType20" border="0" style="height:100%;width:100%;">
+				<tr>
+					<td><img class="DctImg" onclick="showPopupWindow(&#39;../Hodnoceni/KHO010_HodnVypisDetail.aspx?UdalostID=C35393013&amp;OsobaID=C3023618&#39;, 500, 600, event)" onmouseover="onMouseOverTooltip(&#39;NJ (Německý jazyk) &#39;,&#39;Druh hodnocení:~Písemný test&lt;br/>[váha 0,50]~Téma:~Poslech s porozuměním~Výsledek:~1~Den:~Út 5.4.~Hodina:~1.&#39;)" onmouseout="onMouseOut()" src="/SOL/Themes/sol-bak/Images/ikona_hodnoceni.svg" style="border-width:0px;" /><span>&#32;</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328118#14#D#2#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;M (Matematika) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Mášová H.&lt;/span>~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~211-Bi~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (2.)~Je suplována hodinami:~Út 5.4. 2., M (Matematika), Bukvaldová J., 5.G (celá třída), 211-Bi&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>M</span><span class=KuvBunkaRozvrhText>5.G<br />211-Bi</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328175#1#D#3#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;Tv (Tělesná výchova) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Garguláková E.&lt;/span>~Třída:~5.G~Žáci:~5.G (Chlapci)~Učebna:~218-TMal~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (3.)~Je suplována hodinami:~Út 5.4. 3., Tv (Tělesná výchova), Kvasnička P., 5.G (Chlapci), 218-TMal&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Tv</span><span class=KuvBunkaRozvrhText>5.G<br />218-TMal</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328293#13#D#4#1" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;AJ (Anglický jazyk) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Bergerová I.&lt;/span>~Třída:~5.G~Žáci:~5.G (A1)~Učebna:~302-4B~Cyklus:~bez cyklů~Den (vyuč. hodina):~Út 5.4. (4.)~Je suplována hodinami:~Út 5.4. 4., AJ (Anglický jazyk), Koblihová T., 5.G (A1), 302-4B&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>AJ</span><span class=KuvBunkaRozvrhText>5.G<br />302-4B</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowOdd">
+			<th rowspan="2" style="font-weight:normal;"><table cellspacing=0 cellpadding=0><tr><td align=center class=KuvHeaderNadpis>St</td></tr><tr><td nowrap align=center class=KuvHeaderText>6.4.</td></tr></table></th><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328295#38#D#1#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;NJ (Německý jazyk) &#39;,&#39;Učitel:~Šáro O.~Třída:~5.G~Žáci:~5.G (A1)~Učebna:~204-CJ2~Cyklus:~bez cyklů~Den (vyuč. hodina):~St 6.4. (1.)~Probrané učivo:~Finalsätze, Infinitivkonstruktion mit um zu&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>NJ</span><span class=KuvBunkaRozvrhText>5.G<br />204-CJ2</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328038#26#D#2#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;F (Fyzika) &#39;,&#39;Učitel:~Bušová H.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~312-F~Cyklus:~bez cyklů~Den (vyuč. hodina):~St 6.4. (2.)~Probrané učivo:~Zobrazovací rovnice&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>F</span><span class=KuvBunkaRozvrhText>5.G<br />312-F</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328047#25#D#3#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Ch (Chemie) &#39;,&#39;Učitel:~Nevřelová K.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~309-Ch~Cyklus:~bez cyklů~Den (vyuč. hodina):~St 6.4. (3.)~Probrané učivo:~Test - Sacharidy; Hormony&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Ch</span><span class=KuvBunkaRozvrhText>5.G<br />309-Ch</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328040#25#D#4#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;D (Dějepis) &#39;,&#39;Učitel:~Ležatková M.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~103-2G~Cyklus:~bez cyklů~Den (vyuč. hodina):~St 6.4. (4.)~Probrané učivo:~Protektorát Čechy a Morava&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>D</span><span class=KuvBunkaRozvrhText>5.G<br />103-2G</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" colspan="2" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:156px;">
+				<tr>
+					<td id="C35328102#13#D#5#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Pr (Programování) &#39;,&#39;Učitel:~Martinek D.~Třída:~5.G~Žáci:~5.G (VT1)~Učebna:~N08-IVT3~Cyklus:~bez cyklů~Den (vyuč. hodina):~St 6.4. (5.)~Probrané učivo:~Java - RegEx&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Pr</span><span class=KuvBunkaRozvrhText>5.G<br />N08-IVT3</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" colspan="2" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:156px;">
+				<tr>
+					<td id="C35328317#13#D#8#2" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;cF (Cvičení z fyziky) &#39;,&#39;Učitel:~Strumienský J.~Třída:~3.A, 3.B, 5.G~Žáci:~3.A (cF1), 3.B (cF1), 5.G (cF1)~Učebna:~311-Flab.~Cyklus:~bez cyklů~Den (vyuč. hodina):~St 6.4. (8.)~Probrané učivo:~Kirchhoffovy zákony&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>cF</span><span class=KuvBunkaRozvrhText>3.A, 3.B, 5.G<br />311-Flab.</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowOdd">
+			<td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType20" border="0" style="height:100%;width:100%;">
+				<tr>
+					<td><img class="DctImg" onclick="showPopupWindow(&#39;../Hodnoceni/KHO010_HodnVypisDetail.aspx?UdalostID=C35397815&amp;OsobaID=C3023618&#39;, 500, 600, event)" onmouseover="onMouseOverTooltip(&#39;Ch (Chemie) &#39;,&#39;Druh hodnocení:~Písemný test&lt;br/>[váha 0,50]~Téma:~Sacharidy~Výsledek:~2~Den:~St 6.4.~Hodina:~3.&#39;)" onmouseout="onMouseOut()" src="/SOL/Themes/sol-bak/Images/ikona_hodnoceni.svg" style="border-width:0px;" /><span>&#32;</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowEven">
+			<th rowspan="2" style="font-weight:normal;"><table cellspacing=0 cellpadding=0><tr><td align=center class=KuvHeaderNadpis>Čt</td></tr><tr><td nowrap align=center class=KuvHeaderText>7.4.</td></tr></table></th><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328293#1#D#1#3" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;AJ (Anglický jazyk) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Bergerová I.&lt;/span>~Třída:~5.G~Žáci:~5.G (A1)~Učebna:~101-4G~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (1.)~Je suplována hodinami:~Hodina odpadá&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>AJ</span><span class=KuvBunkaRozvrhText>5.G<br />101-4G</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35398533#1#2#3" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;Zsv (Základy společenských věd) &#39;,&#39;Učitel:~Svoboda J.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~106-IVT~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (2.)~Nahrazuje hodiny:~Čt 7.4. 2., M (Matematika), &lt;span class=AbsZdroj>Mášová H.&lt;/span>, 5.G (celá třída), 106-IVT~Probrané učivo:~Filozofie I.Kanta, německé osvícenství&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>Zsv</span><span class=KuvBunkaRozvrhText>5.G<br />106-IVT</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35398535#1#3#3" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;Tv (Tělesná výchova) &#39;,&#39;Učitel:~Kvasnička P.~Třída:~5.G~Žáci:~5.G (Chlapci)~Učebna:~217-TVel~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (3.)~Nahrazuje hodiny:~Čt 7.4. 3., Tv (Tělesná výchova), &lt;span class=AbsZdroj>Garguláková E.&lt;/span>, 5.G (Chlapci), 217-TVel~Probrané učivo:~Míčové hry&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>Tv</span><span class=KuvBunkaRozvrhText>5.G<br />217-TVel</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328089#1#D#4#3" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Pr (Programování) &#39;,&#39;Učitel:~Martinek D.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~106-IVT~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (4.)~Probrané učivo:~Formální gramatiky&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Pr</span><span class=KuvBunkaRozvrhText>5.G<br />106-IVT</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35327987#38#D#5#3" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;ČJ (Český jazyk a literatura) &#39;,&#39;Učitel:~Klímková I.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~105-2F~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (5.)~Probrané učivo:~J. Joyce - ukázky&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>ČJ</span><span class=KuvBunkaRozvrhText>5.G<br />105-2F</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328040#1#D#7#3" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;D (Dějepis) &#39;,&#39;Učitel:~Ležatková M.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~207-Dě~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (7.)~Probrané učivo:~Druhá světová válka&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>D</span><span class=KuvBunkaRozvrhText>5.G<br />207-Dě</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328119#1#D#8#3" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Z (Zeměpis) &#39;,&#39;Učitel:~Sekanina P.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~206-Ze~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (8.)~Probrané učivo:~Řeky ČR&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Z</span><span class=KuvBunkaRozvrhText>5.G<br />206-Ze</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowEven">
+			<td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328118#2#D#2#3" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;M (Matematika) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Mášová H.&lt;/span>~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~106-IVT~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (2.)~Je suplována hodinami:~Čt 7.4. 2., Zsv (Základy společenských věd), Svoboda J., 5.G (celá třída), 106-IVT&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>M</span><span class=KuvBunkaRozvrhText>5.G<br />106-IVT</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328175#13#D#3#3" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;Tv (Tělesná výchova) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Garguláková E.&lt;/span>~Třída:~5.G~Žáci:~5.G (Chlapci)~Učebna:~217-TVel~Cyklus:~bez cyklů~Den (vyuč. hodina):~Čt 7.4. (3.)~Je suplována hodinami:~Čt 7.4. 3., Tv (Tělesná výchova), Kvasnička P., 5.G (Chlapci), 217-TVel&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Tv</span><span class=KuvBunkaRozvrhText>5.G<br />217-TVel</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowOdd">
+			<th rowspan="2" style="font-weight:normal;"><table cellspacing=0 cellpadding=0><tr><td align=center class=KuvHeaderNadpis>Pá</td></tr><tr><td nowrap align=center class=KuvHeaderText>8.4.</td></tr></table></th><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328208#14#D#1#4" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;Zsv (Základy společenských věd) &#39;,&#39;Učitel:~Svoboda J.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~104-1G~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (1.)~Probrané učivo:~Filozofie I.Kanta, německé osvícenství&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>Zsv</span><span class=KuvBunkaRozvrhText>5.G<br />104-1G</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35327987#2#D#2#4" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;ČJ (Český jazyk a literatura) &#39;,&#39;Učitel:~Klímková I.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~205-Ma~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (2.)~Probrané učivo:~Opakovací test: Experimentální próza&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>ČJ</span><span class=KuvBunkaRozvrhText>5.G<br />205-Ma</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35408154#1#3#4" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;Ch (Chemie) &#39;,&#39;Učitel:~Nevřelová K.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~211-Bi~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (3.)~Nahrazuje hodiny:~Pá 8.4. 3., B (Biologie), &lt;span class=AbsZdroj>Garguláková E.&lt;/span>, 5.G (celá třída), 211-Bi~Probrané učivo:~Hormony a Enzymy&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>Ch</span><span class=KuvBunkaRozvrhText>5.G<br />211-Bi</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35408161#1#4#4" class="KuvSuplujiciHodina" onmouseover="onMouseOverTooltip(&#39;M (Matematika) &#39;,&#39;Učitel:~Bradáčová D.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~211-Bi~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (4.)~Nahrazuje hodiny:~Pá 8.4. 4., M (Matematika), &lt;span class=AbsZdroj>Mášová H.&lt;/span>, 5.G (celá třída), 211-Bi~Probrané učivo:~Polohové úlohy v prostoru&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;background-color:#;"><span class=KuvBunkaRozvrhNadpis>M</span><span class=KuvBunkaRozvrhText>5.G<br />211-Bi</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328295#2#D#5#4" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;NJ (Německý jazyk) &#39;,&#39;Učitel:~Šáro O.~Třída:~5.G~Žáci:~5.G (A1)~Učebna:~205-Ma~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (5.)~Probrané učivo:~Finalsätze, Infinitivkonstruktion mit um zu&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>NJ</span><span class=KuvBunkaRozvrhText>5.G<br />205-Ma</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328038#2#D#6#4" class="DctInnerTableType10DataTD" onmouseover="onMouseOverTooltip(&#39;F (Fyzika) &#39;,&#39;Učitel:~Bušová H.~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~211-Bi~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (6.)~Probrané učivo:~Zobrazovaní optickými soustavami - příklady&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>F</span><span class=KuvBunkaRozvrhText>5.G<br />211-Bi</span></td>
+				</tr>
+			</table></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr><tr class="RowOdd">
+			<td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35327957#14#D#3#4" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;B (Biologie) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Garguláková E.&lt;/span>~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~211-Bi~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (3.)~Je suplována hodinami:~Pá 8.4. 3., Ch (Chemie), Nevřelová K., 5.G (celá třída), 211-Bi&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>B</span><span class=KuvBunkaRozvrhText>5.G<br />211-Bi</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"><table class="DctInnerTableType10" border="0" style="height:100%;width:100%;table-layout:fixed;max-width:78px;">
+				<tr>
+					<td id="C35328118#26#D#4#4" class="KuvSuplovanaHodina" onmouseover="onMouseOverTooltip(&#39;M (Matematika) &#39;,&#39;Učitel:~&lt;span class=AbsZdroj>Mášová H.&lt;/span>~Třída:~5.G~Žáci:~5.G (celá třída)~Učebna:~211-Bi~Cyklus:~bez cyklů~Den (vyuč. hodina):~Pá 8.4. (4.)~Je suplována hodinami:~Pá 8.4. 4., M (Matematika), Bradáčová D., 5.G (celá třída), 211-Bi&#39;)" onmouseout="onMouseOut()" onclick="onClickTableCell(event, this, null);" style="width:100%;"><span class=KuvBunkaRozvrhNadpis>M</span><span class=KuvBunkaRozvrhText>5.G<br />211-Bi</span></td>
+				</tr>
+			</table></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td><td class="DctCellBottom DctCell" onclick="onClickTableCell(event, this, null);" style="height:1px;"></td>
+		</tr>
+	</table>
+                                            <table id="Table3">
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <span id="CCALabel1" Tisknout="False">Možnosti zobrazení:</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="InputField"><input id="CBZobrazitRozvrh" type="checkbox" name="CBZobrazitRozvrh" checked="checked" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;CBZobrazitRozvrh\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="CBZobrazitRozvrh" class="InputField">Zobrazit rozvrh</label></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="InputField"><input id="CBZobrazitHodnoceni" type="checkbox" name="CBZobrazitHodnoceni" checked="checked" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;CBZobrazitHodnoceni\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="CBZobrazitHodnoceni" class="InputField">Zobrazit hodnocení</label></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="InputField"><input id="CBZobrazitSobotuNedeli" type="checkbox" name="CBZobrazitSobotuNedeli" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;CBZobrazitSobotuNedeli\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="CBZobrazitSobotuNedeli" class="InputField">Zobrazit sobotu a neděli</label></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                        
+</div>
+                                        
+                                        <span id="LSkriptSpusteniKurzu"></span>
+                                    </div>
+
+                                    <!-- MAIN CONTENT END -->
+                                </div>
+
+                                <div class="sol-body-content-bottom">
+                                    <!-- CONTENT FOOTER BEGIN -->
+                                    
+                                    <!-- CONTENT FOOTER END -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sol-body-footer">
+                            <!-- BOTTOM BEGIN -->
+                            
+
+<footer>
+    <div class="contact">
+        <div class="address">
+            <span id="ctl17_lblAdresa">BAKALÁŘI software s.r.o., Čs. armády 2, 261 01 Příbram</span>
+        </div>
+        <div class="hotline">
+            <span id="ctl17_lblZakaznickaPodpora">Zákaznická podpora:</span>
+            <span id="ctl17_lblTelefon" class="phone"></span>
+            <span id="ctl17_lblEmail" class="email"></span> 
+            <a id="ctl17_hlPotrebujetePomoc" class="help" href="https://aplikace.skolaonline.cz/dokumentace/KS/verejnost/pomoc-s-aplikaci.html" target="_blank">Potřebujete pomoci s aplikací?</a>
+            
+        </div>
+    </div>
+</footer>
+
+                            <!-- BOTTOM END -->
+                        </div>
+
+                    </div>
+
+                    <div class="sol-body-right-wrapper">
+                        <div class="right_frame sol-body-right">
+                            <!-- RIGHT BEGIN -->
+                            
+&nbsp;
+<style>
+
+    .instant-help {
+        width: 200px;
+        /*margin: 5px;*/
+        display: block; /* block | none */
+        /*border: 4px solid white;*/
+        position: absolute;
+        top: 270px;
+        left: 1000px;
+        
+    }
+
+    .instant-help-header {
+        padding: 5px;
+        color: gray;
+        background-color: white;
+        font-weight: bold;
+        /*font-size: 14px;*/
+        border: 1px solid darkgray;
+        border-collapse: collapse;
+        cursor:move;
+    }
+
+    .instant-help-content {
+        padding: 5px;
+        background-color: lightyellow;
+        border: 1px solid darkgray;
+        /*border-collapse: collapse;*/
+        max-height: 100px;
+        overflow-y: auto;
+        width: 200px;
+        position: absolute;
+    }
+
+    .instant-help-close {
+        position: relative;
+        top: -6px;
+    }
+
+
+
+
+
+</style>
+
+<div id="ctl16_instantniNapovedaEditor_pnlInstantniNapoveda">
+	
+    <style>
+        .instantHelp td, .instantHelp th {
+            padding-right: 10px;
+        }
+    </style>
+    <div id="ctl16_instantniNapovedaEditor_pnlInstantniNapovedaPopup" class="modalPopup" style="width: 700px; display: none;">
+		
+        <div class="modalContent">
+
+            <div id="ctl16_instantniNapovedaEditor_pnlInstantniNapovedaPopupHeader" class="modalPopupDragHandle">
+			
+                <span>Instantní nápověda</span>
+            
+		</div>
+
+            <div id="ctl16_instantniNapovedaEditor_pnlInstantniNapovedaPopupContent">
+			
+                <div class="modalTextContainer">
+
+                    <span id="lblInstantniNapovedaProPole">Instantní nápověda k vybranému poli '{0}'.</span>
+                    <br />
+                    <span id="ctl16_instantniNapovedaEditor_lblInstantniNapovedaNavod">Zaškrtnutím checkboxu 'Zadat' budou aktualizována data instantní nápovědy pro vybraný druh organizace.</span>
+                    <br />
+                    <br />
+                    <table class="instantHelp">
+                        
+                                <tr>
+                                    <th>
+                                        <span style="font-weight:bold;">Titulek</span>
+                                        <span class="instantHelp-copy" onclick="titulekCopy(event);">[*]</span>
+                                        <span class="instantHelp-clear" onclick="titulekClear(event);">[x]</span>
+                                    </th>
+                                    <th>
+                                        <span style="font-weight:bold;">Nápověda</span>
+                                        <span class="instantHelp-copy" onclick="napovedaCopy(event);">[*]</span>
+                                        <span class="instantHelp-clear" onclick="napovedaClear(event);">[x]</span>
+                                    </th>
+                                    <th>
+                                        <span onclick="zadatClick(event)" style="font-weight:bold;">Zadat</span>
+                                    </th>
+                                    <th>
+                                        <span onclick="zadatClick(event)" style="font-weight:bold;">Druh organizace</span>
+                                    </th>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl01$txtTitulek" type="text" size="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl01_txtTitulek_0" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:140px;" />
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl01$txtNapoveda" rows="2" cols="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl01_txtNapoveda_0" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:220px;">
+</textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat KS"><input id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl01_cbZadat_0" type="checkbox" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl01$cbZadat" /><label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl01_cbZadat_0" class="instantniNapovedaEditorZadat KS"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl01_cbZadat_0" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl01_lblDruhOrganizace_0">KS - Klasická škola (ZŠ a SŠ)</label>
+                                        <input type="hidden" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl01$hiddenDruhOrganizaceID" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl01_hiddenDruhOrganizaceID_0" value="KS" />
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl02$txtTitulek" type="text" size="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl02_txtTitulek_1" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:140px;" />
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl02$txtNapoveda" rows="2" cols="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl02_txtNapoveda_1" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:220px;">
+</textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat VS"><input id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl02_cbZadat_1" type="checkbox" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl02$cbZadat" /><label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl02_cbZadat_1" class="instantniNapovedaEditorZadat VS"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl02_cbZadat_1" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl02_lblDruhOrganizace_1">VS - Vysoká škola (VŠ)</label>
+                                        <input type="hidden" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl02$hiddenDruhOrganizaceID" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl02_hiddenDruhOrganizaceID_1" value="VS" />
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl03$txtTitulek" type="text" size="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl03_txtTitulek_2" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:140px;" />
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl03$txtNapoveda" rows="2" cols="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl03_txtNapoveda_2" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:220px;">
+</textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat ZR"><input id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl03_cbZadat_2" type="checkbox" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl03$cbZadat" /><label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl03_cbZadat_2" class="instantniNapovedaEditorZadat ZR"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl03_cbZadat_2" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl03_lblDruhOrganizace_2">ZR - Zřizovatel</label>
+                                        <input type="hidden" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl03$hiddenDruhOrganizaceID" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl03_hiddenDruhOrganizaceID_2" value="ZR" />
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <td style="vertical-align: top;">
+                                        <input name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl04$txtTitulek" type="text" size="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl04_txtTitulek_3" class="InputField &lt;%# &quot;instantniNapovedaEditorTitulek &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:140px;" />
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <textarea name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl04$txtNapoveda" rows="2" cols="20" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl04_txtNapoveda_3" class="InputField &lt;%# &quot;instantniNapovedaEditorText &quot; + Eval(&quot;DRUH_ORGANIZACE_ID&quot;) %> sol-form-control" style="width:220px;">
+</textarea>
+                                    </td>
+                                    <td style="vertical-align: top; text-align: center">
+                                        <span class="instantniNapovedaEditorZadat NS"><input id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl04_cbZadat_3" type="checkbox" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl04$cbZadat" /><label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl04_cbZadat_3" class="instantniNapovedaEditorZadat NS"> </label></span>
+                                    </td>
+                                    <td style="vertical-align: top;">
+                                        <label for="ctl16_instantniNapovedaEditor_rptNapoveda_ctl04_cbZadat_3" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl04_lblDruhOrganizace_3">NS - Nezisková organizace</label>
+                                        <input type="hidden" name="ctl16$instantniNapovedaEditor$rptNapoveda$ctl04$hiddenDruhOrganizaceID" id="ctl16_instantniNapovedaEditor_rptNapoveda_ctl04_hiddenDruhOrganizaceID_3" value="NS" />
+                                    </td>
+                                </tr>
+                            
+                    </table>
+
+                    <br />
+                    <span style="font-weight:bold;">Uložit změny v instantní nápovědě?</span>
+                </div>
+
+                <div id="ctl16_instantniNapovedaEditor_pnlInstantniNapovedaButtons" class="modalButtonContainer">
+				
+                    <button type="submit" name="ctl16$instantniNapovedaEditor$btnInstantniNapovedaUlozit" value="Uložit" id="btnInstantniNapovedaUlozit" class="ButtonLabel">Uložit</button>
+                    <button type="submit" name="ctl16$instantniNapovedaEditor$btnInstantniNapovedaZavrit" value="Zavřít" id="btnInstantniNapovedaZavrit" class="ButtonLabel SpaceBeforeButton">Zavřít</button>
+                
+			</div>
+            
+		</div>
+        </div>
+    
+	</div>
+
+    <input type="submit" name="ctl16$instantniNapovedaEditor$targetInstantniNapoveda" value="" id="ctl16_instantniNapovedaEditor_targetInstantniNapoveda" style="display: none" />
+    
+    <input type="hidden" name="ctl16$instantniNapovedaEditor$hiddenInstantniNapovedaPoleID" id="hiddenInstantniNapovedaPoleID" />
+
+    
+
+    <script>
+        var zadat = false;
+        function zadatClick(event) {
+            zadat = !zadat;
+            $('.instantniNapovedaEditorZadat input').attr('checked', zadat);
+        }
+
+        function titulekCopy(event) {
+            $('.instantniNapovedaEditorTitulek').val($('.instantniNapovedaEditorTitulek').val());
+        }
+
+        function titulekClear(event) {
+            $('.instantniNapovedaEditorTitulek').val('');
+        }
+
+        function napovedaCopy(event) {
+            $('.instantniNapovedaEditorText').val($('.instantniNapovedaEditorText').val());
+        }
+
+        function napovedaClear(event) {
+            $('.instantniNapovedaEditorText').val('');
+        }
+    </script>
+
+
+</div>
+
+
+    <div id="pnlInstantHelp" class="instant-help">
+	
+        <div id="ctl16_pnlInstantHelpHeader" class="instant-help-header">
+		
+            <span id="lblInstantHelpTitle" class="instant-help-title">Nápověda</span>
+            <button type="button" class="close instant-help-close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        
+	</div>
+        <div class="instant-help-content">
+		
+            <span id="lblInstantHelpText" class="instant-help-text">Text nápovědy, která není ani krátká ani příliš dlouhá. Prostě jen tak akorát. </span>
+        
+	</div>
+    
+</div>
+
+
+
+
+<script>
+    jQuery(function ($) {
+        //$('.instant-help-close').on('click', instantHelpHide);
+        $('.instant-help-close').click(instantHelpHide);
+
+        //$('.instant-help').on('click', function (event) {
+        $('.instant-help').click(function (event) {
+            event.stopPropagation();
+            //console.log('instant-help click', event);
+        });
+
+
+
+        //$('input, select').on('focus click', function (event) {
+        //    instantHelpFocus(event, this);
+        //});
+
+        $('input, select').click(function (event) {
+            instantHelpFocus(event, this);
+        });
+
+
+        $('input, select').focus(function (event) {
+            instantHelpFocus(event, this);
+        });
+
+
+        //$('[data-instant-help]').on('focus click', function (event) {
+        //    event.stopPropagation();
+        //    console.log('input with help focussed', event);
+
+        //    instantHelp.showByElement(this);
+
+        //});
+
+
+        //$(document.body).on('click', function (event) {
+        $(document.body).click(function (event) {
+            //console.log('body click', event);
+            instantHelp.hide();
+            //txtZkratka
+            //txtNazev
+            //txtUlice
+            //ddlMistoVyuky
+            //igtxttxtPoradi
+            //cbAktivni
+        })
+    });
+
+
+    function instantHelpHide() {
+        //console.log('hide');
+        $('.instant-help').hide();
+    }
+
+    function instantHelpFocus(event, that) {
+        var $element = $(that);
+        //var text = $element.data('instant-help') || $element.attr('title');
+        var text = $element.data('instant-help');
+
+        if ($element.attr('type') == 'checkbox' && !text) {
+            text = $element.parents('span[data-instant-help]').data('instant-help');
+        }
+
+        if (text) {
+            event.stopPropagation();
+            //console.log('input with help focussed by attribute', event);
+            instantHelp.showByElement($element);
+        } else {
+            var elementId = event.target.id;
+            //console.log('elementId', elementId);
+            var texty = instantHelp.dictionary[elementId];
+            //console.log('texty', texty);
+            if (texty) {
+                event.stopPropagation();
+                //console.log('input with help focussed by id', event);
+                instantHelp.showByElementId(elementId, $element);
+            } else {
+                instantHelp.hide();
+                //console.log('input with NO help focussed', event);
+            }
+        }
+    }
+
+
+    //instantHelp.showByElement(document.body);
+    instantHelp.hide();
+
+</script>
+
+                            <!-- RIGHT END -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bottom_frame sol-footer">
+            </div>
+
+        </div>
+
+    
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="eRqMOkFKX0u+Ohd03bqfgTBxudD7Lxe1OQfGjmwe7DqTtTjlqpYR1aruGbMkn6qoBMMTUbhIkDdY1CJg10aoUfOV1osjHFPvcry8XJ1OW/V/G8nKV6Lb7pLxcE4ZL0VhY+AOnk5MY0IGuvYknBv7reyFe7mPgsO6fwxMmKFRPXxSEOrQHHGFqVr8ETWNaWBf8YCnoPxB9nZvAoK6iga9yGRVlKGSE1mByQM/UFGQE7YKq9AYShM2FBjcBQkLfCsV0GCKRv/8dsXNnX5xD4f/yqaRTFJa4B2kPd0SEv5OfK7gcJxzaBF3rsAaX0yZqjBNXUa+bYxV3O/X/SDIPNq2HMWXiuaiK16cCfulFf2VgqRXqBU8s2hT286ubzUnBV8hiRUVqsZfDO83+30l8GFNh3NrttqvAR54OtzBUAc3CoJADWKpe8tNcLTj1YwkGJsNz+8VNpmk4xh37j6JFRPEEipGjwFfDEx8+6gWzwm+a7VDJ1kDle0pdrASEDdUEioBJ9VtkGOWouJnNF6yivZ8+wzALtsF9jgrCHA6Q7W/kS2PLVqabDzR37q8wlCUiQWXh2x3tPQtONBowtkg7vNS7YQiUQ0Ww7Qyt9qfSpx4InZ9N7LLATvbLvEmr7KdFg2afl66D+SktffNSxuV2Q416E7S6Qqokx2xNyK8cpwXVH4GNf+qR27Ku4JAWHsMkM3WS2lsvQ==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var oldOnload = window.onload;
+window.onload = function () {
+  if (oldOnload) {
+    oldOnload();
+  }
+  if (logoutTimeoutSec > 0) {
+    loadTime = new Date();
+    logoutTickHandler = setInterval('logoutTick()', periodaSec * 1000);
+  }
+
+};
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ctl14_NeprecteneZpravyOtazka_btnPozdeji","OkControlID":"ctl14_NeprecteneZpravyOtazka_btnAno","OnCancelScript":"cancelSkript()","OnOkScript":"okScript()","PopupControlID":"ctl14_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravy","PopupDragHandleControlID":"ctl14_NeprecteneZpravyOtazka_pnlSpustNeprecteneZpravyDragHandle","dynamicServicePath":"/SOL/App/Kalendar/KZK001_KalendarTyden.aspx","id":"mpeSpustNeprecteneZpravyBehavior","repositionMode":2}, null, null, $get("ctl14_NeprecteneZpravyOtazka_btnSpustNeprecteneZpravyTargetControl"));
+});
+//]]>
+</script>
+<script type='text/javascript'>
+//<![CDATA[
+try{igcal_init("calendarPart_kalendar","2022,4,8,2022,4,2021,9,1,2022,8,31,0","calendarPart$kalendar,1,1,,%% #,1,0,0,1,,3,0,-1,0,,,,igcal_Day,igcal_WeekendDay,igcal_OtherMonthDay,igcal_TodayDay,ig_Selected igcal_SelectedDay,igcal_WeekNumber","leden,únor,březen,duben,květen,červen,červenec,srpen,září,říjen,listopad,prosinec,,,,,,valueChanging,");}catch(i){window.status="Can't init script for WebCalendar";}
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"btnInstantniNapovedaZavrit","PopupControlID":"ctl16_instantniNapovedaEditor_pnlInstantniNapovedaPopup","PopupDragHandleControlID":"ctl16_instantniNapovedaEditor_pnlInstantniNapovedaPopupHeader","dynamicServicePath":"/SOL/App/Kalendar/KZK001_KalendarTyden.aspx","id":"mpeInstantniNapoveda","repositionMode":2}, null, null, $get("ctl16_instantniNapovedaEditor_targetInstantniNapoveda"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FloatingBehavior, {"handle":$get("ctl16_pnlInstantHelpHeader"),"id":"ctl16_dpeInstantHelp"}, null, null, $get("pnlInstantHelp"));
+});
+//]]>
+</script>
+</form>
+
+    <script>
+        var popupHodnoceni;
+        function showPopupWindow(url, width, height, event) {
+            event.preventDefault();
+            log('showPopupWindow');
+            popupHodnoceni = window.open(url, 'detail', 'width=' + width + ', height=' + height + ', resizable, scrollbars');
+
+            window.setTimeout(function () {
+                if (popupHodnoceni) popupHodnoceni.focus();
+            }, 200);
+        }
+
+        function popupComplete() {
+            popupHodnoceni.focus();
+
+            window.setTimeout(function () {
+                if (popupHodnoceni) {
+                    popupHodnoceni.focus();
+                    log('focus complete');
+                }
+            }, 100);
+        }
+
+    </script>
+
+</body>
+</html>

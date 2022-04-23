@@ -24,26 +24,58 @@
 class Application {
 private:
 protected:
+
+    /**
+     * @brief Základní URL pro HTTP požadavky
+     * 
+     */
     std::string httpUrlBase;
+
+    /**
+     * @brief Klíč pro vektor HTTP požadavků
+     * 
+     */
     std::string httpUrlParamKey;
+
+    /**
+     * @brief Vektor parametrů pro HTTP požadavky
+     * 
+     */
     std::map<std::string, std::string> httpUrlParams;
 
+    /**
+     * @brief Callback statické metody pro HTTP request
+     * 
+     */
     std::function<std::string(std::string url)> getHTTPRequest;
+
+    /**
+     * @brief Callback pro aktualizaci displeje
+     * 
+     */
     std::function<int(void)> updateHandler;
+    
+    /**
+     * @brief Interval mezi aktualizacemi v sekundách
+     * 
+     */
     int updateIntervalSec;
 
 public:
     /**
      * @brief Konstruktor výchozí aplikace
      * 
+     * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
     Application(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
 
     /**
      * @brief Získá data z internetu a převede na JSON objekt
-     * TODO
-     * @return JSONVar Objekt JSON
+     * 
+     * @param httpUrlBase 
+     * @param httpUrlParam 
+     * @return JSONVar JSONVar Objekt JSON
      */
     JSONVar requestJson(std::string httpUrlBase, std::string httpUrlParam);
 

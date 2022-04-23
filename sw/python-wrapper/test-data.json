@@ -1,0 +1,93 @@
+{
+  "1272": {
+    "StopID": 1272,
+    "Message": "VÝLUKA PALACKÉHO TŘÍDA: Linky 41, 71, N90 a N91 ve směru do centra jedou v úseku Vozovna Medlánky - Semilasso odklonem. Podrobnosti na www.dpmb.cz.",
+    "PostList": [
+      {
+        "PostID": 2,
+        "Name": "Tram > město",
+        "Departures": [
+          {
+            "LineName": "1",
+            "FinalStop": "Pisárky",
+            "IsLowFloor": true,
+            "TimeMark": "4min"
+          },
+          {
+            "LineName": "1",
+            "FinalStop": "Pisárky",
+            "IsLowFloor": true,
+            "TimeMark": "14min"
+          },
+          {
+            "LineName": "1",
+            "FinalStop": "Pisárky",
+            "IsLowFloor": true,
+            "TimeMark": "24min"
+          },
+          {
+            "LineName": "1",
+            "FinalStop": "Pisárky",
+            "IsLowFloor": true,
+            "TimeMark": "19:22"
+          }
+        ]
+      }
+    ],
+    "FromCache": false,
+    "Warning": "Downloading data using automated tools is forbidden, for API access contact Kordis JMK. Automatizované stahování dat není povolené, pro přístup k API kontaktujte Kordis JMK.",
+    "Error": ""
+  },
+  "1377": {
+    "StopID": 1377,
+    "Message": "VÝLUKA PALACKÉHO TŘÍDA: Linky 41, 71, N90 a N91 ve směru do centra jedou v úseku Vozovna Medlánky - Semilasso odklonem. Podrobnosti na www.dpmb.cz.",
+    "PostList": [
+      {
+        "PostID": 1,
+        "Name": "směr Ivanovice",
+        "Departures": [
+          {
+            "LineName": "65",
+            "FinalStop": "Řečkovice, hřbitov",
+            "IsLowFloor": true,
+            "TimeMark": "3min"
+          },
+          {
+            "LineName": "41",
+            "FinalStop": "Lelekovice, u kříže",
+            "IsLowFloor": true,
+            "TimeMark": "17min"
+          },
+          {
+            "LineName": "65",
+            "FinalStop": "Řečkovice, hřbitov",
+            "IsLowFloor": true,
+            "TimeMark": "23min"
+          },
+          {
+            "LineName": "41",
+            "FinalStop": "Globus",
+            "IsLowFloor": true,
+            "TimeMark": "19:27"
+          }
+        ]
+      }
+    ],
+    "FromCache": false,
+    "Warning": "Downloading data using automated tools is forbidden, for API access contact Kordis JMK. Automatizované stahování dat není povolené, pro přístup k API kontaktujte Kordis JMK.",
+    "Error": ""
+  },
+  "lastMarks": [
+    {
+      "date": "\u00dat 5.4.",
+      "subject": "N\u011bmeck\u00fd jazyk",
+      "mark": "1"
+    },
+    {
+      "date": "P\u00e1 1.4.",
+      "subject": "\u010cesk\u00fd jazyk a literatura",
+      "mark": "2"
+    },
+    { "date": "St 30.3.", "subject": "Fyzika", "mark": "2" }
+  ]
+}

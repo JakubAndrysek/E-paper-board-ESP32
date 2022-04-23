@@ -5,13 +5,13 @@ Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel. Hl
 Součásti systému:
 
 - [x] [odjezdy MHD - Brno](aplikace/mhd.md)
+- [x] [nejnovější známky ze školy](aplikace/sol-znamky.md)
+- [ ] [aktuální školní rozvrh](aplikace/sol-rozvrh.md)
 - [ ] [předpověď počasí Alojz](aplikace/alojz.md)
-- [ ] [aktuální školní rozvrh](aplikace/skolaoline.md)
-- [ ] [nejnovější známky ze školy](aplikace/skolaoline.md)
 - [ ] [využití strojů ve FabLabu](aplikace/fablab.md)
 - [ ] …
 
-![demo](media/board/ttgo-front.png)
+![demo](media/panel/ttgo-front.png)
 ## Základní informace
 
 Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a tříbarevným E-paper displejem.
