@@ -18,8 +18,9 @@
 
 AppSalina::AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
     : Application(updateIntervalSec, getHTTPRequest) {
-    httpUrlBase = "http://192.168.0.15:3333";
-    // httpUrlBase = "http://192.168.42.22:3333";
+    // httpUrlBase = "http://192.168.0.15:3333"; // Pletacka
+    httpUrlBase = "http://192.168.0.5:3333"; // Rotex
+    // httpUrlBase = "http://192.168.42.22:3333"; // Technika
     // httpUrlBase = "https://mapa.idsjmk.cz/api/Departures";
 
     httpUrlParams.insert(std::make_pair("Kořístkova", "/1272"));

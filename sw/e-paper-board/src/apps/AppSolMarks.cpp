@@ -17,7 +17,9 @@
 
 AppSolMarks::AppSolMarks(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
     : Application(updateIntervalSec, getHTTPRequest) {
-    httpUrlBase = "http://192.168.0.15:5000";
+    // httpUrlBase = "http://192.168.0.15:5000"; // Pletacka
+    httpUrlBase = "http://192.168.0.5:5000"; // Rotex
+    // httpUrlBase = "http://192.168.42.22:5000"; // Technika
     httpUrlParams.insert(std::make_pair("marksLast", "/marksLast/"));
     httpUrlParams.insert(std::make_pair("marksSubject", "/marksSubject/"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
