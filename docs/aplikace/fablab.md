@@ -9,6 +9,6 @@ Stroje jsou přístupné na uživatelské karty a během dne bývají vcelku vyt
 
 ## Využití FabLabu
 
-Pro zpracování dat z webu FabLabu používám Wrapper - [více informací](../ser)
+Pro zpracování dat z webu FabLabu používám Wrapper - [více informací](../wrapper/fablab.md)
 
-Ve vývoji
+### Ve vývoji

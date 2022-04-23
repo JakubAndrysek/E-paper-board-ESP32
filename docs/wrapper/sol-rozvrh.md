@@ -1,3 +1,5 @@
 # ŠOL rozvrh
 
-Ve vývoji
+### Ve vývoji
+
+![](../media/aplikace/sol-rozvrh-big.png)

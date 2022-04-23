@@ -1,4 +1,4 @@
-# API Panelu
+# API Panel
 
 Dokumentace pro zobrazovací panel.
 

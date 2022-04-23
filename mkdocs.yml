@@ -66,15 +66,15 @@ plugins:
   - search
   - mkdoxy: # https://github.com/JakubAndrysek/mkdoxy
       projects:
-        api-board:
+        apiBoard:
           src-dirs: sw/e-paper-board/src/
           full-doc: True
           doxy-cfg:
             FILE_PATTERNS: "*.c* *.h*"
             EXAMPLE_PATH: ""
             RECURSIVE: True
-        api-server:
-          src-dirs: sw/server/python-wrapper/
+        apiWrapper:
+          src-dirs: sw/python-wrapper/
           full-doc: True
           doxy-cfg:
             FILE_PATTERNS: "*.py"
@@ -129,48 +129,48 @@ nav:
   - API dokumentace:
       - api/index.md
       - API Panelu:
-          - api-board/index.md
-          - "Links": "api-board/links.md"
+          - apiBoard/index.md
+          - "Links": "apiBoard/links.md"
           - "Classes":
-              - "Class List": "api-board/annotated.md"
-              - "Class Index": "api-board/classes.md"
-              - "Class Hierarchy": "api-board/hierarchy.md"
-              - "Class Members": "api-board/class_members.md"
-              - "Class Member Functions": "api-board/class_member_functions.md"
-              - "Class Member Variables": "api-board/class_member_variables.md"
-              - "Class Member Typedefs": "api-board/class_member_typedefs.md"
-              - "Class Member Enumerations": "api-board/class_member_enums.md"
+              - "Class List": "apiBoard/annotated.md"
+              - "Class Index": "apiBoard/classes.md"
+              - "Class Hierarchy": "apiBoard/hierarchy.md"
+              - "Class Members": "apiBoard/class_members.md"
+              - "Class Member Functions": "apiBoard/class_member_functions.md"
+              - "Class Member Variables": "apiBoard/class_member_variables.md"
+              - "Class Member Typedefs": "apiBoard/class_member_typedefs.md"
+              - "Class Member Enumerations": "apiBoard/class_member_enums.md"
           - "Namespaces":
-              - "Namespace List": "api-board/namespaces.md"
-              - "Namespace Members": "api-board/namespace_members.md"
-              - "Namespace Member Functions": "api-board/namespace_member_functions.md"
-              - "Namespace Member Variables": "api-board/namespace_member_variables.md"
-              - "Namespace Member Typedefs": "api-board/namespace_member_typedefs.md"
-              - "Namespace Member Enumerations": "api-board/namespace_member_enums.md"
-          - "Functions": "api-board/functions.md"
-          - "Variables": "api-board/variables.md"
-          - "Macros": "api-board/macros.md"
-          - "Files": "api-board/files.md"
-      - API Serveru:
-          - api-server/index.md
-          - "Links": "api-server/links.md"
+              - "Namespace List": "apiBoard/namespaces.md"
+              - "Namespace Members": "apiBoard/namespace_members.md"
+              - "Namespace Member Functions": "apiBoard/namespace_member_functions.md"
+              - "Namespace Member Variables": "apiBoard/namespace_member_variables.md"
+              - "Namespace Member Typedefs": "apiBoard/namespace_member_typedefs.md"
+              - "Namespace Member Enumerations": "apiBoard/namespace_member_enums.md"
+          - "Functions": "apiBoard/functions.md"
+          - "Variables": "apiBoard/variables.md"
+          - "Macros": "apiBoard/macros.md"
+          - "Files": "apiBoard/files.md"
+      - API Wrapper:
+          - apiWrapper/index.md
+          - "Links": "apiWrapper/links.md"
           - "Classes":
-              - "Class List": "api-server/annotated.md"
-              - "Class Index": "api-server/classes.md"
-              - "Class Hierarchy": "api-server/hierarchy.md"
-              - "Class Members": "api-server/class_members.md"
-              - "Class Member Functions": "api-server/class_member_functions.md"
-              - "Class Member Variables": "api-server/class_member_variables.md"
-              - "Class Member Typedefs": "api-server/class_member_typedefs.md"
-              - "Class Member Enumerations": "api-server/class_member_enums.md"
+              - "Class List": "apiWrapper/annotated.md"
+              - "Class Index": "apiWrapper/classes.md"
+              - "Class Hierarchy": "apiWrapper/hierarchy.md"
+              - "Class Members": "apiWrapper/class_members.md"
+              - "Class Member Functions": "apiWrapper/class_member_functions.md"
+              - "Class Member Variables": "apiWrapper/class_member_variables.md"
+              - "Class Member Typedefs": "apiWrapper/class_member_typedefs.md"
+              - "Class Member Enumerations": "apiWrapper/class_member_enums.md"
           - "Namespaces":
-              - "Namespace List": "api-server/namespaces.md"
-              - "Namespace Members": "api-server/namespace_members.md"
-              - "Namespace Member Functions": "api-server/namespace_member_functions.md"
-              - "Namespace Member Variables": "api-server/namespace_member_variables.md"
-              - "Namespace Member Typedefs": "api-server/namespace_member_typedefs.md"
-              - "Namespace Member Enumerations": "api-server/namespace_member_enums.md"
-          - "Functions": "api-server/functions.md"
-          - "Variables": "api-server/variables.md"
-          - "Macros": "api-server/macros.md"
-          - "Files": "api-server/files.md"
+              - "Namespace List": "apiWrapper/namespaces.md"
+              - "Namespace Members": "apiWrapper/namespace_members.md"
+              - "Namespace Member Functions": "apiWrapper/namespace_member_functions.md"
+              - "Namespace Member Variables": "apiWrapper/namespace_member_variables.md"
+              - "Namespace Member Typedefs": "apiWrapper/namespace_member_typedefs.md"
+              - "Namespace Member Enumerations": "apiWrapper/namespace_member_enums.md"
+          - "Functions": "apiWrapper/functions.md"
+          - "Variables": "apiWrapper/variables.md"
+          - "Macros": "apiWrapper/macros.md"
+          - "Files": "apiWrapper/files.md"
