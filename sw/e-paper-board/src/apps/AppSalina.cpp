@@ -50,7 +50,7 @@ void AppSalina::buttonClickRight() {
 
 void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string TimeMark, std::string FinalStop) {
     char buffer[100];
-    display->setTextColor(GxEPD_BLACK);
+    display->setTextColor(GxEPD_TEXT);
     sprintf(buffer, "- %s (%s) %s", LineName.c_str(), TimeMark.c_str(), FinalStop.c_str());
     display->println(printCz(buffer));
     printf("%s\n", buffer);
@@ -61,9 +61,9 @@ int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar data) {
     printf("%s\n", JSON.stringify(StopID).c_str());
 
     display->setFont(&FreeSans9pt8b);
-    display->fillScreen(GxEPD_WHITE);
-    display->setTextColor(GxEPD_RED);
-    display->setCursor(0, 8);
+    display->fillScreen(GxEPD_BG);
+    display->setTextColor(GxEPD_TEXT_EX);
+    display->setCursor(0, 15);
     display->println(printCz(std::string("Odjezdy šalin - ") + httpUrlParamKey));
 
     JSONVar PostList0 = data["PostList"][0];

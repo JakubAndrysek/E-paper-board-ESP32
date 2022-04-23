@@ -47,11 +47,11 @@ void AppSolMarks::buttonClickRight() {
 
 int AppSolMarks::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setFont(&FreeSans9pt8b);
-    display->fillScreen(GxEPD_WHITE);
-    display->setTextColor(GxEPD_RED);
+    display->fillScreen(GxEPD_BG);
+    display->setTextColor(GxEPD_TEXT_EX);
     display->setCursor(0, 15);
-    display->println(printCz(this->toString() + httpUrlParamKey));
-    
+    display->println(printCz("Nejnověší známky ŠOL"));
+
     for (int i = 0; i < data.length(); i++) {
         JSONVar markLine = data[i];
         std::string date = (const char*)markLine["date"];
@@ -65,8 +65,8 @@ int AppSolMarks::showDataOnDisplay(GxEPD* display, JSONVar data) {
 }
 
 void AppSolMarks::showMarkLine(GxEPD* display, std::string date, std::string subject, std::string mark) {
-    display->setTextColor(GxEPD_BLACK);
+    display->setTextColor(GxEPD_TEXT);
     display->print(printCz(date + " - " + subject + " - "));
-    display->setTextColor(GxEPD_RED);
+    display->setTextColor(GxEPD_TEXT_EX);
     display->println(printCz(mark));
 }

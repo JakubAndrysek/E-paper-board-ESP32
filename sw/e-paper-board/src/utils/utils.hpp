@@ -23,3 +23,7 @@ static const char* printCz(const char* str) {
 static const char* printCz(std::string str) {
     return printCz(str.c_str());
 }
+
+static int secToMs(int sec) {
+    return sec * 1000;
+}

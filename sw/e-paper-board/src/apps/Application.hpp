@@ -31,7 +31,6 @@ protected:
     std::function<std::string(std::string url)> getHTTPRequest;
     std::function<int(void)> updateHandler;
     int updateIntervalSec;
-    inline int secToMs(int sec) { return sec * 1000; }
 
 public:
     /**

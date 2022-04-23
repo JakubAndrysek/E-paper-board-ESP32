@@ -17,9 +17,11 @@
 #include "exception/JsonParseException.h"
 #include <iostream>
 #include <stdio.h>
+#include "utils/utils.hpp"
 
 Manager::Manager(bool WiFiConnect) {
-    metronomeTimer.intervalSet(20000);
+    metronomeTimer.intervalSet(secToMs(20));
+    metronomeApp.intervalSet(secToMs(60));
     // array of applications
     applications.emplace_back(new AppSolMarks(30, &HttpFetcher::getHTTPRequest));
     applications.emplace_back(new AppSalina(20, &HttpFetcher::getHTTPRequest));
@@ -85,5 +87,9 @@ void Manager::run() {
     if (metronomeTimer.loopMs()) {
         int newInterval = update();
         metronomeTimer.intervalSet(newInterval);
+    }
+
+    if(metronomeApp.loopMs()) {
+        appIndex = (appIndex + 1) % applications.size();
     }
 }

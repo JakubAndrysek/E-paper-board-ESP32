@@ -58,7 +58,7 @@ public:
      * 
      */
     // void prepareDisplay();
-    void prepareDisplay(const GFXfont *f = &FreeSans9pt8b, uint16_t fillScreenColor = GxEPD_WHITE, uint16_t textColor = GxEPD_BLACK);
+    void prepareDisplay(const GFXfont* f = &FreeSans9pt8b, uint16_t fillScreenColor = GxEPD_BG, uint16_t textColor = GxEPD_TEXT);
 
     /**
      * @brief Zobrazí zprávy chyby

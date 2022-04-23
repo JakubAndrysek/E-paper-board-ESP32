@@ -30,6 +30,7 @@ private:
     InputManager inputManager;
     DisplayManager displayManager;
     ArduinoMetronome metronomeTimer;
+    ArduinoMetronome metronomeApp;
     std::vector<std::unique_ptr<Application>> applications;
 
     int appIndex = 0;

@@ -17,36 +17,36 @@ DisplayManager::DisplayManager() {
     display = new GxEPD_Class(*io, EPD_RSET);
     display->init();
     display->setRotation(1);
-    // display->fillScreen(GxEPD_WHITE);
+    // display->fillScreen(GxEPD_BG);
     // display->update();
 }
 
 void DisplayManager::init() {
-    display->fillScreen(GxEPD_WHITE);
+    display->fillScreen(GxEPD_BG);
     display->update();
 }
 
 void DisplayManager::test() {
     display->setCursor(0, 8);
-    display->setTextColor(GxEPD_RED);
+    display->setTextColor(GxEPD_TEXT_EX);
     display->setFont(&FreeSans9pt8b);
     display->print(printCz("Odjezdy šalin\n"));
     display->update();
 }
 
-void DisplayManager::prepareDisplay(const GFXfont *f, uint16_t fillScreenColor, uint16_t textColor) {
+void DisplayManager::prepareDisplay(const GFXfont* f, uint16_t fillScreenColor, uint16_t textColor) {
     display->setFont(&FreeSans9pt8b);
-    display->fillScreen(GxEPD_WHITE);
-    display->setTextColor(GxEPD_BLACK);
+    display->fillScreen(GxEPD_BG);
+    display->setTextColor(GxEPD_TEXT);
 }
 
 void DisplayManager::showError(std::string errorMsg) {
     display->setFont(&FreeSans9pt8b);
-    display->fillScreen(GxEPD_WHITE);
-    display->setTextColor(GxEPD_BLACK);
+    display->fillScreen(GxEPD_BG);
+    display->setTextColor(GxEPD_TEXT);
     display->setCursor(0, 30);
     display->println(printCz("Error:"));
-    display->setTextColor(GxEPD_RED);
+    display->setTextColor(GxEPD_TEXT_EX);
     display->print(printCz(errorMsg.c_str()));
     display->update();
 }
