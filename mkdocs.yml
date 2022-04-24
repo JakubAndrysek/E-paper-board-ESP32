@@ -49,16 +49,9 @@ extra:
       link: https://twitter.com/Jakubandrysek1
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/jakub-andrysek/
-  # consent:
-  #   title: Cookie consent
-  #   description: >-
-  #     We use cookies to recognize your repeated visits and preferences, as well
-  #     as to measure the effectiveness of our documentation and whether users
-  #     find what they're searching for. With your consent, you're helping us to
-  #     make our documentation better.
-  #   analytics:
-  #     name: Google Analytics
-  #     checked: false
+  analytics:
+    provider: google
+    property: G-21J1TXRYM8      
 
 use_directory_urls: True
 
