@@ -5,3 +5,5 @@ K desce LilyGo jsou připojena tři uživatelská tlačítka a jedno tvrdé rese
 Po stisknutí tlačítka je automaticky zavolán callback neboli zpětné volání, které je specifické pro každou aplikaci.
 
 Druhým řídícím prvkem je ubíhající čas. Panel si automaticky hlídá čas a v přednastavenou periodu vyvolá obnovení a aktualizaci dat.
+
+![](../media/panel/ttgo-vstup.png)
