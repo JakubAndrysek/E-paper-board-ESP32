@@ -58,8 +58,8 @@ use_directory_urls: True
 
 plugins:
   # - with-pdf # https://github.com/orzih/mkdocs-with-pdf
-  # - mkpdfs: # install: pip install https://github.com/dirks/mkpdfs-mkdocs-plugin/archive/e73e8a3e430325b9bd4df0e98d94237439cb99a9.zip
-  #     design: ./temp/mkpdfs-design-sample/report.css
+  - mkpdfs: # install: pip install https://github.com/dirks/mkpdfs-mkdocs-plugin/archive/e73e8a3e430325b9bd4df0e98d94237439cb99a9.zip
+      design: docs/vendor/mkpdfs-design-sample/report.css
   - search
   - mkdoxy: # https://github.com/JakubAndrysek/mkdoxy
       projects:
@@ -82,8 +82,8 @@ plugins:
             EXTRACT_ALL: True
 
       save-api: .mkdoxy
-      # full-doc: True
-      full-doc: False
+      full-doc: True
+      # full-doc: False
       debug: False
       ignore-errors: False
 
