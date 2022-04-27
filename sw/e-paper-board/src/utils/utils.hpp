@@ -45,3 +45,13 @@ static const char* printCz(std::string str) {
 static int secToMs(int sec) {
     return sec * 1000;
 }
+
+/**
+ * @brief Převede číslo ze sekund na milisekundy
+ * 
+ * @param sec Číslo v sekundách
+ * @return int Číslo v milisekundách
+ */
+static int minToSec(int minutes) {
+    return minutes * 60;
+}

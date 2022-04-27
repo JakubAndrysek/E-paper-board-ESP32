@@ -19,12 +19,12 @@
 AppSalina::AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
     : Application(updateIntervalSec, getHTTPRequest) {
     // httpUrlBase = "http://192.168.0.15:3333"; // Pletacka
-    httpUrlBase = "http://192.168.0.5:3333"; // Rotex
+    // httpUrlBase = "http://192.168.0.5:3333"; // Rotex
     // httpUrlBase = "http://192.168.42.22:3333"; // Technika
-    // httpUrlBase = "https://mapa.idsjmk.cz/api/Departures";
+    httpUrlBase = "https://mapa.idsjmk.cz/api/Departures";
 
-    httpUrlParams.insert(std::make_pair("Kořístkova", "/1272"));
-    httpUrlParams.insert(std::make_pair("Med škola->Z", "/1377"));
+    httpUrlParams.insert(std::make_pair("Kořístkova-město", "?stopid=1272&postid=2"));
+    httpUrlParams.insert(std::make_pair("Med škola-Ivano", "?stopid=1377&postid=1"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
 }
 
@@ -38,13 +38,13 @@ void AppSalina::setUpdateHandler(std::function<int(void)> updateHandler) {
 
 void AppSalina::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
-    httpUrlParamKey = "Kořístkova";
+    httpUrlParamKey = "Kořístkova-město";
     updateHandler();
 }
 
 void AppSalina::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
-    httpUrlParamKey = "Med škola->Z";
+    httpUrlParamKey = "Med škola-Ivano";
     updateHandler();
 }
 

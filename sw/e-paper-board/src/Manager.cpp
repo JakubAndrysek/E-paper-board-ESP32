@@ -9,6 +9,7 @@
  */
 
 #include "Manager.hpp"
+#include "apps/AppAlojz.hpp"
 #include "apps/AppFablab.hpp"
 #include "apps/AppSalina.hpp"
 #include "apps/AppSolMarks.hpp"
@@ -23,8 +24,9 @@ Manager::Manager(bool WiFiConnect) {
     metronomeTimer.intervalSet(secToMs(20));
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
+    applications.emplace_back(new AppAlojz(minToSec(5), &HttpFetcher::getHTTPRequest));
     applications.emplace_back(new AppSolMarks(30, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppSalina(20, &HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppSalina(30, &HttpFetcher::getHTTPRequest));
     applications.emplace_back(new AppTemplate(60, &HttpFetcher::getHTTPRequest));
     applications.emplace_back(new AppFablab(120, &HttpFetcher::getHTTPRequest));
 
@@ -89,7 +91,7 @@ void Manager::run() {
         metronomeTimer.intervalSet(newInterval);
     }
 
-    if(metronomeApp.loopMs()) {
-        appIndex = (appIndex + 1) % applications.size();
-    }
+    // if(metronomeApp.loopMs()) {
+    //     appIndex = (appIndex + 1) % applications.size();
+    // }
 }

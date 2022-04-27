@@ -8,16 +8,32 @@ from dotenv import dotenv_values
 from skola_online import SkolaOnline
 from fablab import Fablab
 from salina import Salina
+from functools import wraps
 
 app = Flask(__name__)
 
-# http://127.0.0.1:5000/marksLast/
+# Source: https://coderwall.com/p/4qickw/require-an-api-key-for-a-route-in-flask-using-only-a-decorator
+# The actual decorator function
+def require_appkey(view_function):
+    @wraps(view_function)
+    # the new, post-decoration function. Note *args and **kwargs here.
+    def decorated_function(*args, **kwargs):
+        config = dotenv_values(".env")
+        if request.args.get('api_key') and request.args.get('api_key') == config['API_KEY']:
+            return view_function(*args, **kwargs)
+        else:
+            abort(401)
+    return decorated_function
+
+# http://127.0.0.1:5000/marksLast/?api_key=
 @app.route('/marksLast/')
+@require_appkey
 def marksLastFlask():
 	"""! @brief URL pro získání posledních známek.
 	
 	@return JSON s posledními známkami
 	"""
+	username = request.args.get('username')
 
 	# username = request.args.get('username')
 	# password = request.args.get('password')
