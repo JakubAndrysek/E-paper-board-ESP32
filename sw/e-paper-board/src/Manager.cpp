@@ -21,7 +21,7 @@
 #include "utils/utils.hpp"
 
 Manager::Manager(bool WiFiConnect) {
-    metronomeTimer.intervalSet(secToMs(20));
+    metronomeTimer.intervalSet(secToMs(60));
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
     applications.emplace_back(new AppAlojz(minToSec(5), &HttpFetcher::getHTTPRequest));
@@ -60,7 +60,7 @@ Manager::Manager(bool WiFiConnect) {
 
 int Manager::update() {
     try {
-        printf("Calling update: %s\n", applications[appIndex]->toString().c_str());
+        printf("Calling update: %s -> %ds\n", applications[appIndex]->toString().c_str(), applications[appIndex]->getUpdateIntervalSec());
         return applications[appIndex]->update(displayManager.display);
     } catch (const std::exception& e) {
         std::cerr << e.what() << '\n';

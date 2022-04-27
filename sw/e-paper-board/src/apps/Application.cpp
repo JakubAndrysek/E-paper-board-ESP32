@@ -39,6 +39,10 @@ JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlPar
     return httpPayload;
 }
 
+int Application::getUpdateIntervalSec() {
+    return this->updateIntervalSec;
+}
+
 int Application::update(GxEPD* display) {
     JSONVar data = requestJson(httpUrlBase, httpUrlParams.at(httpUrlParamKey));
     return showDataOnDisplay(display, data);

@@ -87,6 +87,8 @@ public:
      */
     virtual std::string toString() = 0;
 
+    int getUpdateIntervalSec();
+
     /**
      * @brief Nastaví callback pro atualizaci displeje
      * 

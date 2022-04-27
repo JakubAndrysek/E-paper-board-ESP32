@@ -6,8 +6,8 @@ Součásti systému:
 
 - [x] [odjezdy MHD - Brno](aplikace/mhd.md)
 - [x] [nejnovější známky ze školy](aplikace/sol-znamky.md)
+- [x] [předpověď počasí Alojz](aplikace/alojz.md)
 - [ ] [aktuální školní rozvrh](aplikace/sol-rozvrh.md)
-- [ ] [předpověď počasí Alojz](aplikace/alojz.md)
 - [ ] [využití strojů ve FabLabu](aplikace/fablab.md)
 - [ ] …
 
