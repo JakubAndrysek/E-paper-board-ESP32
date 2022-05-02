@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 from lxml import etree
-from pprint import pprint
 from universal import GetRequestException
 
 
