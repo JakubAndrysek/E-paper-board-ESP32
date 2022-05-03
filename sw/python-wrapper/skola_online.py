@@ -117,10 +117,15 @@ class SkolaOnline:
 
 		lastMarks = []
 		for tableRow in table[0]:
-			if tableRow.tag == "tr":
-				if tableRow[2][0][0].text:
-					mark = tableRow[2][0][0].text
-				else:
-					mark = tableRow[2][0][0][0].text
-				lastMarks.append(LastMark(tableRow[0].text, tableRow[1].text, mark))
+			try:
+				mark = "test"
+				# if tableRow.tag == "tr":
+				# 	if tableRow[2][0][0].text:
+				# 		mark = tableRow[2][0][0].text
+				# 	else:
+				# 		mark = tableRow[2][0][0][0].text
+			except IndexError:
+				mark = None
+			finally:
+				lastMarks.append(LastMark(tableRow[0][0].text, tableRow[1][0].text, mark))
 		return lastMarks
