@@ -28,7 +28,7 @@ public:
      * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    AppSolMarks(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest, AppConfig& appConfig);
+    AppSolMarks(int updateIntervalSec, AppConfig& appConfig);
 
     /**
      * @brief Vrátí název a popis třídy

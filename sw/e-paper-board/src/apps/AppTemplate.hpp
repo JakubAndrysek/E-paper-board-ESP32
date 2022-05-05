@@ -28,7 +28,7 @@ public:
      * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    AppTemplate(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest, AppConfig& appConfig);
+    AppTemplate(int updateIntervalSec, AppConfig& appConfig);
 
     /**
      * @brief Vrátí název a popis třídy

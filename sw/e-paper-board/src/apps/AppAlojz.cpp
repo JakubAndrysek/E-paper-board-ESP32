@@ -15,9 +15,9 @@
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppAlojz::AppAlojz(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest, AppConfig& appConfig)
-    : Application(updateIntervalSec, getHTTPRequest) {
-    httpUrlBase = "https://lovecka.info/YrNoProvider1/alojz/alojz";
+AppAlojz::AppAlojz(int updateIntervalSec, AppConfig& appConfig)
+    : Application(updateIntervalSec, appConfig) {
+    // httpUrlBase = "https://lovecka.info/YrNoProvider1/alojz/alojz";
     httpUrlParams.insert(std::make_pair("Brno", "?alojzId=brno&lat=49.195060&lon=16.606837&alt=237"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
     dayKey = "day1";

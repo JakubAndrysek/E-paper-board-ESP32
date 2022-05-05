@@ -13,14 +13,14 @@
 #include "exception/JsonEmptyObjectException.h"
 #include <stdio.h>
 
-Application::Application(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest) {
-    this->getHTTPRequest = getHTTPRequest;
+Application::Application(int updateIntervalSec, AppConfig& appConfig) :
+    appConfig(appConfig) {
     this->updateHandler = nullptr;
     this->updateIntervalSec = updateIntervalSec;
 }
 
 JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlParam) {
-    auto payload = getHTTPRequest(httpUrlBase + httpUrlParam);
+    auto payload = appConfig.getHTTPRequest(httpUrlBase + httpUrlParam);
     printf("Request payload: %s\n", payload.c_str());
     JSONVar httpPayload = JSON.parse(payload.c_str());
 
@@ -44,6 +44,6 @@ int Application::getUpdateIntervalSec() {
 }
 
 int Application::update(GxEPD* display) {
-    JSONVar data = requestJson(httpUrlBase, httpUrlParams.at(httpUrlParamKey));
+    JSONVar data = requestJson(appConfig.httpUrlBase, httpUrlParams.at(httpUrlParamKey));
     return showDataOnDisplay(display, data);
 }

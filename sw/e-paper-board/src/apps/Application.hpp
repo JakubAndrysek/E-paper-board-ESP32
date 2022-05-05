@@ -25,11 +25,11 @@
 class Application {
 private:
 protected:
-    /**
-     * @brief Základní URL pro HTTP požadavky
-     * 
-     */
-    std::string httpUrlBase;
+    // /**
+    //  * @brief Základní URL pro HTTP požadavky
+    //  * 
+    //  */
+    // std::string httpUrlBase;
 
     /**
      * @brief Klíč pro vektor HTTP požadavků
@@ -43,11 +43,11 @@ protected:
      */
     std::map<std::string, std::string> httpUrlParams;
 
-    /**
-     * @brief Callback statické metody pro HTTP request
-     * 
-     */
-    std::function<std::string(std::string url)> getHTTPRequest;
+    // /**
+    //  * @brief Callback statické metody pro HTTP request
+    //  * 
+    //  */
+    // std::function<std::string(std::string url)> getHTTPRequest;
 
     /**
      * @brief Callback pro aktualizaci displeje
@@ -61,7 +61,7 @@ protected:
      */
     int updateIntervalSec;
 
-    AppConfig appConfig;
+    AppConfig& appConfig;
 
 public:
     /**
@@ -70,7 +70,7 @@ public:
      * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    Application(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
+    Application(int updateIntervalSec, AppConfig &appConfig);
 
     /**
      * @brief Získá data z internetu a převede na JSON objekt
