@@ -49,11 +49,11 @@ protected:
     //  */
     // std::function<std::string(std::string url)> getHTTPRequest;
 
-    /**
-     * @brief Callback pro aktualizaci displeje
-     * 
-     */
-    std::function<int(void)> updateHandler;
+    // /**
+    //  * @brief Callback pro aktualizaci displeje
+    //  * 
+    //  */
+    // std::function<int(void)> updateHandler;
 
     /**
      * @brief Interval mezi aktualizacemi v sekundách

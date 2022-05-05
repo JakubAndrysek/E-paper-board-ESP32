@@ -17,7 +17,6 @@
 
 AppTemplate::AppTemplate(int updateIntervalSec, AppConfig& appConfig)
     : Application(updateIntervalSec, appConfig) {
-    // httpUrlBase = "http://baseUrl";
     httpUrlParams.insert(std::make_pair("key1", "/key1json"));
     httpUrlParams.insert(std::make_pair("key2", "/key2json"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
@@ -28,19 +27,19 @@ std::string AppTemplate::toString() {
 }
 
 void AppTemplate::setUpdateHandler(std::function<int(void)> updateHandler) {
-    this->updateHandler = updateHandler;
+    // this->updateHandler = updateHandler;
 }
 
 void AppTemplate::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "key1";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 void AppTemplate::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
     httpUrlParamKey = "key2";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar data) {

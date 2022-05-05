@@ -17,14 +17,14 @@ app = Flask(__name__)
 config = dotenv_values(".env")
 
 
-def request_message(message):
-    mess = {"message": message, "status": "ok", "time": str(datetime.datetime.now())}
+def request_data(data):
+    mess = {"data": data, "status": "ok", "time": str(datetime.datetime.now())}
     print(mess)
     return json.dumps(mess)
 
 
-def request_error(message):
-    mess = {"message": message, "status": "error"}
+def request_error(data):
+    mess = {"data": data, "status": "error"}
     print(mess)
     return json.dumps(mess)
 
@@ -61,7 +61,7 @@ def marksLastFlask():
         for mark in lastMarks:
             print(mark)
             json_arr.append(mark.__dict__)
-        return request_message(json_arr)
+        return request_data(json_arr)
 
     except Exception as e:
         return request_error(str(e))
@@ -87,7 +87,7 @@ def marksSubjectFlask():
         for mark in lastMarks:
             print(mark)
             json_arr.append(mark.__dict__)
-        return request_message(json_arr)
+        return request_data(json_arr)
 
     except Exception as e:
         print(e)
@@ -112,7 +112,7 @@ def fablabNowFlask():
         for machine in machinesStat:
             print(machine)
             json_arr.append(machine.__dict__)
-        return request_message(json_arr)
+        return request_data(json_arr)
 
     except Exception as e:
         print(e)
@@ -130,7 +130,7 @@ def departuresFlask():
     try:
         salina = Salina()
         salinaStop = salina.getDepartures(params)
-        return request_message(salinaStop)
+        return request_data(salinaStop)
     except Exception as e:
         print(e)
         return request_error(str(e))
@@ -148,7 +148,7 @@ def alojzFlask():
     try:
         alozj = Alojz()
         alojzWeather = alozj.getWeather(params)
-        return request_message(alojzWeather)
+        return request_data(alojzWeather)
     except Exception as e:
         print(e)
         return request_error(str(e))

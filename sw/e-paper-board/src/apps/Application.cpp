@@ -15,12 +15,22 @@
 
 Application::Application(int updateIntervalSec, AppConfig& appConfig) :
     appConfig(appConfig) {
-    this->updateHandler = nullptr;
+    // this->updateHandler = nullptr;
     this->updateIntervalSec = updateIntervalSec;
 }
 
 JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlParam) {
+    // if(httpUrlParam.find("?") == std::string::npos) {
+    //     httpUrlParam = httpUrlParam + "?api_key=" + appConfig.apiKey;
+    // // } else if(httpUrlParam.find("&")==std::string::npos) {
+    // //     httpUrlParam = httpUrlParam + "&api_key=" + appConfig.apiKey;
+    // } else {
+    //     httpUrlParam = httpUrlParam + "&api_key=" + appConfig.apiKey;
+    // }
+
     auto payload = appConfig.getHTTPRequest(httpUrlBase + httpUrlParam);
+    
+    
     printf("Request payload: %s\n", payload.c_str());
     JSONVar httpPayload = JSON.parse(payload.c_str());
 
@@ -29,14 +39,19 @@ JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlPar
         throw JsonParseException();
     }
 
-    // printf("JSON: %s\n", JSON.stringify(httpPayload).c_str());
+    // {"data": "Nen\u00ed zad\u00e1no stop_id nebo post_id", "status": "error"}
+    if(!httpPayload.hasOwnProperty("status") || !httpPayload.hasOwnProperty("data")) {
+        Serial.println("DUPLICATED: JSON object is empty!");
+        throw JsonEmptyObjectException();
+    }
 
-    // if(!httpPayload.hasOwnProperty("StopID")) {
-    //     Serial.println("DUPLICATED: JSON object is empty!");
+    // {"data": "Nen\u00ed zad\u00e1no stop_id nebo post_id", "status": "error"}
+    // if((const char*)httpPayload["status"] != "ok") {
+    //     // Serial.println(std::string("Error: ") + std::string((const char*)httpPayload["data"]));
     //     throw JsonEmptyObjectException();
     // }
 
-    return httpPayload;
+    return httpPayload["data"];
 }
 
 int Application::getUpdateIntervalSec() {

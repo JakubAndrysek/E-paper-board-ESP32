@@ -17,11 +17,7 @@
 
 AppSolMarks::AppSolMarks(int updateIntervalSec, AppConfig& appConfig)
     : Application(updateIntervalSec, appConfig) {
-    // httpUrlBase = "http://192.168.0.15:5000"; // Pletacka
-    // httpUrlBase = "http://192.168.0.5:5000"; // Rotex
-    // httpUrlBase = "http://192.168.42.22:5000"; // Technika
-    // httpUrlBase = "http://panel.kubaandrysek.cz:3266"; // Rotex
-    httpUrlParams.insert(std::make_pair("marksLast", "/marksLast/?api_key=P@n3l"));
+    httpUrlParams.insert(std::make_pair("marksLast", "/marksLast/"));
     httpUrlParams.insert(std::make_pair("marksSubject", "/marksSubject/"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
 }
@@ -31,19 +27,19 @@ std::string AppSolMarks::toString() {
 }
 
 void AppSolMarks::setUpdateHandler(std::function<int(void)> updateHandler) {
-    this->updateHandler = updateHandler;
+    // this->updateHandler = updateHandler;
 }
 
 void AppSolMarks::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "marksLast";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 void AppSolMarks::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
     httpUrlParamKey = "marksSubject";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 int AppSolMarks::showDataOnDisplay(GxEPD* display, JSONVar data) {

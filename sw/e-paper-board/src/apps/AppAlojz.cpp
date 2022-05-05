@@ -17,8 +17,7 @@
 
 AppAlojz::AppAlojz(int updateIntervalSec, AppConfig& appConfig)
     : Application(updateIntervalSec, appConfig) {
-    // httpUrlBase = "https://lovecka.info/YrNoProvider1/alojz/alojz";
-    httpUrlParams.insert(std::make_pair("Brno", "?alojzId=brno&lat=49.195060&lon=16.606837&alt=237"));
+    httpUrlParams.insert(std::make_pair("Brno", "/alojz?alojzId=brno&lat=49.195060&lon=16.606837&alt=237"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
     dayKey = "day1";
 }
@@ -28,19 +27,19 @@ std::string AppAlojz::toString() {
 }
 
 void AppAlojz::setUpdateHandler(std::function<int(void)> updateHandler) {
-    this->updateHandler = updateHandler;
+    // this->updateHandler = updateHandler;
 }
 
 void AppAlojz::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     dayKey = "day1";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 void AppAlojz::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
     dayKey = "day2";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 int AppAlojz::showDataOnDisplay(GxEPD* display, JSONVar data) {
@@ -50,15 +49,15 @@ int AppAlojz::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setCursor(0, 15);
     display->println(printCz(std::string("Počasí Alojz: ") + httpUrlParamKey));
 
-    JSONVar weatherDay = data[dayKey.c_str()];
+    // JSONVar weatherDay = data[dayKey.c_str()];
 
-    std::string today_tomorrow = (const char*)weatherDay["today_tomorrow"];
-    std::string string = (const char*)weatherDay["string"];
+    // std::string today_tomorrow = (const char*)weatherDay["today_tomorrow"];
+    // std::string string = weatherDay["string"] ? (const char*)weatherDay["string"] : "";
 
-    display->setTextColor(GxEPD_TEXT);
-    display->println(printCz(today_tomorrow));
-    display->setTextColor(GxEPD_TEXT_EX);
-    display->println(printCz(string));
+    // display->setTextColor(GxEPD_TEXT);
+    // display->println(printCz(today_tomorrow));
+    // display->setTextColor(GxEPD_TEXT_EX);
+    // display->println(printCz(string));
 
     display->update();
     return secToMs(updateIntervalSec);
