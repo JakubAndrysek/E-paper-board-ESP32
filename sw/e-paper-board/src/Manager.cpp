@@ -16,19 +16,23 @@
 #include "apps/AppTemplate.hpp"
 #include "credentials.h"
 #include "exception/JsonParseException.h"
+#include "utils/utils.hpp"
 #include <iostream>
 #include <stdio.h>
-#include "utils/utils.hpp"
 
-Manager::Manager(bool WiFiConnect) {
+Manager::Manager(bool WiFiConnect)
+    : appConfig {
+        "http://panel.kubaandrysek.cz:3265/",
+        &HttpFetcher::getHTTPRequest
+    } {
     metronomeTimer.intervalSet(secToMs(60));
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
-    applications.emplace_back(new AppAlojz(minToSec(5), &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppSolMarks(30, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppSalina(30, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppTemplate(60, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppFablab(120, &HttpFetcher::getHTTPRequest));
+    applications.emplace_back(new AppAlojz(minToSec(5), &HttpFetcher::getHTTPRequest, appConfig));
+    applications.emplace_back(new AppSolMarks(30, &HttpFetcher::getHTTPRequest, appConfig));
+    applications.emplace_back(new AppSalina(30, &HttpFetcher::getHTTPRequest, appConfig));
+    applications.emplace_back(new AppTemplate(60, &HttpFetcher::getHTTPRequest, appConfig));
+    applications.emplace_back(new AppFablab(120, &HttpFetcher::getHTTPRequest, appConfig));
 
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         (*it)->setUpdateHandler(std::bind(&Manager::update, this));

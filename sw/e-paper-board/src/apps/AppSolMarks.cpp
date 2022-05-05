@@ -15,7 +15,7 @@
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppSolMarks::AppSolMarks(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
+AppSolMarks::AppSolMarks(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest, AppConfig& appConfig)
     : Application(updateIntervalSec, getHTTPRequest) {
     // httpUrlBase = "http://192.168.0.15:5000"; // Pletacka
     // httpUrlBase = "http://192.168.0.5:5000"; // Rotex

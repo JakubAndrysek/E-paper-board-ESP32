@@ -15,7 +15,7 @@
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppAlojz::AppAlojz(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
+AppAlojz::AppAlojz(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest, AppConfig& appConfig)
     : Application(updateIntervalSec, getHTTPRequest) {
     httpUrlBase = "https://lovecka.info/YrNoProvider1/alojz/alojz";
     httpUrlParams.insert(std::make_pair("Brno", "?alojzId=brno&lat=49.195060&lon=16.606837&alt=237"));
@@ -54,7 +54,7 @@ int AppAlojz::showDataOnDisplay(GxEPD* display, JSONVar data) {
 
     std::string today_tomorrow = (const char*)weatherDay["today_tomorrow"];
     std::string string = (const char*)weatherDay["string"];
-    
+
     display->setTextColor(GxEPD_TEXT);
     display->println(printCz(today_tomorrow));
     display->setTextColor(GxEPD_TEXT_EX);

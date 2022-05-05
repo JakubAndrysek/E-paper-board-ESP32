@@ -16,7 +16,7 @@
 #include "fontsCz/FreeSansBold12pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppSalina::AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
+AppSalina::AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest, AppConfig& appConfig)
     : Application(updateIntervalSec, getHTTPRequest) {
     // httpUrlBase = "http://192.168.0.15:3333"; // Pletacka
     // httpUrlBase = "http://192.168.0.5:3333"; // Rotex

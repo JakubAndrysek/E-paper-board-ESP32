@@ -15,6 +15,7 @@
 #include "DisplayManager.hpp"
 #include "HttpFetcher.hpp"
 #include "InputManager.hpp"
+#include "apps/AppConfig.hpp"
 #include "apps/Application.hpp"
 #include <WiFi.h>
 #include <memory>
@@ -61,6 +62,12 @@ private:
      * @brief Index aktuálně zobrazované aplikace
      */
     int appIndex = 0;
+
+    /**
+     * @brief Výchozí konfigurace aplikací
+     * 
+     */
+    AppConfig appConfig;
 
     /**
      * @brief Vykreslí vybranou aplikaci na displej

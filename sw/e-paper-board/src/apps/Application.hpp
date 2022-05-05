@@ -9,6 +9,7 @@
  */
 #pragma once
 
+#include "AppConfig.hpp"
 #include "GxEPD.h"
 #include <Arduino_JSON.h>
 #include <functional>
@@ -24,7 +25,6 @@
 class Application {
 private:
 protected:
-
     /**
      * @brief Základní URL pro HTTP požadavky
      * 
@@ -54,12 +54,14 @@ protected:
      * 
      */
     std::function<int(void)> updateHandler;
-    
+
     /**
      * @brief Interval mezi aktualizacemi v sekundách
      * 
      */
     int updateIntervalSec;
+
+    AppConfig appConfig;
 
 public:
     /**

@@ -15,7 +15,7 @@
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppTemplate::AppTemplate(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
+AppTemplate::AppTemplate(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest, AppConfig& appConfig)
     : Application(updateIntervalSec, getHTTPRequest) {
     httpUrlBase = "http://baseUrl";
     httpUrlParams.insert(std::make_pair("key1", "/key1json"));
