@@ -51,7 +51,7 @@ void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string T
     printf("%s\n", buffer);
 }
 
-int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar data) {
+int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar& data) {
     JSONVar StopID = data["StopID"];
     printf("%s\n", JSON.stringify(StopID).c_str());
 

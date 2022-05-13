@@ -27,7 +27,7 @@ private:
 protected:
     // /**
     //  * @brief Základní URL pro HTTP požadavky
-    //  * 
+    //  *
     //  */
     // std::string httpUrlBase;
 
@@ -45,13 +45,13 @@ protected:
 
     // /**
     //  * @brief Callback statické metody pro HTTP request
-    //  * 
+    //  *
     //  */
     // std::function<std::string(std::string url)> getHTTPRequest;
 
     // /**
     //  * @brief Callback pro aktualizaci displeje
-    //  * 
+    //  *
     //  */
     // std::function<int(void)> updateHandler;
 
@@ -70,7 +70,7 @@ public:
      * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    Application(int updateIntervalSec, AppConfig &appConfig);
+    Application(int updateIntervalSec, AppConfig& appConfig);
 
     /**
      * @brief Získá data z internetu a převede na JSON objekt
@@ -79,7 +79,7 @@ public:
      * @param httpUrlParam 
      * @return JSONVar JSONVar Objekt JSON
      */
-    JSONVar requestJson(std::string httpUrlBase, std::string httpUrlParam);
+    JSONVar& requestJson(std::string httpUrlBase, std::string httpUrlParam);
 
     /**
      * @brief Vrátí název a popis třídy
@@ -113,7 +113,7 @@ public:
      */
     virtual void buttonClickRight() = 0;
 
-    virtual int showDataOnDisplay(GxEPD* display, JSONVar data) = 0;
+    virtual int showDataOnDisplay(GxEPD* display, JSONVar& data) = 0;
 
     /**
      * @brief Aktualizuje obsah displeje

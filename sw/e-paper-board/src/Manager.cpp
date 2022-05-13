@@ -22,7 +22,7 @@
 
 Manager::Manager(bool WiFiConnect)
     : appConfig {
-        "http://panel.kubaandrysek.cz:3265/",
+        "http://panel.kubaandrysek.cz:3266",
         API_KEY,
         &HttpFetcher::getHTTPRequest,
         std::bind(&Manager::update, this)
@@ -31,10 +31,10 @@ Manager::Manager(bool WiFiConnect)
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
     // applications.emplace_back(new AppAlojz(minToSec(5), appConfig));
+    applications.emplace_back(new AppTemplate(60, appConfig));
     applications.emplace_back(new AppSolMarks(30, appConfig));
     applications.emplace_back(new AppSalina(30, appConfig));
     applications.emplace_back(new AppFablab(120, appConfig));
-    applications.emplace_back(new AppTemplate(60, appConfig));
 
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         (*it)->setUpdateHandler(std::bind(&Manager::update, this));

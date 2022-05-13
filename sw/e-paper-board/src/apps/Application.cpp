@@ -9,17 +9,17 @@
  */
 
 #include "Application.hpp"
-#include "exception/JsonParseException.h"
 #include "exception/JsonEmptyObjectException.h"
+#include "exception/JsonParseException.h"
 #include <stdio.h>
 
-Application::Application(int updateIntervalSec, AppConfig& appConfig) :
-    appConfig(appConfig) {
+Application::Application(int updateIntervalSec, AppConfig& appConfig)
+    : appConfig(appConfig) {
     // this->updateHandler = nullptr;
     this->updateIntervalSec = updateIntervalSec;
 }
 
-JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlParam) {
+JSONVar& Application::requestJson(std::string httpUrlBase, std::string httpUrlParam) {
     // if(httpUrlParam.find("?") == std::string::npos) {
     //     httpUrlParam = httpUrlParam + "?api_key=" + appConfig.apiKey;
     // // } else if(httpUrlParam.find("&")==std::string::npos) {
@@ -29,10 +29,9 @@ JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlPar
     // }
 
     auto payload = appConfig.getHTTPRequest(httpUrlBase + httpUrlParam);
-    
-    
+
     printf("Request payload: %s\n", payload.c_str());
-    JSONVar httpPayload = JSON.parse(payload.c_str());
+    static JSONVar httpPayload = JSON.parse(payload.c_str());
 
     if (JSON.typeof(httpPayload) == "undefined") {
         printf("DUPLICATED: Parsing input failed!\n");
@@ -40,18 +39,23 @@ JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlPar
     }
 
     // {"data": "Nen\u00ed zad\u00e1no stop_id nebo post_id", "status": "error"}
-    if(!httpPayload.hasOwnProperty("status") || !httpPayload.hasOwnProperty("data")) {
+    if (!httpPayload.hasOwnProperty("status") || !httpPayload.hasOwnProperty("data")) {
         Serial.println("DUPLICATED: JSON object is empty!");
         throw JsonEmptyObjectException();
     }
 
     // {"data": "Nen\u00ed zad\u00e1no stop_id nebo post_id", "status": "error"}
+    Serial.print("Status:");
+    Serial.println((const char*)httpPayload["status"]);
+
     // if((const char*)httpPayload["status"] != "ok") {
     //     // Serial.println(std::string("Error: ") + std::string((const char*)httpPayload["data"]));
     //     throw JsonEmptyObjectException();
     // }
+    // return httpPayload;
 
-    return httpPayload["data"];
+    static JSONVar data = httpPayload["data"];
+    return data;
 }
 
 int Application::getUpdateIntervalSec() {
@@ -59,6 +63,6 @@ int Application::getUpdateIntervalSec() {
 }
 
 int Application::update(GxEPD* display) {
-    JSONVar data = requestJson(appConfig.httpUrlBase, httpUrlParams.at(httpUrlParamKey));
+    JSONVar& data = requestJson(appConfig.httpUrlBase, httpUrlParams.at(httpUrlParamKey));
     return showDataOnDisplay(display, data);
 }

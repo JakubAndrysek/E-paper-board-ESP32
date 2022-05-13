@@ -17,7 +17,7 @@
 
 AppTemplate::AppTemplate(int updateIntervalSec, AppConfig& appConfig)
     : Application(updateIntervalSec, appConfig) {
-    httpUrlParams.insert(std::make_pair("key1", "/key1json"));
+    httpUrlParams.insert(std::make_pair("key1", "/ping"));
     httpUrlParams.insert(std::make_pair("key2", "/key2json"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
 }
@@ -42,7 +42,7 @@ void AppTemplate::buttonClickRight() {
     appConfig.updateHandler();
 }
 
-int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar data) {
+int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar& data) {
     display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_BG);
     display->setTextColor(GxEPD_TEXT_EX);
@@ -51,10 +51,15 @@ int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setTextColor(GxEPD_TEXT);
     display->println(printCz(std::string("Url base: - ") + appConfig.httpUrlBase));
     display->println(printCz(std::string("Url param: - ") + httpUrlParams.at(httpUrlParamKey)));
+
+    printf("xJSON: %s\n", JSON.stringify(data).c_str());
+    // display->println(printCz(std::string("Data: - ") + (const char*)data["data"]));
+    display->println(printCz(std::string("Data: - ") + (const char*)data));
+
     display->update();
     return secToMs(updateIntervalSec);
 }
 
-int AppTemplate::update(GxEPD* display) {
-    return showDataOnDisplay(display, JSONVar());
-}
+// int AppTemplate::update(GxEPD* display) {
+//     // return showDataOnDisplay(display, JSONVar());
+// }

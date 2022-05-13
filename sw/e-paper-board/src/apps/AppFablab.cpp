@@ -42,7 +42,7 @@ void AppFablab::buttonClickRight() {
     appConfig.updateHandler();
 }
 
-int AppFablab::showDataOnDisplay(GxEPD* display, JSONVar data) {
+int AppFablab::showDataOnDisplay(GxEPD* display, JSONVar& data) {
     display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_BG);
     display->setTextColor(GxEPD_TEXT_EX);
@@ -56,5 +56,6 @@ int AppFablab::showDataOnDisplay(GxEPD* display, JSONVar data) {
 }
 
 int AppFablab::update(GxEPD* display) {
-    return showDataOnDisplay(display, JSONVar());
+    JSONVar data = JSONVar();
+    return showDataOnDisplay(display, data);
 }

@@ -68,15 +68,15 @@ public:
      * @param data Data získaná z HTTP requestu
      * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
      */
-    int showDataOnDisplay(GxEPD* display, JSONVar data);
+    int showDataOnDisplay(GxEPD* display, JSONVar& data);
 
-    /**
-     * @brief Aktualizuje obsah displeje
-     * 
-     * @param display GxEPD* ukazatel na displej
-     * 
-     * Implementace z výchozí aplikace
-     * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
-     */
-    int update(GxEPD* display);
+    // /**
+    //  * @brief Aktualizuje obsah displeje
+    //  *
+    //  * @param display GxEPD* ukazatel na displej
+    //  *
+    //  * Implementace z výchozí aplikace
+    //  * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
+    //  */
+    // int update(GxEPD* display);
 };

@@ -68,7 +68,7 @@ public:
      * @param data Data získaná z HTTP requestu
      * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
      */
-    int showDataOnDisplay(GxEPD* display, JSONVar data);
+    int showDataOnDisplay(GxEPD* display, JSONVar& data);
 
     void showMarkLine(GxEPD* display, std::string date, std::string subject, std::string mark);
 };
