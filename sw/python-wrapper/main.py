@@ -7,6 +7,7 @@ from salina import Salina
 from alojz import Alojz
 from functools import wraps
 import datetime
+import time
 
 app = Flask(__name__)
 
@@ -152,6 +153,24 @@ def alojzFlask():
     except Exception as e:
         print(e)
         return request_error(str(e))
+
+# http://127.0.0.1:5000/ping
+# @require_apikey
+@app.route("/ping")
+def pingFlask():
+    params = request.args
+
+    return request_data("Pong" + time.strftime("%Y-%m-%d %H:%M:%S"))
+
+    # if not params.get("alojzId") or not params.get("lat") or not params.get("lon") or not params.get("alt"):
+    #     return request_error("Není zadáno alojzId, lat, lon nebo alt")
+    # try:
+    #     alozj = Alojz()
+    #     alojzWeather = alozj.getWeather(params)
+    #     return request_data(alojzWeather)
+    # except Exception as e:
+    #     print(e)
+    #     return request_error(str(e))
 
 
 if __name__ == "__main__":
