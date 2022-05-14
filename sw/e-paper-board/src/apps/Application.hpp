@@ -79,7 +79,7 @@ public:
      * @param httpUrlParam 
      * @return JSONVar JSONVar Objekt JSON
      */
-    JSONVar& requestJson(std::string httpUrlBase, std::string httpUrlParam);
+    JSONVar requestJson(std::string httpUrlBase, std::string httpUrlParam);
 
     /**
      * @brief Vrátí název a popis třídy
@@ -113,7 +113,7 @@ public:
      */
     virtual void buttonClickRight() = 0;
 
-    virtual int showDataOnDisplay(GxEPD* display, JSONVar& data) = 0;
+    virtual int showDataOnDisplay(GxEPD* display, JSONVar data) = 0;
 
     /**
      * @brief Aktualizuje obsah displeje

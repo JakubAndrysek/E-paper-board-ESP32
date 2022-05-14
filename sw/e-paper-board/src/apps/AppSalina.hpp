@@ -78,5 +78,5 @@ public:
      * @param display Ukazatel na displej
      * @param salinaStop Objekt s odjezdy ze zastávky
      */
-    int showDataOnDisplay(GxEPD* display, JSONVar& data);
+    int showDataOnDisplay(GxEPD* display, JSONVar data);
 };

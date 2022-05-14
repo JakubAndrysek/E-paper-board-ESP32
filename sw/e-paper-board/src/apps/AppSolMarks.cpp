@@ -42,15 +42,16 @@ void AppSolMarks::buttonClickRight() {
     appConfig.updateHandler();
 }
 
-int AppSolMarks::showDataOnDisplay(GxEPD* display, JSONVar& data) {
+int AppSolMarks::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_BG);
     display->setTextColor(GxEPD_TEXT_EX);
     display->setCursor(0, 15);
     display->println(printCz("Nejnověší známky ŠOL"));
 
-    for (int i = 0; i < data.length(); i++) {
-        JSONVar markLine = data[i];
+    JSONVar marks = data["data"];
+    for (int i = 0; i < marks.length(); i++) {
+        JSONVar markLine = marks[i];
         std::string date = (const char*)markLine["date"];
         std::string subject = (const char*)markLine["subject"];
         std::string mark = (const char*)markLine["mark"];

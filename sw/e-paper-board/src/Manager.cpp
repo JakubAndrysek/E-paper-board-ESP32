@@ -22,7 +22,8 @@
 
 Manager::Manager(bool WiFiConnect)
     : appConfig {
-        "http://panel.kubaandrysek.cz:3266",
+        // "http://panel.kubaandrysek.cz:3266",
+        "http://192.168.0.13:5000",
         API_KEY,
         &HttpFetcher::getHTTPRequest,
         std::bind(&Manager::update, this)
@@ -65,13 +66,13 @@ Manager::Manager(bool WiFiConnect)
 }
 
 int Manager::update() {
-    try {
+    // try {
         printf("Calling update: %s -> %ds\n", applications[appIndex]->toString().c_str(), applications[appIndex]->getUpdateIntervalSec());
         return applications[appIndex]->update(displayManager.display);
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << '\n';
-        displayManager.showError(e.what());
-    }
+    // } catch (const std::exception& e) {
+    //     std::cerr << e.what() << '\n';
+    //     displayManager.showError(e.what());
+    // }
     metronomeTimer.timeReset();
     return 10000; // try
 }

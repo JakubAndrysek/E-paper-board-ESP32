@@ -42,7 +42,7 @@ void AppAlojz::buttonClickRight() {
     appConfig.updateHandler();
 }
 
-int AppAlojz::showDataOnDisplay(GxEPD* display, JSONVar& data) {
+int AppAlojz::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_BG);
     display->setTextColor(GxEPD_TEXT_EX);

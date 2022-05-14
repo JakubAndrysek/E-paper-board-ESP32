@@ -42,7 +42,7 @@ void AppTemplate::buttonClickRight() {
     appConfig.updateHandler();
 }
 
-int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar& data) {
+int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setFont(&FreeSans9pt8b);
     display->fillScreen(GxEPD_BG);
     display->setTextColor(GxEPD_TEXT_EX);
@@ -52,9 +52,7 @@ int AppTemplate::showDataOnDisplay(GxEPD* display, JSONVar& data) {
     display->println(printCz(std::string("Url base: - ") + appConfig.httpUrlBase));
     display->println(printCz(std::string("Url param: - ") + httpUrlParams.at(httpUrlParamKey)));
 
-    printf("xJSON: %s\n", JSON.stringify(data).c_str());
-    // display->println(printCz(std::string("Data: - ") + (const char*)data["data"]));
-    display->println(printCz(std::string("Data: - ") + (const char*)data));
+    display->println(printCz(std::string("Data: - ") + (const char*)data["data"]));
 
     display->update();
     return secToMs(updateIntervalSec);

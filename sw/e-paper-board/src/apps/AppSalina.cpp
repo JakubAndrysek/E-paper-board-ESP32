@@ -51,7 +51,7 @@ void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string T
     printf("%s\n", buffer);
 }
 
-int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar& data) {
+int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar data) {
     JSONVar StopID = data["StopID"];
     printf("%s\n", JSON.stringify(StopID).c_str());
 
@@ -61,7 +61,9 @@ int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar& data) {
     display->setCursor(0, 15);
     display->println(printCz(std::string("Odjezdy šalin - ") + httpUrlParamKey));
 
-    JSONVar PostList0 = data["PostList"][0];
+    JSONVar departures = data["data"];
+
+    JSONVar PostList0 = departures["PostList"][0];
     JSONVar Departures = PostList0["Departures"];
 
     JSONVar Departures0 = Departures[0];
