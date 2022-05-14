@@ -11,6 +11,7 @@
 
 #include "Board_TTGO_Tdisplay.hpp"
 
+#include <string>
 #include <Adafruit_I2CDevice.h>
 #include <GxEPD.h>
 #include <GxGDEW027C44/GxGDEW027C44.h> // 2.7" b/w/r form GoodDisplay

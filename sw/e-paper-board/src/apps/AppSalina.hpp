@@ -10,6 +10,7 @@
 #pragma once
 
 #include "Application.hpp"
+#include "apps/AppConfig.hpp"
 #include <Arduino_JSON.h>
 #include <GxGDEW027C44/GxGDEW027C44.h>
 #include <functional>
@@ -27,14 +28,14 @@ public:
      * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
+    AppSalina(int updateIntervalSec, AppConfig& appConfig);
 
     /**
      * @brief Vrátí název a popis třídy
      * 
      * Virtualní metoda
      * @return std::string Název a popis třídy
-     */    
+     */
     std::string toString();
 
     /**

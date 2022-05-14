@@ -10,6 +10,7 @@
 #pragma once
 
 #include "Application.hpp"
+#include "apps/AppConfig.hpp"
 #include <Arduino_JSON.h>
 #include <GxGDEW027C44/GxGDEW027C44.h>
 #include <functional>
@@ -27,7 +28,7 @@ public:
      * @param updateIntervalSec Interval mezi aktualizacemi v sekundách
      * @param getHTTPRequest Statická metoda pro HTTP request
      */
-    AppFablab(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest);
+    AppFablab(int updateIntervalSec, AppConfig& appConfig);
 
     /**
      * @brief Vrátí název a popis třídy
@@ -68,7 +69,7 @@ public:
      * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
      */
     int showDataOnDisplay(GxEPD* display, JSONVar data);
-    
+
     /**
      * @brief Aktualizuje obsah displeje
      * 

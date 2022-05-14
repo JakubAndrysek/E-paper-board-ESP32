@@ -16,15 +16,10 @@
 #include "fontsCz/FreeSansBold12pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppSalina::AppSalina(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(updateIntervalSec, getHTTPRequest) {
-    // httpUrlBase = "http://192.168.0.15:3333"; // Pletacka
-    // httpUrlBase = "http://192.168.0.5:3333"; // Rotex
-    // httpUrlBase = "http://192.168.42.22:3333"; // Technika
-    httpUrlBase = "https://mapa.idsjmk.cz/api/Departures";
-
-    httpUrlParams.insert(std::make_pair("Kořístkova-město", "?stopid=1272&postid=2"));
-    httpUrlParams.insert(std::make_pair("Med škola-Ivano", "?stopid=1377&postid=1"));
+AppSalina::AppSalina(int updateIntervalSec, AppConfig& appConfig)
+    : Application(updateIntervalSec, appConfig) {
+    httpUrlParams.insert(std::make_pair("Kořístkova-město", "/departures?stopid=1272&postid=2"));
+    httpUrlParams.insert(std::make_pair("Med škola-Ivano", "/departures?stopid=1377&postid=1"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
 }
 
@@ -33,19 +28,19 @@ std::string AppSalina::toString() {
 }
 
 void AppSalina::setUpdateHandler(std::function<int(void)> updateHandler) {
-    this->updateHandler = updateHandler;
+    // this->updateHandler = updateHandler;
 }
 
 void AppSalina::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "Kořístkova-město";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 void AppSalina::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
     httpUrlParamKey = "Med škola-Ivano";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string TimeMark, std::string FinalStop) {
@@ -66,7 +61,9 @@ int AppSalina::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setCursor(0, 15);
     display->println(printCz(std::string("Odjezdy šalin - ") + httpUrlParamKey));
 
-    JSONVar PostList0 = data["PostList"][0];
+    JSONVar departures = data["data"];
+
+    JSONVar PostList0 = departures["PostList"][0];
     JSONVar Departures = PostList0["Departures"];
 
     JSONVar Departures0 = Departures[0];

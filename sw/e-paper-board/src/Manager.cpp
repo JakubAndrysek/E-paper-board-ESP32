@@ -16,19 +16,26 @@
 #include "apps/AppTemplate.hpp"
 #include "credentials.h"
 #include "exception/JsonParseException.h"
+#include "utils/utils.hpp"
 #include <iostream>
 #include <stdio.h>
-#include "utils/utils.hpp"
 
-Manager::Manager(bool WiFiConnect) {
+Manager::Manager(bool WiFiConnect)
+    : appConfig {
+        // "http://panel.kubaandrysek.cz:3266",
+        "http://192.168.0.13:5000",
+        API_KEY,
+        &HttpFetcher::getHTTPRequest,
+        std::bind(&Manager::update, this)
+    } {
     metronomeTimer.intervalSet(secToMs(60));
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
-    applications.emplace_back(new AppAlojz(minToSec(5), &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppSolMarks(30, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppSalina(30, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppTemplate(60, &HttpFetcher::getHTTPRequest));
-    applications.emplace_back(new AppFablab(120, &HttpFetcher::getHTTPRequest));
+    // applications.emplace_back(new AppAlojz(minToSec(5), appConfig));
+    applications.emplace_back(new AppTemplate(60, appConfig));
+    applications.emplace_back(new AppSolMarks(30, appConfig));
+    applications.emplace_back(new AppSalina(30, appConfig));
+    applications.emplace_back(new AppFablab(120, appConfig));
 
     for (auto it = applications.begin(); it != applications.end(); ++it) {
         (*it)->setUpdateHandler(std::bind(&Manager::update, this));
@@ -59,13 +66,13 @@ Manager::Manager(bool WiFiConnect) {
 }
 
 int Manager::update() {
-    try {
+    // try {
         printf("Calling update: %s -> %ds\n", applications[appIndex]->toString().c_str(), applications[appIndex]->getUpdateIntervalSec());
         return applications[appIndex]->update(displayManager.display);
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << '\n';
-        displayManager.showError(e.what());
-    }
+    // } catch (const std::exception& e) {
+    //     std::cerr << e.what() << '\n';
+    //     displayManager.showError(e.what());
+    // }
     metronomeTimer.timeReset();
     return 10000; // try
 }

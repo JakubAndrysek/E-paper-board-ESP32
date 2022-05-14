@@ -15,7 +15,7 @@
  * @return int 
  */
 int mainAp() {
-    delay(100);
+    Serial.begin(115200);
     printf("Start application\n");
 
     Manager manager;

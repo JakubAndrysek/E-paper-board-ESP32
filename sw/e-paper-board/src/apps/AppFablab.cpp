@@ -15,9 +15,8 @@
 #include "fontsCz/FreeSans9pt8bfr.h"
 #include "utils/utils.hpp"
 
-AppFablab::AppFablab(int updateIntervalSec, std::function<std::string(std::string url)> getHTTPRequest)
-    : Application(updateIntervalSec, getHTTPRequest) {
-    httpUrlBase = "http://baseUrl";
+AppFablab::AppFablab(int updateIntervalSec, AppConfig& appConfig)
+    : Application(updateIntervalSec, appConfig) {
     httpUrlParams.insert(std::make_pair("key1", "/key1json"));
     httpUrlParams.insert(std::make_pair("key2", "/key2json"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
@@ -28,19 +27,19 @@ std::string AppFablab::toString() {
 }
 
 void AppFablab::setUpdateHandler(std::function<int(void)> updateHandler) {
-    this->updateHandler = updateHandler;
+    // this->updateHandler = updateHandler;
 }
 
 void AppFablab::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "key1";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 void AppFablab::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
     httpUrlParamKey = "key2";
-    updateHandler();
+    appConfig.updateHandler();
 }
 
 int AppFablab::showDataOnDisplay(GxEPD* display, JSONVar data) {
@@ -50,12 +49,13 @@ int AppFablab::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setCursor(0, 15);
     display->println(printCz(this->toString() + httpUrlParamKey));
     display->setTextColor(GxEPD_TEXT);
-    display->println(printCz(std::string("Url base: - ") + httpUrlBase));
+    display->println(printCz(std::string("Url base: - ") + appConfig.httpUrlBase));
     display->println(printCz(std::string("Url param: - ") + httpUrlParams.at(httpUrlParamKey)));
     display->update();
     return secToMs(updateIntervalSec);
 }
 
 int AppFablab::update(GxEPD* display) {
-    return showDataOnDisplay(display, JSONVar());
+    JSONVar data = JSONVar();
+    return showDataOnDisplay(display, data);
 }
