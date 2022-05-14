@@ -27,10 +27,6 @@ std::string AppSalina::toString() {
     return std::string("AppSalina: (updateTime: ");
 }
 
-void AppSalina::setUpdateHandler(std::function<int(void)> updateHandler) {
-    // this->updateHandler = updateHandler;
-}
-
 void AppSalina::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "Kořístkova-město";

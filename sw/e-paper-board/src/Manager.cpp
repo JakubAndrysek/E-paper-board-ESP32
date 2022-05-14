@@ -31,15 +31,11 @@ Manager::Manager(bool WiFiConnect)
     metronomeTimer.intervalSet(secToMs(60));
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
-    // applications.emplace_back(new AppAlojz(minToSec(5), appConfig));
+    applications.emplace_back(new AppAlojz(minToSec(5), appConfig));
     applications.emplace_back(new AppTemplate(60, appConfig));
     applications.emplace_back(new AppSolMarks(30, appConfig));
     applications.emplace_back(new AppSalina(30, appConfig));
     applications.emplace_back(new AppFablab(120, appConfig));
-
-    for (auto it = applications.begin(); it != applications.end(); ++it) {
-        (*it)->setUpdateHandler(std::bind(&Manager::update, this));
-    }
 
     inputManager.btnLeft.setClickHandler([&](Button2& btn) {
         appIndex = (appIndex + 1) % applications.size();

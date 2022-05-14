@@ -92,14 +92,6 @@ public:
     int getUpdateIntervalSec();
 
     /**
-     * @brief Nastaví callback pro atualizaci displeje
-     * 
-     * Virtualní metoda
-     * @param updateHandler Callback pro akutalizaci displeje
-     */
-    virtual void setUpdateHandler(std::function<int(void)> updateHandler) = 0;
-
-    /**
      * @brief Callback vyvolaný po stisknutí prostředního tlačítka
      * 
      * Virtualní metoda

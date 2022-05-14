@@ -26,10 +26,6 @@ std::string AppAlojz::toString() {
     return "AppAlojz";
 }
 
-void AppAlojz::setUpdateHandler(std::function<int(void)> updateHandler) {
-    // this->updateHandler = updateHandler;
-}
-
 void AppAlojz::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     dayKey = "day1";
@@ -49,15 +45,16 @@ int AppAlojz::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->setCursor(0, 15);
     display->println(printCz(std::string("Počasí Alojz: ") + httpUrlParamKey));
 
-    // JSONVar weatherDay = data[dayKey.c_str()];
+    JSONVar weather = data["data"];
+    JSONVar weatherDay = weather[dayKey.c_str()];
 
-    // std::string today_tomorrow = (const char*)weatherDay["today_tomorrow"];
-    // std::string string = weatherDay["string"] ? (const char*)weatherDay["string"] : "";
+    std::string today_tomorrow = (const char*)weatherDay["today_tomorrow"];
+    std::string string = (const char*)weatherDay["string"] ? (const char*)weatherDay["string"] : "";
 
-    // display->setTextColor(GxEPD_TEXT);
-    // display->println(printCz(today_tomorrow));
-    // display->setTextColor(GxEPD_TEXT_EX);
-    // display->println(printCz(string));
+    display->setTextColor(GxEPD_TEXT);
+    display->println(printCz(today_tomorrow));
+    display->setTextColor(GxEPD_TEXT_EX);
+    display->println(printCz(string));
 
     display->update();
     return secToMs(updateIntervalSec);

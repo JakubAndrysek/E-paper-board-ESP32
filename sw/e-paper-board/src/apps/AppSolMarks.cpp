@@ -26,10 +26,6 @@ std::string AppSolMarks::toString() {
     return "AppSolMarks";
 }
 
-void AppSolMarks::setUpdateHandler(std::function<int(void)> updateHandler) {
-    // this->updateHandler = updateHandler;
-}
-
 void AppSolMarks::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "marksLast";

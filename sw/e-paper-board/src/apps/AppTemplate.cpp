@@ -26,10 +26,6 @@ std::string AppTemplate::toString() {
     return "AppTemplate";
 }
 
-void AppTemplate::setUpdateHandler(std::function<int(void)> updateHandler) {
-    // this->updateHandler = updateHandler;
-}
-
 void AppTemplate::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "key1";

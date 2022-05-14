@@ -39,15 +39,6 @@ public:
     std::string toString();
 
     /**
-     * @brief N astaví callback pro atualizaci displeje
-     * 
-     * Implementace z výchozí aplikace
-     * 
-     * @param updateHandler Callback pro akutalizaci displeje
-     */
-    void setUpdateHandler(std::function<int(void)> updateHandler);
-
-    /**
      * @brief Callback vyvolaný po stisknutí prostředního tlačítka
      * 
      * Implementace z výchozí aplikace

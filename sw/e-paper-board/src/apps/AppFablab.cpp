@@ -26,10 +26,6 @@ std::string AppFablab::toString() {
     return "AppFablab";
 }
 
-void AppFablab::setUpdateHandler(std::function<int(void)> updateHandler) {
-    // this->updateHandler = updateHandler;
-}
-
 void AppFablab::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
     httpUrlParamKey = "key1";

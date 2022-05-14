@@ -46,19 +46,14 @@ JSONVar Application::requestJson(std::string httpUrlBase, std::string httpUrlPar
     }
 
     // {"data": "Nen\u00ed zad\u00e1no stop_id nebo post_id", "status": "error"}
-    Serial.print("Status:");
-    Serial.println((const char*)httpPayload["status"]);
+    // Serial.print("Status:");
+    // Serial.println((const char*)httpPayload["status"]);
 
     // if(((const char*)httpPayload["status"]) == "error") {
     //     Serial.println( std::string((const char*)httpPayload["data"]).c_str() );
     //     throw JsonBadFormatObjectException();
     // }
 
-    // static JSONVar data = httpPayload["data"];
-
-    // Serial.println(JSONVar::stringify(data).c_str());
-    // return data;
-    Serial.println("OK-JSON");
     return httpPayload;
 }
 
