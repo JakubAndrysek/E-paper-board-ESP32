@@ -1,16 +1,17 @@
 
-doc-preinstall:
+doc-preinstall-linux:
 	sudo apt install doxygen
-	pip install mkdocs-material
-	pip install git+https://github.com/JakubAndrysek/mkdoxy.git
-	pip install git+https://github.com/it-novum/mkdocs-featherlight.git
-	pip install mkdocs-awesome-pages-plugin
+	pip install -r requirements.txt
+
+doc-preinstall-mac:
+	brew install python@3.10 doxygen pango libffi
+	pip install -r requirements.txt
 
 doc:
-	python3.9 -m mkdocs serve
+	python3 -m mkdocs serve
 
 doc-static:
-	python3.9 -m mkdocs serve --no-livereload
+	python3 -m mkdocs serve --no-livereload
 
 python-wrapper:
 	make -C sw/python-wrapper/ python-wrapper 

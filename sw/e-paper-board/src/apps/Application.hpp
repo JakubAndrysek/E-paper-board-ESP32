@@ -25,12 +25,6 @@
 class Application {
 private:
 protected:
-    // /**
-    //  * @brief Základní URL pro HTTP požadavky
-    //  *
-    //  */
-    // std::string httpUrlBase;
-
     /**
      * @brief Klíč pro vektor HTTP požadavků
      * 
@@ -42,18 +36,6 @@ protected:
      * 
      */
     std::map<std::string, std::string> httpUrlParams;
-
-    // /**
-    //  * @brief Callback statické metody pro HTTP request
-    //  *
-    //  */
-    // std::function<std::string(std::string url)> getHTTPRequest;
-
-    // /**
-    //  * @brief Callback pro aktualizaci displeje
-    //  *
-    //  */
-    // std::function<int(void)> updateHandler;
 
     /**
      * @brief Interval mezi aktualizacemi v sekundách
