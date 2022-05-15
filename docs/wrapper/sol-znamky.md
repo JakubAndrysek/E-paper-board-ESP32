@@ -1,7 +1,9 @@
 # ŠOL známky
 
-![](../media/aplikace/sol-znamky-big.png)
+Známky získávám ze školního informačního systému [Škola Online](https://www.skolaonline.cz/) [ŠOL]. 
+Jelikož webová aplikace nemá žádná přístupné API, musel jsem navrhnout wrapper, který pomocí web scapingu stáhne HTML data a pomocí knihovny LXML je rozparsuje do pomocných tříd. Za tříd se na závěr generuje výstup ve formátu JSON.
 
+![](../media/aplikace/sol-znamky-big.png)
 
 
 ## Vstupní HTML data
@@ -31,21 +33,25 @@
 ## Výstupní JSON
 
 ```json
-[
-	{
-		"date": "St 20.4.",
-		"subject": "Český jazyk a literatura",
-		"mark": "2"
-	},
-	{
-		"date": "Út 12.4.",
-		"subject": "Český jazyk a literatura",
-		"mark": "1"
-	},
-	{
-		"date": "St 6.4.",
-		"subject": "Chemie",
-		"mark": "2"
-	}
-]
+{
+    "data": [
+		{
+			"date": "St 20.4.",
+			"subject": "Český jazyk a literatura",
+			"mark": "2"
+		},
+		{
+			"date": "Út 12.4.",
+			"subject": "Český jazyk a literatura",
+			"mark": "1"
+		},
+		{
+			"date": "St 6.4.",
+			"subject": "Chemie",
+			"mark": "2"
+		}
+	],
+    "status": "ok",
+    "time": "2022-05-15 13:48:38.867022"
+}
 ```

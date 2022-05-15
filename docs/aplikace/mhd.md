@@ -4,8 +4,6 @@ Hlavním modulem a prvotním nápadem na vytvoření tohoto projektu je aplikace
 
 ![](../media/aplikace/mhd-web.png)
 
-![mhd](../media/panel/ttgo-front.png)
-
 ## Odjezdy ze zastávky
 
 Hlavním požadavkem na tohoto moduli je rychlé a jednoduché zobrazení odjezdů MHD z přednastavených zastávek.
@@ -13,4 +11,4 @@ V aktuální verzi aplikace zobrazuje dvě nejbližší zastávky od domu.
 
 Na displeji je vidět odjez do obou směrů.
 
-OBRÁZEK
+![](../media/panel/appSalina.png)

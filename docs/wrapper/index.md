@@ -12,3 +12,11 @@ Wrapper pro získání dat z internetu využívá [Web scraping](https://en.wiki
 Jedná se o strojové čtení dat z webových stránek. 
 
 Více informací o [web scrapingu](https://naucse.python.cz/2020/pydata-ostrava-jaro/pydata/webscraping/)
+
+# Moduly wreapperu
+
+Wrapper se skládá z aplikačních modulů.
+Každý aplikace na E-paper panelu má svůj modul pro zpracování dat.
+Na základě URL dotazu se zavolá správný modul, předají se mu přijaté parametry a vrátí se výsledek ve formátu JSON.
+
+Jednotlivé moduly jsou popsány v následujících kapitolách.

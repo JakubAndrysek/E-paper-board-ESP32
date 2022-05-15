@@ -60,7 +60,10 @@ int AppSolMarks::showDataOnDisplay(GxEPD* display, JSONVar data) {
 
 void AppSolMarks::showMarkLine(GxEPD* display, std::string date, std::string subject, std::string mark) {
     display->setTextColor(GxEPD_TEXT);
-    display->print(printCz(date + " - " + subject + " - "));
+    char buffer[100];
+    sprintf(buffer, "%s - %s - ", date.c_str(), substr(subject, 0, 18));
+    display->print(printCz(buffer));
+
     display->setTextColor(GxEPD_TEXT_EX);
     display->println(printCz(mark));
 }

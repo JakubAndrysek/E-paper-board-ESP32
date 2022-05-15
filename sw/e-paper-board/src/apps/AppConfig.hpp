@@ -1,7 +1,5 @@
 #pragma once
 
-#include "GxEPD.h"
-#include <Arduino_JSON.h>
 #include <functional>
 #include <map>
 #include <memory>

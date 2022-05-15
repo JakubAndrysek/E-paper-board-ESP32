@@ -8,6 +8,7 @@ from alojz import Alojz
 from functools import wraps
 import datetime
 import time
+from pprint import *
 
 app = Flask(__name__)
 
@@ -18,8 +19,12 @@ app = Flask(__name__)
 config = dotenv_values(".env")
 
 
-def request_data(message):
-    mess = {"data": message, "status": "ok", "time": str(datetime.datetime.now())}
+def request_data(message: str):
+    """! @brief Vytvoří odpověď na požadavek.
+    @param message: Zpráva, která se má vrátit.
+    @return JSON Odpověď na požadavek.
+    """
+    mess = {"data": message, "status": "ok", "timeFull": str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))}
     print(mess)
     return json.dumps(mess)
 
@@ -54,18 +59,18 @@ def marksLastFlask():
     @return JSON s posledními známkami
     """
 
-    # try:
-    sol = SkolaOnline(config["USERNAME"], config["PASSWORD"])
-    lastMarks = sol.getLastMarks()
+    try:
+        sol = SkolaOnline(config["USERNAME"], config["PASSWORD"])
+        lastMarks = sol.getLastMarks()
 
-    json_arr = []
-    for mark in lastMarks:
-        print(mark)
-        json_arr.append(mark.__dict__)
-    return request_data(json_arr)
+        json_arr = []
+        for mark in lastMarks:
+            print(mark)
+            json_arr.append(mark.__dict__)
+        return request_data(json_arr)
 
-    # except Exception as e:
-    #     return request_error(str(e))
+    except Exception as e:
+        return request_error(str(e))
 
 
 # http://127.0.0.1:5000/marksSubject/
@@ -103,16 +108,20 @@ def fablabNowFlask():
     @return JSON s aktuálním stavem strojů ve Fsblabu
     """
 
-    return request_error("Neni implementovano :-(")
+    # return request_error("Neni implementovano :-(")
 
     try:
         fablab = Fablab()
         machinesStat = fablab.getMachinesStatus()
 
-        json_arr = []
-        for machine in machinesStat:
-            print(machine)
-            json_arr.append(machine.__dict__)
+        json_machines = []
+        for machine in machinesStat.machines:
+            json_machines.append(machine.__dict__)
+        json_printers = []
+        for printer in machinesStat.printers:
+            json_printers.append(printer.__dict__)
+        json_arr = {"members": machinesStat.members, "machines": json_machines, "printers": json_printers}
+
         return request_data(json_arr)
 
     except Exception as e:
@@ -159,18 +168,7 @@ def alojzFlask():
 @app.route("/ping")
 def pingFlask():
     params = request.args
-
     return request_data("Pong" + time.strftime("%Y-%m-%d %H:%M:%S"))
-
-    # if not params.get("alojzId") or not params.get("lat") or not params.get("lon") or not params.get("alt"):
-    #     return request_error("Není zadáno alojzId, lat, lon nebo alt")
-    # try:
-    #     alozj = Alojz()
-    #     alojzWeather = alozj.getWeather(params)
-    #     return request_data(alojzWeather)
-    # except Exception as e:
-    #     print(e)
-    #     return request_error(str(e))
 
 
 if __name__ == "__main__":
@@ -179,4 +177,4 @@ if __name__ == "__main__":
     """
 
     app.run(host="0.0.0.0")
-    # app.run(debug=True, host="0.0.0.0")
+    # # app.run(debug=True, host="0.0.0.0")

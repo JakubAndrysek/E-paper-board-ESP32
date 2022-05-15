@@ -31,11 +31,11 @@ Manager::Manager(bool WiFiConnect)
     metronomeTimer.intervalSet(secToMs(60));
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
-    applications.emplace_back(new AppAlojz(minToSec(5), appConfig));
-    applications.emplace_back(new AppTemplate(60, appConfig));
-    applications.emplace_back(new AppSolMarks(30, appConfig));
+    applications.emplace_back(new AppTemplate(minToSec(1), appConfig));
     applications.emplace_back(new AppSalina(30, appConfig));
-    applications.emplace_back(new AppFablab(120, appConfig));
+    applications.emplace_back(new AppSolMarks(30, appConfig));
+    applications.emplace_back(new AppAlojz(minToSec(5), appConfig));
+    applications.emplace_back(new AppFablab(minToSec(2), appConfig));
 
     inputManager.btnLeft.setClickHandler([&](Button2& btn) {
         appIndex = (appIndex + 1) % applications.size();
@@ -62,13 +62,13 @@ Manager::Manager(bool WiFiConnect)
 }
 
 int Manager::update() {
-    // try {
+    try {
         printf("Calling update: %s -> %ds\n", applications[appIndex]->toString().c_str(), applications[appIndex]->getUpdateIntervalSec());
         return applications[appIndex]->update(displayManager.display);
-    // } catch (const std::exception& e) {
-    //     std::cerr << e.what() << '\n';
-    //     displayManager.showError(e.what());
-    // }
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << '\n';
+        displayManager.showError(e.what());
+    }
     metronomeTimer.timeReset();
     return 10000; // try
 }

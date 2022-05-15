@@ -7,8 +7,8 @@ Součásti systému:
 - [x] [odjezdy MHD - Brno](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/mhd)
 - [x] [nejnovější známky ze školy](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/sol-znamky)
 - [x] [předpověď počasí Alojz](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/alojz)
+- [x] [využití strojů ve FabLabu](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/fablab)
 - [ ] [aktuální školní rozvrh](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/sol-rozvrh)
-- [ ] [využití strojů ve FabLabu](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/fablab)
 - [ ] …
 
 ![demo](docs/media/panel/ttgo-front.png)

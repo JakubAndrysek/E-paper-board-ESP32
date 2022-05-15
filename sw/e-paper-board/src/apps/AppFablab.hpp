@@ -21,6 +21,8 @@
  */
 class AppFablab : public Application {
 private:
+protected:
+    std::string machineKey;
 public:
     /**
      * @brief Konstruktor aplikace - dědí z výchozí aplikace
@@ -61,13 +63,5 @@ public:
      */
     int showDataOnDisplay(GxEPD* display, JSONVar data);
 
-    /**
-     * @brief Aktualizuje obsah displeje
-     * 
-     * @param display GxEPD* ukazatel na displej
-     * 
-     * Implementace z výchozí aplikace
-     * @return int Vrací čas v ms za jak dlouho se má aplikace znovu aktualizovat
-     */
-    int update(GxEPD* display);
+    void showMachineLine(GxEPD* display, std::string name, std::string status);
 };

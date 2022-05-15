@@ -11,8 +11,3 @@ Obvyklý rozvrh
 
 Upravovaný rozvrh
 ![](../media/aplikace/sol-rozvrh-special.png)
-
-
-## Školní rozvrh - Panel
-
-### Ve vývoji

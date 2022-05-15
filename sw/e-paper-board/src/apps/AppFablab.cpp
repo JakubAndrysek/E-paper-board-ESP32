@@ -17,9 +17,9 @@
 
 AppFablab::AppFablab(int updateIntervalSec, AppConfig& appConfig)
     : Application(updateIntervalSec, appConfig) {
-    httpUrlParams.insert(std::make_pair("key1", "/key1json"));
-    httpUrlParams.insert(std::make_pair("key2", "/key2json"));
+    httpUrlParams.insert(std::make_pair("machinees1", "/fablabNow/"));
     httpUrlParamKey = httpUrlParams.begin()->first; // set first parameter as default
+    machineKey = "machines";
 }
 
 std::string AppFablab::toString() {
@@ -28,13 +28,13 @@ std::string AppFablab::toString() {
 
 void AppFablab::buttonClickMiddle() {
     printf("Pressed button MIDDLE - %s\n", this->toString().c_str());
-    httpUrlParamKey = "key1";
+    machineKey = "machines";
     appConfig.updateHandler();
 }
 
 void AppFablab::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
-    httpUrlParamKey = "key2";
+    machineKey = "printers";
     appConfig.updateHandler();
 }
 
@@ -43,15 +43,31 @@ int AppFablab::showDataOnDisplay(GxEPD* display, JSONVar data) {
     display->fillScreen(GxEPD_BG);
     display->setTextColor(GxEPD_TEXT_EX);
     display->setCursor(0, 15);
-    display->println(printCz(this->toString() + httpUrlParamKey));
-    display->setTextColor(GxEPD_TEXT);
-    display->println(printCz(std::string("Url base: - ") + appConfig.httpUrlBase));
-    display->println(printCz(std::string("Url param: - ") + httpUrlParams.at(httpUrlParamKey)));
+
+    JSONVar fablab = data["data"];
+    std::string members = (const char*)fablab["members"];
+ 
+    display->println(printCz("Obsazenost FabLabu: " + members));
+ 
+    JSONVar machines = fablab[machineKey.c_str()];
+     
+    for (int i = 0; i < machines.length(); i++) {
+        JSONVar markLine = machines[i];
+        std::string name = (const char*)markLine["name"];
+        std::string subject = (const char*)markLine["status"];
+        showMachineLine(display, name, subject);
+    }
+
     display->update();
     return secToMs(updateIntervalSec);
 }
 
-int AppFablab::update(GxEPD* display) {
-    JSONVar data = JSONVar();
-    return showDataOnDisplay(display, data);
+void AppFablab::showMachineLine(GxEPD* display, std::string name, std::string status) {
+    display->setTextColor(GxEPD_TEXT);
+    char buffer[100];
+    sprintf(buffer, "%s -", name.c_str());
+    display->print(printCz(buffer));
+
+    display->setTextColor(GxEPD_TEXT_EX);
+    display->println(printCz(substr(status, 0, 18)));
 }

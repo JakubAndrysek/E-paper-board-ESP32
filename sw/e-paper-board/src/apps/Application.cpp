@@ -16,7 +16,6 @@
 
 Application::Application(int updateIntervalSec, AppConfig& appConfig)
     : appConfig(appConfig) {
-    // this->updateHandler = nullptr;
     this->updateIntervalSec = updateIntervalSec;
 }
 

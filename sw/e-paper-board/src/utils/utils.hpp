@@ -55,3 +55,11 @@ static int secToMs(int sec) {
 static int minToSec(int minutes) {
     return minutes * 60;
 }
+
+static const char* substr(std::string text, int start, int end) {
+    if(text.length() > end) {
+        return std::string(text.substr(start, end) + "..").c_str();
+    } else {
+        return text.c_str();
+    }
+}

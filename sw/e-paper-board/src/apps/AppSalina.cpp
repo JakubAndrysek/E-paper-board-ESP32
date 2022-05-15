@@ -42,7 +42,7 @@ void AppSalina::buttonClickRight() {
 void AppSalina::showStopLine(GxEPD* display, std::string LineName, std::string TimeMark, std::string FinalStop) {
     char buffer[100];
     display->setTextColor(GxEPD_TEXT);
-    sprintf(buffer, "- %s (%s) %s", LineName.c_str(), TimeMark.c_str(), FinalStop.c_str());
+    sprintf(buffer, "- %s (%s) %s", LineName.c_str(), TimeMark.c_str(), substr(FinalStop, 0, 20));
     display->println(printCz(buffer));
     printf("%s\n", buffer);
 }
