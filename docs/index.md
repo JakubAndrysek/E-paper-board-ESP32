@@ -2,9 +2,9 @@
 
 ## Cíl projektu
 
-Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel.
+Cílem tohoto projektu je navrhnout a&nbsp;vytvořit univerzální domácí panel.
 Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy.
-Díky bezdrátovému připojení na WiFi a komunikací se zpracujícím servery je displej schopen zobrazit jakékoliv údaje.
+Díky bezdrátovému připojení na WiFi a&nbsp;komunikací se zpracujícím servery je displej schopen zobrazit jakékoliv údaje.
 Díky tomu má uživatel 
 
 ### Součásti systému:
@@ -20,12 +20,12 @@ Díky tomu má uživatel
 
 ## Základní informace
 
-Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a tříbarevným E-paper displejem.
+Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a&nbsp;tříbarevným E-paper displejem.
 
 ### ESP32
 
-ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a Bluetooth.
+ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a&nbsp;Bluetooth.
 
 ### E-paper displej
 
-Do svého projektu jsem si zvolil decentní tříbarevný displej s velikostí 2,7 palců. Který má rozlišení 264 na 176 pixelů.
+Do svého projektu jsem si zvolil decentní tříbarevný displej s&nbsp;velikostí 2,7 palců. Který má rozlišení 264 na 176 pixelů.

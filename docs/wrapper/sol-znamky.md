@@ -1,7 +1,7 @@
 # ŠOL známky
 
 Známky získávám ze školního informačního systému [Škola Online](https://www.skolaonline.cz/) [ŠOL]. 
-Jelikož webová aplikace nemá žádná přístupné API, musel jsem navrhnout wrapper, který pomocí web scapingu stáhne HTML data a pomocí knihovny LXML je rozparsuje do pomocných tříd. Za tříd se na závěr generuje výstup ve formátu JSON.
+Jelikož webová aplikace nemá žádná přístupné API, musel jsem navrhnout wrapper, který pomocí web scapingu stáhne HTML data a&nbsp;pomocí knihovny LXML je rozparsuje do pomocných tříd. Za tříd se na závěr generuje výstup ve formátu JSON.
 
 ![](../media/aplikace/sol-znamky-big.png)
 

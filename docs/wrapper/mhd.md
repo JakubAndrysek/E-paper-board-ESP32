@@ -1,11 +1,11 @@
 # Odjezdy MHD
 
-Tento modul vytvářím ve spolupráci s [IDSJMK](https://idsjmk.cz/). Díky čemuž jsem získal neomezený přístup k veřejnému API na webu [https://mapa.idsjmk.cz](https://mapa.idsjmk.cz/).
+Tento modul vytvářím ve spolupráci s&nbsp;[IDSJMK](https://idsjmk.cz/). Díky čemuž jsem získal neomezený přístup k&nbsp;veřejnému API na webu [https://mapa.idsjmk.cz](https://mapa.idsjmk.cz/).
 
-Více informací [v aplikaci](../aplikace/mhd.md)
+Více informací [v&nbsp;aplikaci](../aplikace/mhd.md)
 
 
-## Odjezd ze zastávky s [ID 1146 a pozicí 1](https://mapa.idsjmk.cz/api/Departures?stopid=1146&postid=1)
+## Odjezd ze zastávky s&nbsp;[ID 1146 a&nbsp;pozicí 1](https://mapa.idsjmk.cz/api/Departures?stopid=1146&postid=1)
 
 ![](../media/aplikace/mhd-web.png)
 

@@ -1,8 +1,8 @@
 # Předpověď počasí Alojz
 
 Stránka [Alojz.cz](https://alojz.cz/brno) je mezi českými bastlíří velmi populární.
-Bohužel však v poslední době v některých případech vrací chybná data.
-Proto vývojář Petr Brouzda navrhl svoji alternativu postavenou na také na webu Alojz, ale při nefunkčnosti služby se zobrazí data přímo z norského meteo radaru [Yr.no](https://www.yr.no/).
+Bohužel však v&nbsp;poslední době v&nbsp;některých případech vrací chybná data.
+Proto vývojář Petr Brouzda navrhl svoji alternativu postavenou na také na webu Alojz, ale při&nbsp;nefunkčnosti služby se zobrazí data přímo z&nbsp;norského meteo radaru [Yr.no](https://www.yr.no/).
 
 ![](../media/aplikace/alojz.png)
 

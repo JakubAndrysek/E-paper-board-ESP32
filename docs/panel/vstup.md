@@ -1,9 +1,9 @@
 # Vstupy panelu
 
-K desce LilyGo jsou připojena tři uživatelská tlačítka a jedno tvrdé reset tlačítko. Tento vstupní modul by měl zajišťovat příjem podnětů, která následně vyvolají změny v aplikaci. První tlačítko slouží k přepínání aplikací (modulů) na displeji. Zbylá dvě tlačítka slouží k
+K&nbsp;desce LilyGo jsou připojena tři uživatelská tlačítka a&nbsp;jedno tvrdé reset tlačítko. Tento vstupní modul by měl zajišťovat příjem podnětů, která následně vyvolají změny v&nbsp;aplikaci. První tlačítko slouží k&nbsp;přepínání aplikací (modulů) na displeji. Zbylá dvě tlačítka slouží k
 
 Po stisknutí tlačítka je automaticky zavolán callback neboli zpětné volání, které je specifické pro každou aplikaci.
 
-Druhým řídícím prvkem je ubíhající čas. Panel si automaticky hlídá čas a v přednastavenou periodu vyvolá obnovení a aktualizaci dat.
+Druhým řídícím prvkem je ubíhající čas. Panel si automaticky hlídá čas a&nbsp;v&nbsp;přednastavenou periodu vyvolá obnovení a&nbsp;aktualizaci dat.
 
 ![](../media/panel/ttgo-vstup.png)
