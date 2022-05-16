@@ -34,14 +34,6 @@ Výsledky se ukládají do tříd, ze kterých se vytváří výsledný JSON.
                 "name": "Bruska",
                 "status": "— available"
             },
-            {
-                "name": "Innovis V5",
-                "status": "— available"
-            },
-            {
-                "name": "Ohýbačka",
-                "status": "— available"
-            },
 			...
         ],
         "printers": [
@@ -53,14 +45,6 @@ Výsledky se ukládají do tříd, ze kterých se vytváří výsledný JSON.
                 "name": "3D  Niki",
                 "status": "— available"
             },
-            {
-                "name": "3D  Pavlína",
-                "status": "— working (5 days)"
-            },
-            {
-                "name": "3D  Tereza",
-                "status": "— working (4 days)"
-            }
 			...
         ]
     },

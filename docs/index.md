@@ -1,8 +1,13 @@
 # E-paper panel
 
-Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel. Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy. Díky bezdrátovému připojení na WiFi a komunikací se zpracujícím servery je displej schopen zobrazit jakékoliv údaje a zjednodušit tak uživateli přístupnost ke každodenním informacím.
+## Cíl projektu
 
-Součásti systému:
+Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel.
+Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy.
+Díky bezdrátovému připojení na WiFi a komunikací se zpracujícím servery je displej schopen zobrazit jakékoliv údaje.
+Díky tomu má uživatel 
+
+### Součásti systému:
 
 - [x] [odjezdy MHD - Brno](aplikace/mhd.md)
 - [x] [nejnovější známky ze školy](aplikace/sol-znamky.md)
@@ -11,7 +16,8 @@ Součásti systému:
 - [ ] [aktuální školní rozvrh](aplikace/sol-rozvrh.md)
 - [ ] …
 
-![demo](media/panel/ttgo-front.png)
+![demo](media/panel/appSalina.png)
+
 ## Základní informace
 
 Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a tříbarevným E-paper displejem.
@@ -22,4 +28,4 @@ ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a Bluetoo
 
 ### E-paper displej
 
-Do svého projektu jsem si zvolil decentní tříbarevný displej s velikostí 2,7 palců. Tento displej má rozlišení 264 na 176 bodů.
+Do svého projektu jsem si zvolil decentní tříbarevný displej s velikostí 2,7 palců. Který má rozlišení 264 na 176 pixelů.

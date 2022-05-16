@@ -102,7 +102,9 @@ extra_css:
   - vendor/featherlight.min.css #https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css
 
 nav:
-  - "Domů": "index.md"
+  - Domů: 
+    - "index.md"
+    - technologie.md
   - Panel:
       - panel/index.md
       - panel/vstup.md
@@ -122,6 +124,8 @@ nav:
       - wrapper/sol-znamky.md
       - wrapper/sol-rozvrh.md
       - wrapper/fablab.md
+  - Závěr:
+      - zaver/index.md
   - API dokumentace:
       - api/index.md
       - API Panelu:
