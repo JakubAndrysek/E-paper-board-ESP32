@@ -2,7 +2,7 @@
 
 O&nbsp;práci s&nbsp;displejem se stará knihovna [GxEPD](https://github.com/ZinggJM/GxEPD), která je obalená mojí třídou `DisplayManager`.
 
-![](../media/panel/ttgo-front.png)
+![demo](../media/aplikace/salinaApp.jpeg)
 
 ## [GxEPD](https://github.com/ZinggJM/GxEPD)
 

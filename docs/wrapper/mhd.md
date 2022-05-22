@@ -33,18 +33,7 @@ Více informací [v&nbsp;aplikaci](../aplikace/mhd.md)
               "IsLowFloor": true,
               "TimeMark": "18min"
             },
-            {
-              "LineName": "N95",
-              "FinalStop": "Kamenný vrch",
-              "IsLowFloor": true,
-              "TimeMark": "18min"
-            },
-            {
-              "LineName": "N97",
-              "FinalStop": "Jírovcova",
-              "IsLowFloor": true,
-              "TimeMark": "18min"
-            }
+            ...
           ]
         }
       ],

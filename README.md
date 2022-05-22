@@ -11,10 +11,10 @@ Součásti systému:
 - [ ] [aktuální školní rozvrh](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/sol-rozvrh)
 - [ ] …
 
-![demo](docs/media/panel/ttgo-front.png)
+![demo](docs/media/aplikace/salinaApp.jpeg)
 ## Základní informace
 
-Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a tříbarevným E-paper displejem.
+Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a tříbarevným E-paper displejem.
 
 ### ESP32
 
@@ -23,5 +23,7 @@ ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a Bluetoo
 ### E-paper displej
 
 Do svého projektu jsem si zvolil decentní tříbarevný displej s velikostí 2,7 palců. Tento displej má rozlišení 264 na 176 bodů.
+
+![demo](docs/media/panel/case.jpeg)
 
 ## Více informací v [kompletní dokumentaci](https://jakubandrysek.github.io/E-paper-board-ESP32/)

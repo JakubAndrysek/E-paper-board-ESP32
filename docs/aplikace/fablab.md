@@ -11,4 +11,8 @@ Stroje jsou přístupné na uživatelské karty a&nbsp;během dne bývají vcelk
 
 Pro zpracování dat z&nbsp;webu FabLabu používám Wrapper - [více informací](../wrapper/fablab.md)
 
-![](../media/panel/appFabLab.png)
+### Po stisknutí tlačítka 2
+![](../media/aplikace/fablabApp.jpeg)
+
+### Po stisknutí tlačítka 3
+![](../media/aplikace/fablabApp2.jpeg)

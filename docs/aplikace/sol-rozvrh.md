@@ -1,13 +1,17 @@
 # ŠOL rozvrh
 
 Důvodem pro vytvoření tohoto modulu jsou časté změny ve standardním školním rozvrhu.
-Při použití běžného papírového se tady skoro každý den stává, že má je potřeba kontrolovat změny rozvrhu na webu. 
+Při&nbsp;použití běžného papírového se tady skoro každý den stává, že má je potřeba kontrolovat změny rozvrhu na webu. 
 
 
 ## Školní rozvrh - Web
 
-Obvyklý rozvrh
+Obvyklý&nbsp;rozvrh
 ![](../media/aplikace/sol-rozvrh.png)
 
-Upravovaný rozvrh
+Upravovaný&nbsp;rozvrh
 ![](../media/aplikace/sol-rozvrh-special.png)
+
+## Ve vývoji
+
+Tato část aplikace ještě není v&nbsp;kompletním stavu.

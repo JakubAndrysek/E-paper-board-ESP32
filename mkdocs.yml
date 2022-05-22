@@ -13,7 +13,7 @@ repo_url: https://github.com/JakubAndrysek/E-paper-board-ESP32
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2022 Jakub Andrýsek
+copyright: Copyright © 2022 Jakub Andrýsek
 
 theme:
   name: material
@@ -124,8 +124,6 @@ nav:
       - wrapper/sol-znamky.md
       - wrapper/sol-rozvrh.md
       - wrapper/fablab.md
-  - Závěr:
-      - zaver/index.md
   - API dokumentace:
       - api/index.md
       - API Panelu:
@@ -174,3 +172,5 @@ nav:
           - "Variables": "apiWrapper/variables.md"
           - "Macros": "apiWrapper/macros.md"
           - "Files": "apiWrapper/files.md"
+  - Závěr:
+      - zaver/index.md

@@ -1,12 +1,12 @@
 # FabLab now
 
-FabLab Wrapper zpracovává data o obsazenosti komunitní dílny FabLab a o využití místních strojů.
-Wrapper stáhne data	z webu [Fablab NOW](https://now.fablabbrno.cz/) a zpracuje je.
+FabLab Wrapper zpracovává data o&nbsp;obsazenosti komunitní dílny FabLab a&nbsp;o&nbsp;využití místních strojů.
+Wrapper stáhne data	z&nbsp;webu [Fablab NOW](https://now.fablabbrno.cz/) a&nbsp;zpracuje je.
 
 # Zpracování dat
 
-Webová stránka je v HTML kódu, který pomocí knihovny LXML rozparsuji.
-Následně program prochází po jednotlivých záznamech o stroji a zjišťuje, zda je obsazen.
+Webová stránka je v&nbsp;HTML kódu, který pomocí knihovny LXML rozparsuji.
+Následně program prochází po jednotlivých záznamech o&nbsp;stroji a&nbsp;zjišťuje, zda je obsazen.
 Výsledky se ukládají do tříd, ze kterých se vytváří výsledný JSON.
 
 

@@ -2,7 +2,7 @@
 
 ## Hardware
 
-Domácí panej je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a&nbsp;tříbarevným E-paper displejem.
+Domácí panej je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a&nbsp;tříbarevným E-paper displejem.
 
 ![mhd](../media/panel/ttgo-front.png)
 ![](../media/panel/ttgo-back.jpg)
@@ -21,7 +21,7 @@ Díky tomu je možné oddělit logiku aplikace od konkrétní implementace.
 
 ### [Vstupy panelu](vstup.md)
 
-Reakce na tlačítka a&nbsp;periodická aktualizace displeje v&nbsp;nastavený čas .
+Reakce na tlačítka a&nbsp;periodická aktualizace displeje v&nbsp;nastavený čas.
 
 ### [Jádro aplikace](jadro.md)
 

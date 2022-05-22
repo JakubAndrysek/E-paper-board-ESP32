@@ -1,0 +1,4 @@
+\b([aiouksvz]) 
+$1&nbsp;
+docs
+*.js, *.css

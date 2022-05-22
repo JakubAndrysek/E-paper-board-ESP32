@@ -4,4 +4,4 @@ Mezi další moduly patří moje oblíbená webová stránka [Alojz.cz](https://
 
 ![](../media/aplikace/alojz.png)
 
-![](../media/panel/appAlojz.png)
+![](../media/aplikace/alojzApp.jpeg)

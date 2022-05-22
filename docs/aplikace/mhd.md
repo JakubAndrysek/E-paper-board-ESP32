@@ -6,9 +6,9 @@ Hlavním modulem a&nbsp;prvotním nápadem na vytvoření tohoto projektu je apl
 
 ## Odjezdy ze zastávky
 
-Hlavním požadavkem na tohoto moduli je rychlé a&nbsp;jednoduché zobrazení odjezdů MHD z&nbsp;přednastavených zastávek.
+Hlavním požadavkem na tohoto modulu je rychlé a&nbsp;jednoduché zobrazení odjezdů MHD z&nbsp;přednastavených zastávek.
 V&nbsp;aktuální verzi aplikace zobrazuje dvě nejbližší zastávky od domu.
 
 Na displeji je vidět odjez do obou směrů.
 
-![](../media/panel/appSalina.png)
+![](../media/aplikace/salinaApp.jpeg)

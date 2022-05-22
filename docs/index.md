@@ -16,11 +16,11 @@ Díky tomu má uživatel
 - [ ] [aktuální školní rozvrh](aplikace/sol-rozvrh.md)
 - [ ] …
 
-![demo](media/panel/appSalina.png)
+![demo](media/aplikace/salinaApp.jpeg)
 
 ## Základní informace
 
-Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a&nbsp;tříbarevným E-paper displejem.
+Domácí panel je postaven na modulu [LilyGo-T5-Epaper](https://github.com/Xinyuan-LilyGO/LilyGo-T5-Epaper-Series) který tvoří velmi významnou kombinaci mezi výkonným mikrokontrolérem ESP32 a&nbsp;tříbarevným E-paper displejem.
 
 ### ESP32
 
@@ -29,3 +29,5 @@ ESP32 je výkonný mikrokontrolér, který disponuje konektivitou WiFi a&nbsp;Bl
 ### E-paper displej
 
 Do svého projektu jsem si zvolil decentní tříbarevný displej s&nbsp;velikostí 2,7 palců. Který má rozlišení 264 na 176 pixelů.
+
+![demo](media/panel/case.jpeg)
