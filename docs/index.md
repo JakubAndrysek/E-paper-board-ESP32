@@ -2,10 +2,7 @@
 
 ## Cíl projektu
 
-Cílem tohoto projektu je navrhnout a&nbsp;vytvořit univerzální domácí panel.
-Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy.
-Díky bezdrátovému připojení na WiFi a&nbsp;komunikací se zpracujícím servery je displej schopen zobrazit jakékoliv údaje.
-Díky tomu má uživatel 
+Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel. Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy. Díky bezdrátovému připojení na WiFi a komunikací se zpracujícím servery je displej schopen zobrazit jakékoliv údaje a zjednodušit tak uživateli přístupnost ke každodenním informacím.
 
 ### Součásti systému:
 

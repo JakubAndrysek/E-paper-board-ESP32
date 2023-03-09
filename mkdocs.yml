@@ -3,7 +3,7 @@ site_name: E-paper panel
 site_url: https://jakubandrysek.github.io/E-paper-board-ESP32/
 site_author: Jakub Andrýsek
 site_description: >-
-  Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel. 
+  Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel.
   Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy.
 
 # Repository
@@ -47,7 +47,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/JakubAndrysek
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/Jakubandrysek1
+      link: https://twitter.com/KubaAndrysek
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/jakub-andrysek/
   analytics:
@@ -102,7 +102,7 @@ extra_css:
   - vendor/featherlight.min.css #https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css
 
 nav:
-  - Domů: 
+  - Domů:
     - "index.md"
     - technologie.md
   - Panel:
