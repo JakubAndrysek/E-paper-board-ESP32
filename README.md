@@ -18,7 +18,7 @@ System components:
 - [ ] [Current School Schedule](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/sol-rozvrh)
 - [ ] ...
 
-<a href="https://jakubandrysek.github.io/E-paper-board-ESP32/" target="_blank"><h3 align="center">DOCUMENTATION - CZ</h3></a>
+### [Documentation](https://jakubandrysek.github.io/E-paper-board-ESP32/)
 
 ![demo](docs/media/aplikace/salinaApp.jpeg)
 ## Basic Information
@@ -53,7 +53,7 @@ Součásti systému:
 - [ ] [aktuální školní rozvrh](https://jakubandrysek.github.io/E-paper-board-ESP32/aplikace/sol-rozvrh)
 - [ ] …
 
-<a href="https://jakubandrysek.github.io/E-paper-board-ESP32/" target="_blank"><h3 align="center">DOKUMENTACE</h3></a>
+### [Dokumentace](https://jakubandrysek.github.io/E-paper-board-ESP32/)
 
 ![demo](docs/media/aplikace/salinaApp.jpeg)
 ## Základní informace
