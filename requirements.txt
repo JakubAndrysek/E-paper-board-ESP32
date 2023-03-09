@@ -1,5 +1,6 @@
 mkdocs
 mkdocs-material
+mkdocs-awesome-pages-plugin
 git+https://github.com/JakubAndrysek/mkdoxy.git
 git+https://github.com/it-novum/mkdocs-featherlight.git
-git+https://github.com/dirks/mkpdfs-mkdocs-plugin.git@e73e8a3e430325b9bd4df0e98d94237439cb99a9
+# git+https://github.com/dirks/mkpdfs-mkdocs-plugin.git@e73e8a3e430325b9bd4df0e98d94237439cb99a9
