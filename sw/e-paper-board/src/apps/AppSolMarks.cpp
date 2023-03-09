@@ -34,7 +34,7 @@ void AppSolMarks::buttonClickMiddle() {
 
 void AppSolMarks::buttonClickRight() {
     printf("Pressed button RIGHT - %s\n", this->toString().c_str());
-    httpUrlParamKey = "marksSubject";
+    httpUrlParamKey = "marksLast";
     appConfig.updateHandler();
 }
 

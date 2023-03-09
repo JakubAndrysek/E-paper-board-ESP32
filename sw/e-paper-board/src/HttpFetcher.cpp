@@ -26,7 +26,7 @@ std::string HttpFetcher::getHTTPRequest(std::string url) {
     HTTPClient http;
 
     http.begin(url.c_str());
-
+    http.setTimeout(8000);
     int httpResponseCode = http.GET();
 
     std::string payload = "{}";

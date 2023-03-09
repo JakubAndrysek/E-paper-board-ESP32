@@ -22,8 +22,8 @@
 
 Manager::Manager(bool WiFiConnect)
     : appConfig {
-        // "http://panel.kubaandrysek.cz:3266",
-        "http://192.168.0.13:5000",
+        "http://panel.kubaandrysek.cz:3266",
+        // "http://192.168.0.11:5000",
         API_KEY,
         &HttpFetcher::getHTTPRequest,
         std::bind(&Manager::update, this)
@@ -31,11 +31,11 @@ Manager::Manager(bool WiFiConnect)
     metronomeTimer.intervalSet(secToMs(60));
     metronomeApp.intervalSet(secToMs(60));
     // array of applications
-    applications.emplace_back(new AppTemplate(minToSec(1), appConfig));
-    applications.emplace_back(new AppSalina(30, appConfig));
-    applications.emplace_back(new AppSolMarks(30, appConfig));
+    applications.emplace_back(new AppSalina(50, appConfig));
     applications.emplace_back(new AppAlojz(minToSec(5), appConfig));
     applications.emplace_back(new AppFablab(minToSec(2), appConfig));
+    applications.emplace_back(new AppSolMarks(60, appConfig));
+    applications.emplace_back(new AppTemplate(minToSec(1), appConfig));
 
     inputManager.btnLeft.setClickHandler([&](Button2& btn) {
         appIndex = (appIndex + 1) % applications.size();
@@ -43,7 +43,18 @@ Manager::Manager(bool WiFiConnect)
         update();
     });
 
+    inputManager.btnLeft.setLongClickHandler([&](Button2& btn) {
+        appIndex = (appIndex + 1) % applications.size();
+        printf("appIndex: %d -> %s\n", appIndex, applications[appIndex]->toString().c_str());
+        update();
+    });    
+
     inputManager.btnMiddle.setClickHandler([&](Button2& btn) {
+        applications[appIndex]->buttonClickMiddle();
+        update();
+    });
+
+    inputManager.btnMiddle.setLongClickHandler([&](Button2& btn) {
         applications[appIndex]->buttonClickMiddle();
         update();
     });
@@ -52,6 +63,19 @@ Manager::Manager(bool WiFiConnect)
         applications[appIndex]->buttonClickRight();
         update();
     });
+
+    inputManager.btnRight.setLongClickHandler([&](Button2& btn) {
+        applications[appIndex]->buttonClickRight();
+        update();
+    });
+
+    inputManager.btnRight.setDoubleClickHandler([&](Button2& btn) {
+        printf("double click\n");
+        appIndex = 0;
+        printf("appIndex: %d -> %s\n", appIndex, applications[appIndex]->toString().c_str());
+        update();
+    });
+
 
     if (WiFiConnect) {
         connectToWiFi(ssid, password);
