@@ -3,23 +3,24 @@ site_name: E-paper panel
 site_url: https://jakubandrysek.github.io/E-paper-board-ESP32/
 site_author: Jakub Andrýsek
 site_description: >-
-  Cílem tohoto projektu je navrhnout a vytvořit univerzální domácí panel.
-  Hlavním úkolem tohoto panelu je zobrazovat aktuální odjezdy městské hromadné dopravy.
+  The aim of this project is to design and create a universal home panel.
+  The main task of this panel is to display the current departures of public transport.
+
 
 # Repository
 repo_name: JakubAndrysek/E-paper-board-ESP32
 repo_url: https://github.com/JakubAndrysek/E-paper-board-ESP32
 # edit_uri: blob/main/docs/
-edit_uri: ""
+# edit_uri: ""
 
 # Copyright
-copyright: Copyright © 2022 Jakub Andrýsek
+copyright: Copyright © 2023 Jakub Andrýsek
 
 theme:
   name: material
   language: cs
-  # logo: assets/logo.png
-  # favicon: images/favicon.png
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.tabs
     - navigation.indexes
@@ -29,18 +30,10 @@ theme:
     repo: fontawesome/brands/github
 
   palette:
-    - scheme: default
-      primary: light blue
-      accent: light blue
-      toggle:
-        icon: material/weather-night
-        name: Přepnout na tmavý režim
     - scheme: slate
       primary: red
       accent: red
-      toggle:
-        icon: material/weather-sunny
-        name: Přepnout na světý režim
+
 
 extra:
   social:
@@ -61,6 +54,23 @@ plugins:
   # - mkpdfs: # install: pip install https://github.com/dirks/mkpdfs-mkdocs-plugin/archive/e73e8a3e430325b9bd4df0e98d94237439cb99a9.zip
   #     design: docs/vendor/mkpdfs-design-sample/report.css
   - search
+  - glightbox
+  # - i18n:
+  #   default_language: !ENV [DEFAULT_LANGUAGE, "en"]
+  #   default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
+  #   docs_structure: suffix
+  #   languages:
+  #     default:
+  #       name: Default (en)
+  #       build: true
+  #     cs:
+  #       name: Czech (cs)
+  #       build: true
+  #       site_name: InkSvgNest
+  #   # nav_translations:
+  #   #   fr:
+  #   #     Topic1: Sujet1
+  #   #     Topic2: Sujet2
   - mkdoxy: # https://github.com/JakubAndrysek/mkdoxy
       projects:
         apiBoard:
@@ -87,19 +97,14 @@ plugins:
       debug: False
       ignore-errors: False
 
+  # - git-revision-date-localized
+
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
-  - featherlight # install: pip install git+https://github.com/it-novum/mkdocs-featherlight.git
 
-extra_javascript:
-  - vendor/jquery-latest.js #https://code.jquery.com/jquery-latest.js
-  - vendor/featherlight.min.js # https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js
-
-extra_css:
-  - vendor/featherlight.min.css #https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css
 
 nav:
   - Domů:
