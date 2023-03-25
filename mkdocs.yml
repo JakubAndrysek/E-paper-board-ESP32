@@ -105,6 +105,9 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
 
+extra_javascript:
+  - assets/js/open_in_new_tab.js
+
 
 nav:
   - Domů:
